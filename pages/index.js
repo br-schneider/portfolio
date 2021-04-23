@@ -167,8 +167,8 @@ export default function Home() {
         )}
       </Popover>
 
-      <div className="py-20 bg-gray-400">
-        <h1 className="mx-auto text-2xl font-bold text-center text-white">Computer Science Major at University of Colorado Boulder</h1>
+      <div className="py-20 bg-gray-50">
+        <h1 className="mx-auto text-2xl font-bold text-center ">Computer Science Major at University of Colorado Boulder</h1>
       </div>
 
     
