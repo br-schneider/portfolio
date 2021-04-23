@@ -15,7 +15,7 @@ const navigation = [
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen overflow-hidden">
+    <div className="">
       <Popover className="relative overflow-hidden bg-white">
         {({ open }) => (
           <>
@@ -44,7 +44,7 @@ export default function Home() {
                             className="w-auto h-8 sm:h-10"
                             src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
                           /> */}
-                          <h1 className="block text-3xl font-bold xl:inline">Brett Schneider</h1>
+                          <h1 className="block text-3xl font-bold text-blue-600 xl:inline">Brett Schneider</h1>
                         </a>
                         <div className="flex items-center -mr-2 md:hidden">
                           <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
@@ -124,7 +124,7 @@ export default function Home() {
                       {/* <span className="block text-blue-600 xl:inline">I am Brett</span> */}
                     </h1>
                     <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                      This is my portfolio website that I used to display my skills and abilities.  
+                      This is my portfolio website that I use to display my skills and abilities. Please let me know if you're interested in any of my services by hitting the contact button below. 
                     </p>
                     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                       <div className="rounded-md shadow">
@@ -148,7 +148,7 @@ export default function Home() {
                 </main>
               </div>
             </div>
-            <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
               {/* <Image
                 className="object-cover w-full h-56 sm:h-72 md:h-96 lg:w-full lg:h-full"
                 src="/images/home.png"
@@ -167,10 +167,49 @@ export default function Home() {
         )}
       </Popover>
 
-      <div className="py-20 bg-gray-50">
-        <h1 className="mx-auto text-2xl font-bold text-center ">Computer Science Major at University of Colorado Boulder</h1>
-      </div>
+      <div className=" bg-gray-50">
+        <h1 className="py-5 mx-2 text-2xl font-bold text-center align-center">Computer Science Major at University of Colorado Boulder</h1>
+        
+        <div className="grid grid-cols-1 px-2 md:px-20 md:grid-cols-3">
 
+          <div className="mx-5 mb-5">
+          
+            <div>
+              <h4 className="text-lg font-bold text-blue-600">About Me</h4>
+              <p className="mt-1 ">
+              My name is Brett, I am currently a full time student and plan on graduating in May of 2021. 
+              I am a progressive, energetic problem solver with project management, salesforce, and marketing 
+              experience on top of my already growing knowledge of the computer science field!
+              </p>
+            </div>
+          </div>
+
+          <div className="mx-5 mb-5">
+
+            <div>
+              <h4 className="text-lg font-bold text-blue-600">Skills</h4>
+              <p className="mt-1 ">
+                Programming Languages: Java, C++, Python, HTML, CSS, Javascript, Vuejs, React, and SQL.<br/>
+                Applications: Excel, Photoshope, Illustrator
+                
+              </p>
+            </div>
+          </div>
+
+          <div className="mx-5 ">
+
+            <div>
+              <h4 className="text-lg font-bold text-blue-600">This Website</h4>
+              <p className="mt-1 ">
+                I built this website from scratch using React and TailwindCSS
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        
+      </div>
     
     </div>
 
