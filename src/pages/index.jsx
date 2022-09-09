@@ -24,6 +24,9 @@ import logoAscendant from '@/images/logos/ascendant.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import { useState } from 'react'
+import { useForm } from '@formspree/react'
+import { useRouter } from 'next/router'
 
 function MailIcon(props) {
   return (
@@ -101,16 +104,25 @@ function Article({ article }) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="p-1 -m-1 group" {...props}>
+    <Link target={'_blank'} className="p-1 -m-1 group" {...props}>
       <Icon className="w-6 h-6 transition fill-zinc-500 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
 }
 
 function Newsletter() {
+  const [email, setEmail] = useState('')
+  const [state, handleSubmit] = useForm('moqbjylz')
+  const router = useRouter()
+
+  if (state.succeeded) {
+    router.push('/thank-you')
+  }
+
   return (
     <form
-      action="/thank-you"
+      // action="/thank-you"
+      onSubmit={handleSubmit}
       className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -122,15 +134,28 @@ function Newsletter() {
       </p>
       <div className="flex mt-6">
         <input
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="Email address"
           aria-label="Email address"
           required
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
         />
-        <Button type="submit" className="flex-none ml-4">
+        {/* <div
+          onClick={() => {
+            axios.post('https://formspree.io/f/moqbjylz', { email })
+          }}
+        > */}
+        <Button
+          type="submit"
+          disabled={state.submitting}
+          className="flex-none ml-4"
+        >
           Join
         </Button>
+        {/* </div> */}
       </div>
     </form>
   )
@@ -178,6 +203,18 @@ function Resume() {
     },
   ]
 
+  const handleDownload = () => {
+    fetch('/brett_schneider_resume.pdf').then((response) => {
+      response.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob)
+        let alink = document.createElement('a')
+        alink.href = fileURL
+        alink.download = "Brett Schneider's Resume.pdf"
+        alink.click()
+      })
+    })
+  }
+
   return (
     <div className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -218,10 +255,12 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="w-full mt-6 group">
-        Download CV
-        <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      <div onClick={handleDownload}>
+        <Button variant="secondary" className="w-full mt-6 group">
+          Download CV
+          <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </div>
     </div>
   )
 }
@@ -257,9 +296,7 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>
-          Brett Schneider - Software Engineer
-        </title>
+        <title>Brett Schneider - Software Engineer</title>
         <meta
           name="description"
           content="I’m Brett, a software engineer and entrepreneur based in Austin.
@@ -273,8 +310,8 @@ export default function Home({ articles }) {
             Founding Software Engineer at Gladiate Law.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Brett, a software engineer and entrepreneur based in Austin.
-            I work on the Gladiate Law team, where we develop technologies that
+            I’m Brett, a software engineer and entrepreneur based in Austin. I
+            work on the Gladiate Law team, where we develop technologies that
             empower attorneys to practice law on their own terms.
           </p>
           <div className="flex gap-6 mt-6">
