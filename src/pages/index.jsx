@@ -24,7 +24,6 @@ import logoAscendant from '@/images/logos/ascendant.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
-import { axios } from 'axios'
 import { useState } from 'react'
 import { useForm } from '@formspree/react'
 import { useRouter } from 'next/router'
@@ -105,7 +104,7 @@ function Article({ article }) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="p-1 -m-1 group" {...props}>
+    <Link target={'_blank'} className="p-1 -m-1 group" {...props}>
       <Icon className="w-6 h-6 transition fill-zinc-500 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )

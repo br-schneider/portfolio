@@ -17,6 +17,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
+        target="_blank"
         className="flex text-sm font-medium transition group text-zinc-800 hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
         <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-teal-500" />
@@ -61,11 +62,18 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Brett Schneider. I live in Austin, Texas, where I engineer applications.
+              I’m Brett Schneider. I live in Austin, Texas, where I engineer
+              applications.
             </h1>
             <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
               {/* <p>
                 The only thing I loved more than computers as a kid was space.
@@ -91,10 +99,18 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://github.com/br-schneider" icon={GitHubIcon} className="mt-4">
+              <SocialLink
+                href="https://github.com/br-schneider"
+                icon={GitHubIcon}
+                className="mt-4"
+              >
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://linkedin.com/in/brettcschneider/" icon={LinkedInIcon} className="mt-4">
+              <SocialLink
+                href="https://linkedin.com/in/brettcschneider/"
+                icon={LinkedInIcon}
+                className="mt-4"
+              >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
