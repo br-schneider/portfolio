@@ -77,10 +77,10 @@ export default function Photography() {
     <>
       <Head>
         <title>Photography - Brett Schneider</title>
-        <meta name="description" content="Here's my recent camera roll." />
+        <meta name="description" content="Here's my camera roll." />
       </Head>
       <SimpleLayout
-        title="Here's my recent camera roll."
+        title="Here's my camera roll."
         intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       >
         <div className="-mt-8">
