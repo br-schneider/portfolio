@@ -262,7 +262,9 @@ export default function Home({ articles }) {
         </title>
         <meta
           name="description"
-          content="I’m Brett, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="I’m Brett, a software engineer and entrepreneur based in Austin.
+            I work on the Gladiate Law team, where we develop technologies that
+            empower attorneys to practice law on their own terms."
         />
       </Head>
       <Container className="mt-9">
@@ -277,17 +279,12 @@ export default function Home({ articles }) {
           </p>
           <div className="flex gap-6 mt-6">
             <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com"
+              href="https://github.com/br-schneider"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/brettcschneider/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
