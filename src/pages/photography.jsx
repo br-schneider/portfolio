@@ -1,7 +1,4 @@
 import Head from 'next/head'
-
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
 import Image from 'next/future/image'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
@@ -13,7 +10,7 @@ function importAll(r) {
   return images
 }
 const imagesObject = importAll(
-  require.context('../../public/pics', false, /\.(png|jpe?g|svg|JPG|jpg)$/)
+  require.context('/public/pics', false, /\.(png|jpe?g|svg|JPG|jpg)$/)
 )
 
 const images = Object.keys(imagesObject).map((key) => {
@@ -59,9 +56,9 @@ function Gallery() {
               <p className="block mt-2 text-sm font-medium truncate pointer-events-none text-zinc-800 dark:text-zinc-100">
                 {image.title}
               </p>
-              <p className="block text-sm font-medium text-gray-500 pointer-events-none">
+              {/* <p className="block text-sm font-medium text-gray-500 pointer-events-none">
                 {image.width} × {image.height} px
-              </p>
+              </p> */}
             </li>
           )
         } else {
@@ -83,7 +80,7 @@ export default function Photography() {
         title="Here's my camera roll."
         intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       >
-        <div className="-mt-8">
+        <div className="-mt-5">
           <Gallery />
         </div>
       </SimpleLayout>

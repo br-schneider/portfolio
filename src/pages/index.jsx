@@ -18,7 +18,7 @@ import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import logoCervello from '@/images/logos/cervello.png'
-import logoDogsilly from '@/images/logos/dogsilly.png'
+import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoGladiate from '@/images/logos/gladiate.png'
 import logoAscendant from '@/images/logos/ascendant.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
@@ -183,7 +183,7 @@ function Resume() {
     {
       company: 'dogsilly',
       title: 'Software Engineer',
-      logo: logoDogsilly,
+      logo: logoPlanetaria,
       start: '2020',
       end: '2021',
     },
