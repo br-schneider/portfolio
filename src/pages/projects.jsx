@@ -4,10 +4,8 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoApollo from '@/images/logos/apollo.png'
 
 const projects = [
   {
@@ -16,6 +14,16 @@ const projects = [
       'Built out a full fledged e-commerce site for a clothing brand. The site leverages CommerceJs and Stripe to handle purchases.',
     link: { href: 'https://dogsilly.com', label: 'dogsilly.com' },
     logo: logoPlanetaria,
+  },
+  {
+    name: 'Apollo Funding Partners',
+    description:
+      'This website was built for a loan sourcing company. It was built using Next.js and TailwindCSS.',
+    link: {
+      href: 'https://apollofundingpartners.com',
+      label: 'apollofundingpartners.com',
+    },
+    logo: logoApollo,
   },
   {
     name: 'This Website',
@@ -50,7 +58,7 @@ export default function Projects() {
       <SimpleLayout
         title="Things I’ve worked on."
         // intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        intro="I've worked on many projects over the years. Here are a few of my favorites."
       >
         <ul
           role="list"
