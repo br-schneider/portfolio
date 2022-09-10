@@ -45,7 +45,8 @@ export default function About() {
         <title>About - Brett Schneider</title>
         <meta
           name="description"
-          content="I’m Brett Schneider. I live in Austin, Texas, where I engineer applications."
+          content="I’m Brett Schneider. I live in Austin, Texas, where I engineer
+              and design applications."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -62,8 +63,8 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Brett Schneider. I live in Austin, Texas, where I engineer
-              applications.
+              I’m Brett Schneider. I live in Austin, Texas, where I engineer and
+              design applications.
             </h1>
             <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
               <p>
