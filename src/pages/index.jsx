@@ -194,13 +194,6 @@ function Resume() {
       start: '2019',
       end: '2019',
     },
-    {
-      company: 'Ascendant Capital',
-      title: 'Capital Markets Associate',
-      logo: logoAscendant,
-      start: '2018',
-      end: '2018',
-    },
   ]
 
   const handleDownload = () => {

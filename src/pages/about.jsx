@@ -68,34 +68,35 @@ export default function About() {
             </h1>
             <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              {/* <p>
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                I graduated from the University of Colorado Boulder with a
+                degree in Computer Science. I’ve worked as a software engineer
+                for the past three years and am currently a software engineer at{' '}
+                <a className="underline" href="https://www.gladiatelaw.com/">
+                  Gladiate Law
+                </a>
+                .
               </p>
               <p>
-                I spent the next few summers indoors working on a rocket design,
-                while I recovered from the multiple surgeries it took to fix my
-                badly broken legs. It took nine iterations, but when I was 15 I
-                sent my dad’s Blackberry into orbit and was able to transmit a
-                photo back down to our family computer from space.
+                I’m passionate about building applications that are accessible,
+                performant, and delightful to use. I’m also interested in the
+                intersection of design and engineering. I have always been
+                interested in design and try to soak up as much information as
+                possible about design systems. It adds a much-needed layer of
+                polish to the applications I build.
               </p>
               <p>
-                Today, I’m the founder of Planetaria, where we’re working on
-                civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
-                make it to orbit — from the comfort of their own backyards.
-              </p> */}
+                Working on the web is a great way to understand and solve
+                complex problems. In addition, I love the fact that I can build
+                applications that are accessible to everyone. Unfortunately, the
+                topic of accessibility is often overlooked, and I believe it is
+                crucial to ensure that everyone can access the web and
+                technology in a meaningful way.
+              </p>
+              <p>
+                I’m always looking for new opportunities to learn and grow. If
+                you have any questions or would like to chat, feel free to reach
+                out to me at the links provided.
+              </p>
             </div>
           </div>
           <div className="lg:pl-20">

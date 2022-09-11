@@ -36,7 +36,7 @@ function Gallery() {
         if (image) {
           return (
             <li key={image.source} className="relative">
-              <div className="block w-full overflow-hidden bg-gray-100 rounded-lg group aspect-w-10 aspect-h-7 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+              <div className="block w-full overflow-hidden rounded-lg group aspect-w-10 aspect-h-7 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
                 <Image
                   src={image.source}
                   alt=""
@@ -78,7 +78,7 @@ export default function Photography() {
       </Head>
       <SimpleLayout
         title="Here's my camera roll."
-        intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        intro="Most of these are from my DJI Mavic Pro. "
       >
         <div className="-mt-5">
           <Gallery />
