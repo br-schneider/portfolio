@@ -25,7 +25,7 @@ export default function App({ Component, pageProps, router }) {
         <script
           defer
           data-domain="brettcschneider.com"
-          src="https://plausible.io/js/plausible.js"
+          src="https://plausible.io/js/script.file-downloads.js"
         ></script>
       </Head>
       <div className="fixed inset-0 flex justify-center sm:px-8">
