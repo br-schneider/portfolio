@@ -4,7 +4,7 @@ import commerceOrder from './commerceOrder.png'
 
 export const meta = {
   author: 'Brett Schneider',
-  date: '2022-05-22',
+  date: '2022-05-28',
   title: 'How to Beat Any Shopify Store',
   description:
     'How to leverage CommerceJS to beat out the same old shopify template.',
@@ -28,9 +28,7 @@ running:
 
 ```js
 export async function getStaticProps() {
-  const { data: products } = await commerce.products.list({
-    category_slug: [process.env.NEXT_PUBLIC_PRODUCTION_MODE],
-  })
+  const { data: products } = await commerce.products.list()
 
   return {
     props: {
