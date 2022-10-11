@@ -28,7 +28,7 @@ const projects = [
   {
     name: 'This Website',
     description:
-      'This website was written using all of my favorite technologies. It is a site generated with Next.js, styled with Tailwind CSS, and hosted on Netlify.',
+      'Written using all of my favorite technologies. It is a site generated with Next.js, styled with Tailwind CSS, and hosted on Netlify.',
     link: {
       href: 'https://github.com/br-schneider/portfolio',
       label: 'github.com',
@@ -57,7 +57,6 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="Things I’ve worked on."
-        // intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         intro="I've worked on many projects over the years. Here are a few of my favorites."
       >
         <ul
