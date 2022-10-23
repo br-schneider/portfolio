@@ -18,6 +18,10 @@ function usePrevious(value) {
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
 
+  const isProduction = process.env.NODE_ENV === 'production'
+
+  console.log('isProduction', isProduction)
+
   return (
     <PlausibleProvider domain="brettcschneider.com">
       <div className="fixed inset-0 flex justify-center sm:px-8">
