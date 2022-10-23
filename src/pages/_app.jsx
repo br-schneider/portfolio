@@ -18,14 +18,14 @@ function usePrevious(value) {
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
 
-  console.log(window.location.host)
-
-  const isProduction = process.env.NODE_ENV === 'production'
-
-  console.log('isProduction', isProduction)
+  //get the url
+  const url = typeof window !== 'undefined' ? window.location.href : ''
+  const isProd = url.includes('brettcschneider.com')
+  console.log(url)
+  console.log(isProd)
 
   return (
-    <PlausibleProvider enabled={isProduction} domain="brettcschneider.com">
+    <PlausibleProvider enabled={isProd} domain="brettcschneider.com">
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
