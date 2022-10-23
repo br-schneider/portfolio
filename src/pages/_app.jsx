@@ -21,8 +21,6 @@ export default function App({ Component, pageProps, router }) {
   //get the url
   const url = typeof window !== 'undefined' ? window.location.href : ''
   const isProd = url.includes('brettcschneider.com')
-  console.log(url)
-  console.log(isProd)
 
   return (
     <PlausibleProvider enabled={isProd} domain="brettcschneider.com">
