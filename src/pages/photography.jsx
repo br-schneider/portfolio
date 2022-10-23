@@ -57,16 +57,16 @@ function ImageModal({ image, onClose }) {
             width={1000}
             height={500}
             layout="responsive"
-            className={' rounded-lg ' + (loaded ? '' : ' hidden')}
+            className={
+              ' rounded-lg ' +
+              (loaded ? '' : ' animate-pulse bg-zinc-200 dark:bg-zinc-700 ')
+            }
             priority={true}
             onLoad={() => {
               setLoaded(true)
             }}
           />
         </div>
-        {loaded ? null : (
-          <div className="flex h-[calc(100vw-10rem)] w-[calc(100vw-10rem)] animate-pulse justify-center rounded-lg bg-zinc-200 dark:bg-zinc-700 sm:h-[calc(100vw-20rem)]" />
-        )}
       </div>
     </div>
   )
