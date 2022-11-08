@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://brettcschneider.com
+
+# Sitemaps
+Sitemap: https://brettcschneider.com/sitemap.xml
