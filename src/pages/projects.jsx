@@ -8,36 +8,6 @@ import logoApollo from '@/images/logos/apollo.png'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 
-// const projects = [
-//   {
-//     name: 'dogsilly',
-//     description:
-//       'Built out a full fledged e-commerce site for a clothing brand. The site leverages CommerceJs and Stripe to handle purchases.',
-//     link: { href: 'https://dogsilly.com', label: 'dogsilly.com' },
-//     logo: logoPlanetaria,
-//   },
-//   {
-//     name: 'Apollo Funding Partners',
-//     description:
-//       'This website was built for a loan sourcing company. It was built using Next.js and TailwindCSS.',
-//     link: {
-//       href: 'https://apollofundingpartners.com',
-//       label: 'apollofundingpartners.com',
-//     },
-//     logo: logoApollo,
-//   },
-//   {
-//     name: 'This Website',
-//     description:
-//       'Written using all of my favorite technologies. It is a site generated with Next.js, styled with Tailwind CSS, and hosted on Netlify.',
-//     link: {
-//       href: 'https://github.com/br-schneider/portfolio',
-//       label: 'github.com',
-//     },
-//     logo: logoAnimaginary,
-//   },
-// ]
-
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -57,7 +27,7 @@ export default function Projects() {
         {
           headers: {
             // Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
-            Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
           },
         }
       )
