@@ -26,7 +26,6 @@ export default function Projects() {
         'https://brett-portfolio-backend.herokuapp.com/api/projects?populate=*',
         {
           headers: {
-            // Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
           },
         }
