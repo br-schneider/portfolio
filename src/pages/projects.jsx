@@ -57,7 +57,7 @@ export default function Projects() {
         {
           headers: {
             // Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
-            Authorization: `Bearer 1c70e4e7e865abde55f533442b6812fe0c425714faf63023def7c1458f33ecdc27be7605588dd67c9c1879e67eb45616599815063bc6174bb446e5270d89d21375fdfb347e5ea0210a4eb646eaf2f67d5612ad958f5b70f48c0c04deb24599ef85bfa906563136d3008249bdfb6200ca48f7eda250ce4eca5b8b48bb31117ad8`,
+            Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
           },
         }
       )
