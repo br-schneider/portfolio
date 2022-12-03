@@ -7,6 +7,7 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoApollo from '@/images/logos/apollo.png'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
+import { fetchAPI } from '@/lib/api'
 
 function LinkIcon(props) {
   return (
@@ -52,6 +53,8 @@ export default function Projects() {
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects &&
+            !error &&
+            !isLoading &&
             projects.map((project) => {
               const imageUrl = project?.attributes?.icon?.data?.attributes?.url
 
