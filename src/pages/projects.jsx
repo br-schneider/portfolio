@@ -36,7 +36,7 @@ export default function Projects() {
       })
   )
 
-  const projects = res.data ? res.data : [{ title: 'Loading...' }]
+  const projects = data
 
   return (
     <>
@@ -53,8 +53,8 @@ export default function Projects() {
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects &&
-            !res.error &&
-            !res.isLoading &&
+            !error &&
+            !isLoading &&
             projects.map((project) => {
               const imageUrl = project?.attributes?.icon?.data?.attributes?.url
 
