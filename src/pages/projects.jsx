@@ -21,22 +21,20 @@ function LinkIcon(props) {
 }
 
 export default function Projects() {
-  // const { isLoading, error, data, isFetching } = useQuery(['projects'], () =>
-  //   axios
-  //     .get(
-  //       'https://brett-portfolio-backend.herokuapp.com/api/projects?populate=*',
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
-  //         },
-  //       }
-  //     )
-  //     .then((res) => {
-  //       return res.data.data
-  //     })
-  // )
-
-  const res = fetchAPI('/projects?populate=*', {}, {}, 'projects')
+  const { isLoading, error, data, isFetching } = useQuery(['projects'], () =>
+    axios
+      .get(
+        'https://brett-portfolio-backend.herokuapp.com/api/projects?populate=*',
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res.data.data
+      })
+  )
 
   const projects = res.data ? res.data : [{ title: 'Loading...' }]
 
