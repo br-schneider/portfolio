@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Brett Schneider</title>
-        <link>https://brettcschneider.com</link>
+        <link>https://bretts.dev</link>
         <description>Your blog description</description>
-        <lastBuildDate>Tue, 08 Nov 2022 14:02:57 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 03 Dec 2022 03:41:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>Brett Schneider</title>
-            <url>https://brettcschneider.com/favicon.ico</url>
-            <link>https://brettcschneider.com</link>
+            <url>https://bretts.dev/favicon.ico</url>
+            <link>https://bretts.dev</link>
         </image>
         <copyright>All rights reserved 2022</copyright>
         <item>
             <title><![CDATA[How to Beat Any Shopify Store]]></title>
-            <link>https://brettcschneider.com/articles/how-to-beat-any-shopify-store</link>
-            <guid>https://brettcschneider.com/articles/how-to-beat-any-shopify-store</guid>
+            <link>https://bretts.dev/articles/how-to-beat-any-shopify-store</link>
+            <guid>https://bretts.dev/articles/how-to-beat-any-shopify-store</guid>
             <pubDate>Sat, 28 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[How to leverage CommerceJS to beat out the same old shopify template.]]></description>
             <content:encoded><![CDATA[<p>When approached with creating an e-commerce app, it&#x27;s pretty easy to pop up the

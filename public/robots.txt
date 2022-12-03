@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://brettcschneider.com
+Host: https://bretts.dev
 
 # Sitemaps
-Sitemap: https://brettcschneider.com/sitemap.xml
+Sitemap: https://bretts.dev/sitemap.xml
