@@ -120,7 +120,7 @@ export default function About() {
                 icon={MailIcon}
                 className="pt-8 mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
               >
-                brett.schneider@gladiatelaw.com
+                brett.c.schneider@gmail.com
               </SocialLink>
             </ul>
           </div>
