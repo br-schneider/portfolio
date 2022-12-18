@@ -27,7 +27,6 @@ import { formatDate } from '@/lib/formatDate'
 import { useState } from 'react'
 import { useForm } from '@formspree/react'
 import { useRouter } from 'next/router'
-import { usePlausible } from 'next-plausible'
 
 function MailIcon(props) {
   return (
@@ -197,7 +196,6 @@ function Resume() {
     },
   ]
 
-  const plausible = usePlausible()
   const handleDownload = () => {
     fetch('/brett_schneider_resume.pdf').then((response) => {
       response.blob().then((blob) => {

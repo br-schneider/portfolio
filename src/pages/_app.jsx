@@ -1,16 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import PlausibleProvider from 'next-plausible'
 import '@/styles/tailwind.css'
 import 'focus-visible'
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Analytics } from '@vercel/analytics/react'
 
 function usePrevious(value) {
   let ref = useRef()
@@ -27,26 +21,21 @@ const queryClient = new QueryClient()
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
 
-  //get the url
-  const url = typeof window !== 'undefined' ? window.location.href : ''
-  const isProd = url.includes('bretts.dev')
-
   return (
     <QueryClientProvider client={queryClient}>
-      <PlausibleProvider enabled={isProd} domain="bretts.dev">
-        <div className="fixed inset-0 flex justify-center sm:px-8">
-          <div className="flex w-full max-w-7xl lg:px-8">
-            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
-          </div>
+      <div className="fixed inset-0 flex justify-center sm:px-8">
+        <div className="flex w-full max-w-7xl lg:px-8">
+          <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
         </div>
-        <div className="relative">
-          <Header />
-          <main>
-            <Component previousPathname={previousPathname} {...pageProps} />
-          </main>
-          <Footer />
-        </div>
-      </PlausibleProvider>
+      </div>
+      <div className="relative">
+        <Header />
+        <main>
+          <Component previousPathname={previousPathname} {...pageProps} />
+        </main>
+        <Footer />
+      </div>
+      <Analytics />
     </QueryClientProvider>
   )
 }
