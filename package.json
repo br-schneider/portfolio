@@ -29,7 +29,7 @@
     "focus-visible": "^5.2.0",
     "moment": "^2.29.4",
     "mongodb": "^5.0.1",
-    "next": "^13.1.6",
+    "next": "^12.3.0",
     "next-sitemap": "^3.1.30",
     "postcss-focus-visible": "^6.0.4",
     "qs": "^6.11.0",

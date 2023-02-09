@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { useState } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/solid'
