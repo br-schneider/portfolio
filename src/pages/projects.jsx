@@ -1,13 +1,10 @@
-import Image from 'next/future/image'
+/* eslint-disable react-hooks/rules-of-hooks */
+import Image from 'next/image'
 import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoApollo from '@/images/logos/apollo.png'
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { fetchAPI } from '@/lib/api'
 
 function LinkIcon(props) {
   return (
@@ -21,22 +18,14 @@ function LinkIcon(props) {
 }
 
 export default function Projects() {
-  const { isLoading, error, data, isFetching } = useQuery(['projects'], () =>
-    axios
-      .get(
-        'https://brett-portfolio-backend.herokuapp.com/api/projects?populate=*',
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
-          },
-        }
-      )
-      .then((res) => {
-        return res.data.data
-      })
+  const { isLoading, error, data } = useQuery(['project'], () =>
+    axios.get('/api/project').then((res) => {
+      return res.data.projects
+    })
   )
 
-  const projects = data
+  //sort data by order
+  const projects = data?.sort((a, b) => a.order - b.order)
 
   return (
     <>
@@ -56,15 +45,18 @@ export default function Projects() {
             !error &&
             !isLoading &&
             projects.map((project) => {
-              const imageUrl = project?.attributes?.icon?.data?.attributes?.url
-
+              console.log(project.imageUrl)
               return (
                 <Card as="li" key={project.id}>
-                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                     <Image
-                      src={imageUrl}
+                      src={
+                        project?.imageId
+                          ? `https://imagedelivery.net/NyDIeOklL-swJIKB3uRXYw/${project?.imageId}/public`
+                          : '/images/placeholder.png'
+                      }
                       alt=""
-                      className="w-8 h-8"
+                      className="h-8 w-8"
                       width={32}
                       height={32}
                       unoptimized
@@ -73,19 +65,15 @@ export default function Projects() {
                   <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                     <Card.Link
                       target={'_blank'}
-                      href={project?.attributes?.link?.href || '#'}
+                      href={project?.link?.href || '#'}
                     >
-                      {project?.attributes?.title}
+                      {project?.title}
                     </Card.Link>
                   </h2>
-                  <Card.Description>
-                    {project?.attributes?.description}
-                  </Card.Description>
-                  <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-teal-500 dark:text-zinc-200">
-                    <LinkIcon className="flex-none w-6 h-6" />
-                    <span className="ml-2">
-                      {project?.attributes?.link?.label}
-                    </span>
+                  <Card.Description>{project?.description}</Card.Description>
+                  <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">{project?.link?.label}</span>
                   </p>
                 </Card>
               )
