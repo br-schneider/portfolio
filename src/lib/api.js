@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import qs from 'qs'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'

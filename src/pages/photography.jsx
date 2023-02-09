@@ -39,7 +39,7 @@ function ImageModal({ image, onClose }) {
         }}
         className="fixed inset-0 overflow-hidden bg-black opacity-50"
       />
-      <div className="absolute flex justify-end mb-3 cursor-pointer top-3 right-3">
+      <div className="absolute top-3 right-3 mb-3 flex cursor-pointer justify-end">
         <button
           className="text-white"
           onClick={() => {
@@ -49,7 +49,7 @@ function ImageModal({ image, onClose }) {
           <XMarkIcon className="h-7 w-7" />
         </button>
       </div>
-      <div className="relative z-10 p-5 mx-10 bg-white rounded-lg dark:bg-zinc-800">
+      <div className="relative z-10 mx-10 rounded-lg bg-white p-5 dark:bg-zinc-800">
         <div className="flex justify-center">
           <Image
             src={image.source}
@@ -99,13 +99,13 @@ function Gallery() {
               key={image.source}
               className="relative cursor-pointer"
             >
-              <div className="block w-full overflow-hidden rounded-lg group aspect-w-10 aspect-h-7 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+              <div className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
                 <Image
                   src={image.source}
                   alt=""
                   height="200"
                   width="200"
-                  className="object-cover pointer-events-none group-hover:opacity-75"
+                  className="pointer-events-none object-cover group-hover:opacity-75"
                 />
                 <button
                   type="button"
@@ -116,7 +116,7 @@ function Gallery() {
                   </span>
                 </button>
               </div>
-              <p className="block mt-2 text-sm font-medium truncate pointer-events-none text-zinc-800 dark:text-zinc-100">
+              <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-zinc-800 dark:text-zinc-100">
                 {image.title}
               </p>
               {/* <p className="block text-sm font-medium text-gray-500 pointer-events-none">
