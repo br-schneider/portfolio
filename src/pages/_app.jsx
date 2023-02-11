@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useRef } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -5,7 +6,7 @@ import '@/styles/tailwind.css'
 import 'focus-visible'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Analytics } from '@vercel/analytics/react'
-import connectToDatabase from '@/lib/conectToDatabase'
+import axios from 'axios'
 
 function usePrevious(value) {
   let ref = useRef()
@@ -21,6 +22,10 @@ const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
+
+  useEffect(() => {
+    axios.get('/api/hello')
+  }, [])
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -39,17 +44,4 @@ export default function App({ Component, pageProps, router }) {
       <Analytics />
     </QueryClientProvider>
   )
-}
-
-App.getInitialProps = async ({ Component, ctx }) => {
-  let pageProps = {}
-
-  // warm up the database connection
-  const db = await connectToDatabase()
-
-  if (Component.getInitialProps) {
-    pageProps = await Component.getInitialProps(ctx)
-  }
-
-  return { pageProps }
 }

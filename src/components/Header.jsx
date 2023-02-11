@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Image from 'next/future/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

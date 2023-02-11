@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import ReactDOMServer from 'react-dom/server'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Image from 'next/future/image'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -6,12 +7,7 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import {
-  TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -204,7 +200,6 @@ function Resume() {
         alink.href = fileURL
         alink.download = "Brett Schneider's Resume.pdf"
         alink.click()
-        plausible('Resume')
       })
     })
   }
@@ -349,6 +344,7 @@ export async function getStaticProps() {
     props: {
       articles: (await getAllArticles())
         .slice(0, 4)
+        // eslint-disable-next-line no-unused-vars
         .map(({ component, ...meta }) => meta),
     },
   }
