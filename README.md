@@ -1,5 +1,5 @@
-# My Portfolio Website
+# Welcome to My Portfolio 👋
 
-I built this site using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+---
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/53654960-093e-4fe2-86f7-d2068654b11c/deploy-status)](https://app.netlify.com/sites/brett-portfolio/deploys)
+I built the frontend for this site using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org). For my backend I used [Node.js](https://nodejs.org/en/) and [Express](https://expressjs.com) along with [MongoDB](https://www.mongodb.com) for my database. This also contains all my favorite projects and a blog. I hope you enjoy it!

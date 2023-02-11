@@ -5,6 +5,7 @@ import '@/styles/tailwind.css'
 import 'focus-visible'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Analytics } from '@vercel/analytics/react'
+import connectToDatabase from '@/lib/conectToDatabase'
 
 function usePrevious(value) {
   let ref = useRef()
@@ -20,6 +21,11 @@ const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
+
+  // Connect to database on initial load to avoid cold start
+  useEffect(() => {
+    connectToDatabase()
+  }, [])
 
   return (
     <QueryClientProvider client={queryClient}>
