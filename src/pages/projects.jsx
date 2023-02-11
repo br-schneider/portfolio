@@ -43,52 +43,23 @@ export default function Projects() {
         >
           {isLoading && (
             <>
-              {' '}
-              <li
-                className="rounded-lg border border-gray-300 p-5 shadow-lg"
-                key={null}
-              >
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md">
-                  <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400" />
-                </div>
-                <h2 className="mt-6 mb-2 w-44">
-                  <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200" />
-                </h2>
-                <div className="h-6 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-2 h-6 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-2 h-6 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-8 h-6 w-24 animate-pulse rounded-md bg-gray-200"></div>
-              </li>{' '}
-              <li
-                className="rounded-lg border border-gray-300 p-5 shadow-lg"
-                key={null}
-              >
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md">
-                  <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400" />
-                </div>
-                <h2 className="mt-6 mb-2 w-44">
-                  <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200" />
-                </h2>
-                <div className="h-6 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-2 h-6 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-2 h-6 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-8 h-6 w-24 animate-pulse rounded-md bg-gray-200"></div>
-              </li>{' '}
-              <li
-                className="rounded-lg border border-gray-300 p-5 shadow-lg"
-                key={null}
-              >
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md">
-                  <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400" />
-                </div>
-                <h2 className="mt-6 mb-2 w-44">
-                  <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200" />
-                </h2>
-                <div className="h-6 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-2 h-6 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-2 h-6 animate-pulse rounded-md bg-gray-200"></div>
-                <div className="mt-8 h-6 w-24 animate-pulse rounded-md bg-gray-200"></div>
-              </li>
+              {[1, 2, 3].map(() => (
+                <li
+                  className="rounded-lg border border-gray-300 p-5 shadow-lg dark:border-zinc-800/50"
+                  key={null}
+                >
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md dark:bg-gray-800/70">
+                    <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400 dark:bg-gray-800/50" />
+                  </div>
+                  <h2 className="mt-6 mb-2 w-44">
+                    <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200 dark:bg-gray-800/50" />
+                  </h2>
+                  <div className="h-6 animate-pulse rounded-md bg-gray-200 dark:bg-gray-800/50"></div>
+                  <div className="mt-2 h-6 w-3/4 animate-pulse rounded-md bg-gray-200 dark:bg-gray-800/50"></div>
+                  <div className="mt-2 h-6 animate-pulse rounded-md bg-gray-200 dark:bg-gray-800/50"></div>
+                  <div className="mt-8 h-6 w-24 animate-pulse rounded-md bg-gray-200 dark:bg-gray-800/50"></div>
+                </li>
+              ))}
             </>
           )}
           {projects &&
