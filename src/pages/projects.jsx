@@ -41,6 +41,56 @@ export default function Projects() {
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
+          {isLoading && (
+            <>
+              {' '}
+              <li
+                className="rounded-lg border border-gray-300 p-5 shadow-lg"
+                key={null}
+              >
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md">
+                  <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400" />
+                </div>
+                <h2 className="mt-6 mb-2 w-44">
+                  <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200" />
+                </h2>
+                <div className="h-6 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-2 h-6 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-2 h-6 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-8 h-6 w-24 animate-pulse rounded-md bg-gray-200"></div>
+              </li>{' '}
+              <li
+                className="rounded-lg border border-gray-300 p-5 shadow-lg"
+                key={null}
+              >
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md">
+                  <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400" />
+                </div>
+                <h2 className="mt-6 mb-2 w-44">
+                  <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200" />
+                </h2>
+                <div className="h-6 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-2 h-6 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-2 h-6 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-8 h-6 w-24 animate-pulse rounded-md bg-gray-200"></div>
+              </li>{' '}
+              <li
+                className="rounded-lg border border-gray-300 p-5 shadow-lg"
+                key={null}
+              >
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md">
+                  <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400" />
+                </div>
+                <h2 className="mt-6 mb-2 w-44">
+                  <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200" />
+                </h2>
+                <div className="h-6 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-2 h-6 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-2 h-6 animate-pulse rounded-md bg-gray-200"></div>
+                <div className="mt-8 h-6 w-24 animate-pulse rounded-md bg-gray-200"></div>
+              </li>
+            </>
+          )}
           {projects &&
             !error &&
             !isLoading &&
