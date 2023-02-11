@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Head from 'next/head'
 
 import { Card } from '@/components/Card'
@@ -63,6 +64,7 @@ export default function ArticlesIndex({ articles }) {
 export async function getStaticProps() {
   return {
     props: {
+      // eslint-disable-next-line no-unused-vars
       articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
     },
   }

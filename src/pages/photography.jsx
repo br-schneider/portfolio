@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Head from 'next/head'
 import Image from 'next/future/image'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -6,7 +7,7 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 
 function importAll(r) {
   let images = {}
-  r.keys().forEach((item, index) => {
+  r.keys().forEach((item) => {
     images[item.replace('./', '')] = r(item)
   })
   return images

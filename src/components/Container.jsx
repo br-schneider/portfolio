@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { forwardRef } from 'react'
 import clsx from 'clsx'
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import glob from 'fast-glob'
 import * as path from 'path'
 

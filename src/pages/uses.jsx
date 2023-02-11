@@ -101,8 +101,8 @@ export default function Uses() {
               me. I use it for everything from writing blog posts to building
               out new features in my apps.
             </Tool>
-            <Tool title="Netlify">
-              I use Netlify for most of my sites. It&apos;s very flexible and
+            <Tool title="Vercel">
+              I use Vercel for most of my sites. It&apos;s very flexible and
               easy to use. It can scale with your site and also offers a lot of
               great features out of the box.
             </Tool>
