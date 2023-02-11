@@ -22,11 +22,6 @@ const queryClient = new QueryClient()
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
 
-  // Connect to database on initial load to avoid cold start
-  useEffect(() => {
-    connectToDatabase()
-  }, [])
-
   return (
     <QueryClientProvider client={queryClient}>
       <div className="fixed inset-0 flex justify-center sm:px-8">
@@ -44,4 +39,17 @@ export default function App({ Component, pageProps, router }) {
       <Analytics />
     </QueryClientProvider>
   )
+}
+
+App.getInitialProps = async ({ Component, ctx }) => {
+  let pageProps = {}
+
+  // warm up the database connection
+  const db = await connectToDatabase()
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx)
+  }
+
+  return { pageProps }
 }
