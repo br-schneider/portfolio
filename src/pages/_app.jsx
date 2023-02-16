@@ -5,7 +5,6 @@ import { Header } from '@/components/Header'
 import '@/styles/tailwind.css'
 import 'focus-visible'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Analytics } from '@vercel/analytics/react'
 import axios from 'axios'
 
 function usePrevious(value) {
@@ -28,20 +27,30 @@ export default function App({ Component, pageProps, router }) {
   }, [])
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="fixed inset-0 flex justify-center sm:px-8">
-        <div className="flex w-full max-w-7xl lg:px-8">
-          <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
+    <>
+      {/* add plausible */}
+      {process.env.NODE_ENV === 'production' && (
+        <script
+          defer
+          data-domain="bretts.dev"
+          src="https://plausible.io/js/script.js"
+        ></script>
+      )}
+
+      <QueryClientProvider client={queryClient}>
+        <div className="fixed inset-0 flex justify-center sm:px-8">
+          <div className="flex w-full max-w-7xl lg:px-8">
+            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
+          </div>
         </div>
-      </div>
-      <div className="relative">
-        <Header />
-        <main>
-          <Component previousPathname={previousPathname} {...pageProps} />
-        </main>
-        <Footer />
-      </div>
-      <Analytics />
-    </QueryClientProvider>
+        <div className="relative">
+          <Header />
+          <main>
+            <Component previousPathname={previousPathname} {...pageProps} />
+          </main>
+          <Footer />
+        </div>
+      </QueryClientProvider>
+    </>
   )
 }
