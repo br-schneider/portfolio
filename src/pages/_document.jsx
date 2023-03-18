@@ -42,7 +42,7 @@ export default function Document() {
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <script
           src="https://tracklyze.com/insightCore.js"
-          data-domain="bretts.dev"
+          crossOrigin="anonymous"
           async
         ></script>
         <link
