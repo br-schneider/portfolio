@@ -40,11 +40,7 @@ export default function Document() {
     <Html className="h-full antialiased" lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
-        <script
-          src="https://tracklyze.com/insightCore.js"
-          crossOrigin="anonymous"
-          async
-        ></script>
+        <script src="https://tracklyze.com/insightCore.js" async></script>
         <link
           rel="alternate"
           type="application/rss+xml"
