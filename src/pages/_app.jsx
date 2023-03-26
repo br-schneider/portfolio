@@ -37,6 +37,14 @@ export default function App({ Component, pageProps, router }) {
         ></script>
       )}
 
+      {process.env.NODE_ENV === 'production' && (
+        <script
+          defer
+          data-domain="bretts.dev"
+          src="https://tracklyze.com/insightCore.js"
+        ></script>
+      )}
+
       <QueryClientProvider client={queryClient}>
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
