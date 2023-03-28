@@ -41,6 +41,50 @@ export default function Uses() {
         intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
       >
         <div className="space-y-20">
+          <ToolsSection title="Frameworks and Libraries">
+            <Tool title="TailwindCSS">
+              I rely on Tailwind for nearly all my projects. It is an
+              outstanding utility-first CSS framework that simplifies the
+              creation of responsive, accessible, and high-performance
+              interfaces.
+            </Tool>
+            <Tool title="Next.js">
+              Next.js is my go-to for all React projects. It is an excellent
+              framework for developing static and server-rendered React
+              applications.
+            </Tool>
+            <Tool title="TanStack Query">
+              TanStack Query is an essential data-fetching library I use for my
+              projects. It simplifies the process of fetching, caching, and
+              syncing data in React applications, making it easy to manage
+              server state and improve user experience.
+            </Tool>
+          </ToolsSection>
+          <ToolsSection title="Development">
+            <Tool title="VS Code">
+              VS Code is my development environment of choice. Its extensibility
+              and open-source nature are impressive. I use the Material Theme
+              extension and the Material Icon Theme extension.
+            </Tool>
+            <Tool title="GitHub Copilot">
+              I&apos;ve been using GitHub Copilot for a few months now and
+              I&apos;m absolutely in love with it. It&apos;s a game changer for
+              me. I use it for everything from writing blog posts to building
+              out new features in my apps.
+            </Tool>
+            <Tool title="Vercel">
+              I use Vercel for most of my websites. It is highly flexible and
+              user-friendly, capable of scaling with my site and providing
+              numerous outstanding features out of the box.
+            </Tool>
+          </ToolsSection>
+          <ToolsSection title="Design">
+            <Tool title="Figma">
+              Figma is my preferred tool for all design work, including
+              wireframes, prototypes, and final designs. It is an excellent
+              platform for collaboration with others.
+            </Tool>
+          </ToolsSection>
           <ToolsSection title="Workstation">
             <Tool title="16” MacBook Pro, M1 Pro, 16GB RAM (2021)">
               I was using an Intel-based 16” MacBook Pro prior to this and the
@@ -49,14 +93,14 @@ export default function Uses() {
               bunch of browser tabs open without any slowdown.
             </Tool>
             <Tool title="11” iPad Pro">
-              I use this for reading, writing, and taking notes. I also use it
-              as a second screen for my laptop. I&apos;m a big fan of the Apple
-              Pencil and the Smart Keyboard Folio.
+              I utilize this device for reading, writing, and note-taking. It
+              also serves as a second screen for my laptop. I am a big fan of
+              the Apple Pencil and the Smart Keyboard Folio.
             </Tool>
             <Tool title="LG 4k HDR Monitors">
-              I use these monitors for my main display. They&apos;re great for
-              development and I love the HDR support. Also always gotta have
-              that one vertical monitor.
+              These monitors are my primary display and are excellent for
+              development. I appreciate the HDR support and the convenience of a
+              vertical monitor.
             </Tool>
             <Tool title="MagFlött Magnetic Stand by CharJenPro">
               I use this stand to add a 3rd monitor to my setup. It&apos;s super
@@ -68,50 +112,14 @@ export default function Uses() {
               basic, but I love the Touch ID.
             </Tool>
             <Tool title="MX Master 3">
-              I&apos;ve been using this mouse for years and it&apos;s still my
-              favorite. It&apos;s comfortable, has a great scroll wheel, and the
-              thumb wheel is super useful for navigating back and forward in my
-              browser.
+              I have been using this mouse for years, and it remains my
+              favorite. It is comfortable, has an excellent scroll wheel, and
+              the thumb wheel is incredibly useful for navigating backward and
+              forward in my browser.
             </Tool>
             <Tool title="Steelcase Leap">
               If I&apos;m going to slouch in the worst ergonomic position
               imaginable all day, I might as well do it in an expensive chair.
-            </Tool>
-          </ToolsSection>
-          <ToolsSection title="Frameworks">
-            <Tool title="TailwindCSS">
-              I use Tailwind for almost all of my projects. It&apos;s a great
-              utility-first CSS framework that makes it easy to build
-              responsive, accessible, and performant interfaces.
-            </Tool>
-            <Tool title="Next.js">
-              I use Next.js for all of my React projects. It&apos;s a great
-              framework for building static and server-rendered React apps.
-            </Tool>
-          </ToolsSection>
-          <ToolsSection title="Development">
-            <Tool title="VS Code">
-              I use VS Code for all of my development. I love the extensibility
-              and the fact that it’s open source. I use the Material Theme
-              extension and the Material Icon Theme extension.
-            </Tool>
-            <Tool title="GitHub Copilot">
-              I&apos;ve been using GitHub Copilot for a few months now and
-              I&apos;m absolutely in love with it. It&apos;s a game changer for
-              me. I use it for everything from writing blog posts to building
-              out new features in my apps.
-            </Tool>
-            <Tool title="Vercel">
-              I use Vercel for most of my sites. It&apos;s very flexible and
-              easy to use. It can scale with your site and also offers a lot of
-              great features out of the box.
-            </Tool>
-          </ToolsSection>
-          <ToolsSection title="Design">
-            <Tool title="Figma">
-              I use Figma for all of my design work, including wireframes,
-              prototypes, and final designs. It&apos;s a great tool for
-              collaborating with others.
             </Tool>
           </ToolsSection>
         </div>
