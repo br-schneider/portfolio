@@ -5,9 +5,16 @@ import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-function ToolsSection({ children, ...props }) {
+function ToolsSection({
+  children,
+  title,
+  ...props
+}: {
+  children: React.ReactNode
+  title: string
+}) {
   return (
-    <Section {...props}>
+    <Section title={title} {...props}>
       <ul role="list" className="space-y-16">
         {children}
       </ul>
@@ -15,9 +22,17 @@ function ToolsSection({ children, ...props }) {
   )
 }
 
-function Tool({ title, href, children }) {
+function Tool({
+  title,
+  href,
+  children,
+}: {
+  title: string
+  href?: string
+  children: React.ReactNode
+}) {
   return (
-    <Card as="li">
+    <Card as="li" className={''}>
       <Card.Title as="h3" href={href}>
         {title}
       </Card.Title>
@@ -41,7 +56,7 @@ export default function Uses() {
         intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
       >
         <div className="space-y-20">
-          <ToolsSection title="Frameworks and Libraries">
+          <ToolsSection title="Development">
             <Tool title="TailwindCSS">
               I rely on Tailwind for nearly all my projects. It is an
               outstanding utility-first CSS framework that simplifies the
@@ -59,8 +74,11 @@ export default function Uses() {
               syncing data in React applications, making it easy to manage
               server state and improve user experience.
             </Tool>
-          </ToolsSection>
-          <ToolsSection title="Development">
+            <Tool title="Vercel">
+              I use Vercel for most of my websites. It is highly flexible and
+              user-friendly, capable of scaling with my site and providing
+              numerous outstanding features out of the box.
+            </Tool>
             <Tool title="VS Code">
               VS Code is my development environment of choice. Its extensibility
               and open-source nature are impressive. I use the Material Theme
@@ -71,11 +89,6 @@ export default function Uses() {
               I&apos;m absolutely in love with it. It&apos;s a game changer for
               me. I use it for everything from writing blog posts to building
               out new features in my apps.
-            </Tool>
-            <Tool title="Vercel">
-              I use Vercel for most of my websites. It is highly flexible and
-              user-friendly, capable of scaling with my site and providing
-              numerous outstanding features out of the box.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Design">

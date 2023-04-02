@@ -6,9 +6,11 @@ import '@/styles/tailwind.css'
 import 'focus-visible'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import axios from 'axios'
+import { AppProps } from 'next/app'
 
-function usePrevious(value) {
-  let ref = useRef()
+// this hook is used to track the previous pathname and will infer the type of the value
+function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T | undefined>()
 
   useEffect(() => {
     ref.current = value
@@ -19,8 +21,8 @@ function usePrevious(value) {
 
 const queryClient = new QueryClient()
 
-export default function App({ Component, pageProps, router }) {
-  let previousPathname = usePrevious(router.pathname)
+export default function App({ Component, pageProps, router }: AppProps) {
+  const previousPathname = usePrevious(router.pathname)
 
   useEffect(() => {
     axios.get('/api/hello')
@@ -28,7 +30,6 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      {/* add plausible */}
       {process.env.NODE_ENV === 'production' && (
         <script
           defer
@@ -48,7 +49,7 @@ export default function App({ Component, pageProps, router }) {
       <QueryClientProvider client={queryClient}>
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
-            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
+            <div className="w-full bg-white ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
           </div>
         </div>
         <div className="relative">

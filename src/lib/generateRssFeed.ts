@@ -1,21 +1,30 @@
-/* eslint-disable no-undef */
 import ReactDOMServer from 'react-dom/server'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
+import { Article, getAllArticles } from './getAllArticles'
+import React from 'react'
 
-import { getAllArticles } from './getAllArticles'
+type ComponentType = React.FC<ComponentProps>
+
+interface ComponentProps {
+  isRssFeed?: boolean
+}
+
+interface ExtendedArticle extends Article {
+  component: ComponentType
+}
 
 export async function generateRssFeed() {
-  let articles = await getAllArticles()
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  let author = {
+  const articles: ExtendedArticle[] = await getAllArticles()
+  const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL!
+  const author = {
     name: 'Brett Schneider',
-    email: 'brett.schneider@gladiatelaw.com',
+    email: 'brett.c.schneider@gmail.com',
   }
 
-  let feed = new Feed({
+  const feed = new Feed({
     title: author.name,
-    description: 'Your blog description',
+    description: "Brett Schneider's personal website",
     author,
     id: siteUrl,
     link: siteUrl,
@@ -28,10 +37,10 @@ export async function generateRssFeed() {
     },
   })
 
-  for (let article of articles) {
-    let url = `${siteUrl}/articles/${article.slug}`
-    let html = ReactDOMServer.renderToStaticMarkup(
-      <article.component isRssFeed />
+  for (const article of articles) {
+    const url = `${siteUrl}/articles/${article.slug}`
+    const html = ReactDOMServer.renderToStaticMarkup(
+      React.createElement(article.component, { isRssFeed: true })
     )
 
     feed.addItem({
