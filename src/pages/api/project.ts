@@ -1,6 +1,10 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import connectToDatabase from '@/lib/conectToDatabase'
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === 'GET') {
     try {
       const db = await connectToDatabase()

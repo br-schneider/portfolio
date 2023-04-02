@@ -8,6 +8,12 @@ export default async function connectToDatabase() {
     return cachedDb
   }
 
+  if (!uri) {
+    throw new Error(
+      'Please define the MONGO_URI environment variable inside .env.local'
+    )
+  }
+
   // Connect to our MongoDB database hosted on MongoDB Atlas
   const client = await MongoClient.connect(uri)
 
