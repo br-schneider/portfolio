@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import '@/styles/tailwind.css'
-import 'focus-visible'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import axios from 'axios'
+import 'focus-visible'
 import { AppProps } from 'next/app'
+import { useEffect, useRef } from 'react'
 
 // this hook is used to track the previous pathname and will infer the type of the value
 function usePrevious<T>(value: T): T | undefined {
@@ -42,7 +42,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <script
           defer
           data-domain="bretts.dev"
-          src="https://tracklyze.com/insightCore.js"
+          src="https://tracklyze-app-router.vercel.app/insightCore.js"
         ></script>
       )}
 
