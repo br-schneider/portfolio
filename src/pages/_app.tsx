@@ -42,7 +42,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <script
           defer
           data-domain="bretts.dev"
-          src="https://tracklyze-app-router.vercel.app/insightCore.js"
+          src="https://tracklyze.com/insightCoreV2.js"
         ></script>
       )}
 
