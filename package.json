@@ -21,7 +21,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@tanstack/react-query": "^4.16.1",
     "autoprefixer": "^10.4.7",
-    "axios": "^0.27.2",
+    "axios": "^1.6.0",
     "clsx": "^1.2.0",
     "fast-glob": "^3.2.11",
     "feed": "^4.2.2",
