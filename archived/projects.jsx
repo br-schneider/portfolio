@@ -1,10 +1,9 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import Image from 'next/future/image'
-import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
+import Head from 'next/head'
+import Image from 'next/image'
 
 function LinkIcon(props) {
   return (
@@ -51,7 +50,7 @@ export default function Projects() {
                   <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 shadow-md dark:bg-gray-800/70">
                     <div className="h-8 w-8 animate-pulse rounded-full bg-gray-400 dark:bg-gray-800/50" />
                   </div>
-                  <h2 className="mt-6 mb-2 w-44">
+                  <h2 className="mb-2 mt-6 w-44">
                     <div className="h-7 animate-pulse rounded-md bg-gray-200 text-base font-semibold text-gray-200 dark:bg-gray-800/50" />
                   </h2>
                   <div className="h-6 animate-pulse rounded-md bg-gray-200 dark:bg-gray-800/50"></div>
@@ -80,7 +79,6 @@ export default function Projects() {
                       className="h-8 w-8"
                       width={32}
                       height={32}
-                      unoptimized
                     />
                   </div>
                   <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
