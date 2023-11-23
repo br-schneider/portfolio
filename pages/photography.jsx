@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import Head from 'next/head'
-import Image from 'next/future/image'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { useState } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/solid'
+import Head from 'next/head'
+import Image from 'next/image'
+import { useState } from 'react'
 
 function importAll(r) {
   let images = {}
@@ -40,7 +40,7 @@ function ImageModal({ image, onClose }) {
         }}
         className="fixed inset-0 overflow-hidden bg-black opacity-50"
       />
-      <div className="absolute top-3 right-3 mb-3 flex cursor-pointer justify-end">
+      <div className="absolute right-3 top-3 mb-3 flex cursor-pointer justify-end">
         <button
           className="text-white"
           onClick={() => {
@@ -57,7 +57,6 @@ function ImageModal({ image, onClose }) {
             alt={image.title}
             width={1000}
             height={500}
-            layout="responsive"
             className={
               ' rounded-lg ' +
               (loaded ? '' : ' animate-pulse bg-zinc-200 dark:bg-zinc-700 ')
@@ -100,7 +99,7 @@ function Gallery() {
               key={image.source}
               className="relative cursor-pointer"
             >
-              <div className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+              <div className="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
                 <Image
                   src={image.source}
                   alt=""

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Brett Schneider</title>
-        <link>https://bretts.dev</link>
+        <link>undefined</link>
         <description>Brett Schneider's personal website</description>
-        <lastBuildDate>Sun, 02 Apr 2023 16:52:19 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Nov 2023 20:25:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>Brett Schneider</title>
-            <url>https://bretts.dev/favicon.ico</url>
-            <link>https://bretts.dev</link>
+            <url>undefined/favicon.ico</url>
+            <link>undefined</link>
         </image>
         <copyright>All rights reserved 2023</copyright>
         <item>
             <title><![CDATA[Unleashing Your E-Commerce Potential with CommerceJS and Headless Integration]]></title>
-            <link>https://bretts.dev/articles/unleashing-your-ecommerce-potential-with-commercejs-and-headless-integration</link>
-            <guid>https://bretts.dev/articles/unleashing-your-ecommerce-potential-with-commercejs-and-headless-integration</guid>
+            <link>undefined/articles/unleashing-your-ecommerce-potential-with-commercejs-and-headless-integration</link>
+            <guid>undefined/articles/unleashing-your-ecommerce-potential-with-commercejs-and-headless-integration</guid>
             <pubDate>Sat, 28 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Maximize your e-commerce potential and beat the competition with CommerceJS and headless integration. Learn how in this quick guide.]]></description>
             <content:encoded><![CDATA[<p>When approached with creating an e-commerce app, it&#x27;s pretty easy to pop up the
@@ -216,7 +216,7 @@ other payment processing functions, I was able to create a fully functioning
 e-commerce website in a matter of days. The amazing part is it all plugs into
 the CommerceJS portal so you can manage your products, orders, and customers all
 In one place. Here is a screenshot of a typical order in the CommerceJS portal:</p>
-<span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%272108%27%20height=%271806%27/%3e"/></span><img alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/><noscript><img alt="" srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FcommerceOrder.fae0edd6.png&amp;w=3840&amp;q=75 1x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FcommerceOrder.fae0edd6.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" loading="lazy"/></noscript></span>
+<img alt="" loading="lazy" width="2108" height="1806" decoding="async" data-nimg="1" style="color:transparent" srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FcommerceOrder.fae0edd6.png&amp;w=3840&amp;q=75 1x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FcommerceOrder.fae0edd6.png&amp;w=3840&amp;q=75"/>
 <p>There is a lot more to the CommerceJS API than what I have shown here, but I
 hope this gives you a good idea of what it can do. I am very excited to see
 what the future holds for CommerceJS and I hope you are too. If you are

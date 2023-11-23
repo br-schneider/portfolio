@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import connectToDatabase from '@/lib/conectToDatabase'
+import connectToDatabase from '../lib/connectToDatabase'
 
 export default async function handler(
   req: NextApiRequest,

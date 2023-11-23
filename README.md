@@ -2,7 +2,7 @@
 
 Welcome to my portfolio website! I'm excited to share with you some of my favorite projects and the skills I have developed as a full-stack software engineer.
 
-This website is built using modern web technologies and frameworks, including [Next.js](https://nextjs.org) for the frontend and [Tailwind CSS](https://tailwindcss.com) for styling. For the backend, I've utilized [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com) as the database to store all relevant information.
+This website is built using modern web technologies and frameworks, including [Next.js](https://nextjs.org) for the frontend and [Tailwind CSS](https://tailwindcss.com) for styling.
 
 Currently, I'm in the process of converting the backend from JavaScript to [TypeScript](https://www.typescriptlang.org/) to improve the codebase's maintainability and scalability.
 

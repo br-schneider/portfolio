@@ -27,7 +27,7 @@ async function importArticle(articleFilename: string): Promise<Article> {
 
 export async function getAllArticles() {
   const articleFilenames = await glob(['*.mdx', '*/index.mdx'], {
-    cwd: path.join(process.cwd(), 'src/pages/articles'),
+    cwd: path.join(process.cwd(), 'pages/articles'),
   })
 
   const articles = await Promise.all(articleFilenames.map(importArticle))

@@ -15,7 +15,7 @@ function ToolsSection({
 }) {
   return (
     <Section title={title} {...props}>
-      <ul role="list" className="space-y-16">
+      <ul role="list" className="space-y-16 pt-5">
         {children}
       </ul>
     </Section>
@@ -55,7 +55,7 @@ export default function Uses() {
         title="Software I use, and other things I recommend."
         intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
       >
-        <div className="space-y-20">
+        <div className="flex flex-col space-y-10">
           <ToolsSection title="Development">
             <Tool title="TailwindCSS">
               I rely on Tailwind for nearly all my projects. It is an

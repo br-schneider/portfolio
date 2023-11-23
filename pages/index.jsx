@@ -1,28 +1,27 @@
 /* eslint-disable react/prop-types */
-import Image from 'next/future/image'
-import Head from 'next/head'
-import Link from 'next/link'
-import clsx from 'clsx'
-
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import logoAscendant from '@/images/logos/ascendant.png'
+import logoCervello from '@/images/logos/cervello.png'
+import logoGladiate from '@/images/logos/gladiate.png'
+import logoPlanetaria from '@/images/logos/planetaria.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import logoCervello from '@/images/logos/cervello.png'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoGladiate from '@/images/logos/gladiate.png'
-import logoAscendant from '@/images/logos/ascendant.png'
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
-import { formatDate } from '@/lib/formatDate'
-import { useState } from 'react'
 import { useForm } from '@formspree/react'
+import clsx from 'clsx'
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { formatDate } from '../lib/formatDate'
+import { generateRssFeed } from '../lib/generateRssFeed'
+import { getAllArticles } from '../lib/getAllArticles'
 
 function MailIcon(props) {
   return (
@@ -207,7 +206,7 @@ function Resume() {
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+              <Image src={role.logo} alt="" className="h-7 w-7" />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
