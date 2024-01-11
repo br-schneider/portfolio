@@ -2,6 +2,8 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import '@/styles/tailwind.css'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import 'focus-visible'
 import { AppProps } from 'next/app'
 import { useEffect, useRef } from 'react'
@@ -37,6 +39,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
           src="https://tracklyze.com/insightCoreV2.js"
         ></script>
       )}
+
+      <SpeedInsights />
+
+      <Analytics />
 
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
