@@ -1,6 +1,6 @@
-# Brett Schneider's Portfolio Website - Showcasing Skills and Projects 🚀
+# Brett Schneider's Portfolio Website 🚀
 
-Welcome to my portfolio website! I'm excited to share with you some of my favorite projects and the skills I have developed as a full-stack software engineer.
+Welcome to my portfolio website! I'm excited to share with you some of my thoughts I have developed as a full-stack software engineer.
 
 This website is built using modern web technologies and frameworks, including [Next.js](https://nextjs.org) for the frontend and [Tailwind CSS](https://tailwindcss.com) for styling.
 
