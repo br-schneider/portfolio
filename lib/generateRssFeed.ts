@@ -1,8 +1,8 @@
-import ReactDOMServer from 'react-dom/server'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
-import { Article, getAllArticles } from './getAllArticles'
 import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import { Article, getAllArticles } from './getAllArticles'
 
 type ComponentType = React.FC<ComponentProps>
 

@@ -6,22 +6,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import 'focus-visible'
 import { AppProps } from 'next/app'
-import { useEffect, useRef } from 'react'
 
-// this hook is used to track the previous pathname and will infer the type of the value
-function usePrevious<T>(value: T): T | undefined {
-  const ref = useRef<T | undefined>()
-
-  useEffect(() => {
-    ref.current = value
-  }, [value])
-
-  return ref.current
-}
-
-export default function App({ Component, pageProps, router }: AppProps) {
-  const previousPathname = usePrevious(router.pathname)
-
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       {process.env.NODE_ENV === 'production' && (
@@ -52,7 +38,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <div className="relative">
         <Header />
         <main>
-          <Component previousPathname={previousPathname} {...pageProps} />
+          <Component {...pageProps} />
         </main>
         <Footer />
       </div>

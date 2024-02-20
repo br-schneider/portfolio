@@ -1,3 +1,5 @@
+'use client'
+
 /* eslint-disable react/prop-types */
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/portrait.jpg'

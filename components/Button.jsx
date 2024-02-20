@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import Link from 'next/link'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 const variantStyles = {
   primary:
@@ -16,7 +16,7 @@ export function Button({ variant = 'primary', className, href, ...props }) {
     className
   )
 
-  return href ? (
+  return href && href !== '' ? (
     <Link href={href} className={className} {...props} />
   ) : (
     <button className={className} {...props} />

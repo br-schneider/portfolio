@@ -116,12 +116,9 @@ function Gallery() {
                   </span>
                 </button>
               </div>
-              <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-zinc-800 dark:text-zinc-100">
+              <div className="pointer-events-none mt-2 block truncate text-sm font-medium text-zinc-800 dark:text-zinc-100">
                 {image.title}
-              </p>
-              {/* <p className="block text-sm font-medium text-gray-500 pointer-events-none">
-                {image.width} × {image.height} px
-              </p> */}
+              </div>
             </li>
           )
         } else {
