@@ -9,24 +9,12 @@ import { getAllArticles } from '@/lib/articles'
 
 export default async function Home() {
   const articles = (await getAllArticles()).slice(0, 4)
-  console.log(`🔥 articles -> `, articles)
 
   return (
     <>
-      {/* <Head>
-        <title>Brett Schneider - Software Engineer</title>
-        <meta
-          name="description"
-          content="I’m Brett, a software engineer and entrepreneur based in Austin.
-            I work on the Gladiate Law team, where we develop technologies that
-            empower attorneys to practice law on their own terms."
-        />
-      </Head> 
-
-      */}
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Founding Software Engineer at Gladiate Law.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
