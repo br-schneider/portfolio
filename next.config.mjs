@@ -4,13 +4,7 @@ import remarkGfm from 'remark-gfm'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['jsx', 'mdx', 'js', 'ts', 'tsx'],
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    // newNextLinkBehavior: true,
-    scrollRestoration: true,
-  },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
 }
 
 const withMDX = nextMDX({
