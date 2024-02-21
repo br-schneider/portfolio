@@ -41,7 +41,7 @@ function Article({ article }: { article: Article }) {
 }
 
 export const metadata: Metadata = {
-  title: 'Articles - Brett Schneider',
+  title: 'Articles',
   description:
     'All of my long-form thoughts on programming, product design, and more, collected in chronological order.',
 }

@@ -44,7 +44,7 @@ function MailIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
 }
 
 export const metadata: Metadata = {
-  title: 'About - Brett Schneider',
+  title: 'About',
   description:
     'I’m Brett Schneider. I live in Austin, Texas, where I engineer and design applications.',
 }
