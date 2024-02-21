@@ -1,7 +1,13 @@
 import Gallery from '@/components/custom/gallery'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { getAllPhotos } from '@/lib/photos'
+import { Metadata } from 'next'
 import Head from 'next/head'
+
+export const metadata: Metadata = {
+  title: 'Photography',
+  description: 'Here’s my camera roll.',
+}
 
 export default async function PhotographyPage() {
   const photos = await getAllPhotos()

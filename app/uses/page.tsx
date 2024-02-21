@@ -42,7 +42,7 @@ function Tool({
 }
 
 export const metadata: Metadata = {
-  title: 'Uses - Brett Schneider',
+  title: 'Uses',
   description: 'Software I use, gadgets I love, and other things I recommend.',
 }
 
