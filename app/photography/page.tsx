@@ -3,8 +3,6 @@ import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { getAllPhotos } from '@/lib/photos'
 import Head from 'next/head'
 
-// eslint-disable-next-line react/prop-types
-
 export default async function PhotographyPage() {
   const photos = await getAllPhotos()
 
