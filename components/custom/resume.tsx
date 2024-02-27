@@ -2,6 +2,7 @@
 
 import logoAscendant from '@/images/logos/ascendant.png'
 import logoCervello from '@/images/logos/cervello.png'
+import logoConcentro from '@/images/logos/concentro-black.png'
 import logoGladiate from '@/images/logos/gladiate.png'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import Image from 'next/image'
@@ -20,14 +21,21 @@ function getDateTime(date: any) {
 export default function Resume() {
   const resume = [
     {
-      company: 'Gladiate',
-      title: 'Software Engineer',
-      logo: logoGladiate,
-      start: '2022',
+      company: 'Concentro',
+      title: 'Founding Software Engineer',
+      logo: logoConcentro,
+      start: '2024',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
+    },
+    {
+      company: 'Gladiate',
+      title: 'Founding Software Engineer',
+      logo: logoGladiate,
+      start: '2022',
+      end: '2024',
     },
     {
       company: 'Cervello',
@@ -89,7 +97,7 @@ export default function Resume() {
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                 aria-label={`${formatDate(role.start)} until ${formatDate(
-                  role.end
+                  role.end,
                 )}`}
               >
                 <time dateTime={getDateTime(role.start)}>

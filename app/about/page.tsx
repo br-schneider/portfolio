@@ -65,34 +65,38 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Brett Schneider. I live in Austin, Texas, where I engineer and
-            design applications.
+            I'm Brett Schneider, an Entrepreneur and Software Engineer Building
+            Companies in Austin, Texas.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I graduated from the University of Colorado Boulder with a degree
-              in Computer Science. I’ve worked as a software engineer for the
-              past three years and am currently a software engineer at{' '}
-              <a className="underline" href="https://www.gladiatelaw.com/">
-                Gladiate Law
-              </a>
-              .
+              My journey began at the University of Colorado Boulder, where I
+              earned a degree in Computer Science, laying the groundwork for a
+              career not just in engineering applications but in forging
+              companies. I am currently working at{' '}
+              <a className="underline" href="https://www.concentro.io/">
+                Concentro
+              </a>{' '}
+              where we create innovative applications to democratize access to
+              affordable funding for renewable energy.
             </p>
             <p>
-              I’m passionate about building applications that are accessible,
-              performant, and delightful to use. I’m also interested in the
-              intersection of design and engineering. I have always been
-              interested in design and try to soak up as much information as
-              possible about design systems. It adds a much-needed layer of
-              polish to the applications I build.
+              With many years of experience, I’ve transitioned from engineering
+              solutions to being at the forefront of creating businesses that
+              address critical needs. My passion lies in the fusion of
+              technology and entrepreneurship, especially in developing
+              platforms that are not only accessible and high-performing but
+              also make a significant impact on the communities they serve.
             </p>
             <p>
-              Working on the web is a great way to understand and solve complex
-              problems. In addition, I love the fact that I can build
-              applications that are accessible to everyone. Unfortunately, the
-              topic of accessibility is often overlooked, and I believe it is
-              crucial to ensure that everyone can access the web and technology
-              in a meaningful way.
+              The intersection of design and engineering is where I thrive,
+              believing that the true elegance of a solution lies in its
+              simplicity and user experience. My commitment to design is about
+              more than aesthetics; it's about creating intuitive and inclusive
+              systems that enhance the interaction between technology and its
+              users. This approach has been a cornerstone in my journey as I
+              move beyond application development to build companies with a
+              conscience.
             </p>
             <p>
               I’m always looking for new opportunities to learn and grow. If you

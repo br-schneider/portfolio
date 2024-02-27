@@ -15,12 +15,13 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Founding Software Engineer at Gladiate Law.
+            Founding Software Engineer at Concentro.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Brett, a software engineer and entrepreneur based in Austin. I
-            work on the Gladiate Law team, where we develop technologies that
-            empower attorneys to practice law on their own terms.
+            I’m Brett, a software engineer and entrepreneur based in Austin, TX.
+            I work on the Concentro team, where we create innovative
+            applications to democratize access to affordable funding for
+            renewable energy.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

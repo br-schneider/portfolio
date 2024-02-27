@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: 'Brett Schneider - Founding Software Engineer',
   },
   description:
-    'I’m Brett, a software engineer and entrepreneur based in Austin. I work on the Gladiate Law team, where we develop technologies that empower attorneys to practice law on their own terms.',
+    'I’m Brett, a software engineer and entrepreneur based in Austin, TX. I work on the Concentro team, where we create innovative applications to democratize access to affordable funding for renewable energy.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
