@@ -27,6 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
+        <script
+          defer
+          data-domain="bretts.dev"
+          src="https://www.tracklyze.com/insightCore.js"
+        ></script>
+
         <SpeedInsights />
         <Analytics />
         <Providers>
