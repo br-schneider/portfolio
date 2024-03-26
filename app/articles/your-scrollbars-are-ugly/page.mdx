@@ -1,0 +1,80 @@
+import { ArticleLayout } from '@/components/tailwind/article-layout'
+import badCorner from './bad-corner.png'
+import goodCorner from './good-corner.png'
+import shadCnScrollbars from './shadcn-example.png'
+
+
+export const article = {
+  author: 'Brett Schneider',
+  date: '2024-03-26',
+  title:
+    'Your Scrollbars Are Ugly: How to Customize Scrollbars with Plain CSS',
+  description: 'Discover how straightforward CSS can transform the appearance of scrollbars on your website, elevating user experience and ensuring seamless design integration.'
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+I acknowledge it's been a while since my last blog post. Interestingly, I
+decided to dive back into writing by tackling the topic of customizing
+scrollbars. While working on a new project featuring beautifully rounded
+corners, I noticed the default scrollbars detracted from the design. Having seen
+elegant custom scrollbars before, I decided to give customization a try.
+
+## The Problem
+Many aesthetically pleasing websites are marred by unsightly scrollbars. Take
+[Shadcn's website](https://ui.shadcn.com/), for example, where some components are overshadowed by
+unattractive scrollbars:
+<Image src={shadCnScrollbars} alt="A screenshot of Shadcn's website showcasing an elegant component marred by an unsightly scrollbar"  /> 
+This issue echoed in my project, particularly at the ends of the main content area:
+<Image src={badCorner} alt="Screenshot showing an ill-fitted corner due to the default scrollbar"  /> 
+<Image src={goodCorner} alt="Screenshot displaying the desired rounded corner without the default scrollbar"  />
+
+## My First Attempt
+My immediate reaction was to hop on over to [Shadcn](https://ui.shadcn.com/) and
+use his very nice [Scroll-area
+component](https://ui.shadcn.com/docs/components/scroll-area). This component is
+great, however, you need to explicitly use it in every component that you want
+to have a non-native scrollbar. This was not what I wanted. I wanted to have a
+global scrollbar that would be applied to every scrollbar on the website without
+much effort. 
+
+## The Solution
+After sifting through numerous complex or ineffective solutions online, I
+discovered a straightforward and effective approach. The main reason I decided
+to write this article was to hopefully save someone out there some time, as it
+took me way too long to get it just right. I understand that everyone has
+different tastes, so I will provide you with the code, and you can customize it
+to your liking. The following CSS, when added to your global stylesheet, offers
+a customizable and elegant scrollbar design, saving you time and enhancing your
+site's aesthetics:
+
+```css
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width to create space for padding */
+  height: 10px; /* Adjust the height to create space for padding */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Ensure the track is transparent */
+  border-radius: 10px; /* Match the border-radius of the thumb */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0; /* You can adjust this color for the thumb */
+  border-radius: 9999px; /* Match the border-radius of the thumb */
+  background-clip: content-box; /* Ensure the thumb doesn't overlap the track */
+  border: 2px solid transparent; /* Ensure the thumb doesn't overlap the track */
+  box-shadow: 0 0 0 2px transparent; /* Extend the padding with a transparent box-shadow */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c0c0; /* You can adjust this color for the hover state */
+}
+```
+
+Thank you for reading! I hope this guide simplifies your web design process and inspires more visually cohesive interfaces.
