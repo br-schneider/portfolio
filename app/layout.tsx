@@ -2,6 +2,7 @@ import { Layout } from '@/components/tailwind/layout'
 import '@/styles/tailwind.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Metadata } from 'next'
+import Script from 'next/script'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
@@ -26,16 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
-        <script
+        <Script
           defer
           data-domain="bretts.dev"
           src="https://www.tracklyze.com/insightCore.js"
-        ></script>
-        <script
+        ></Script>
+        <Script
           defer
           data-domain="bretts.dev"
           src="https://plausible.io/js/script.js"
-        ></script>
+        ></Script>
 
         <SpeedInsights />
         <Providers>
