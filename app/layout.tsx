@@ -26,18 +26,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <Script
+        defer
+        data-domain="bretts.dev"
+        src="https://www.tracklyze.com/insightCore.js"
+      ></Script>
+      <Script
+        defer
+        data-domain="bretts.dev"
+        src="https://plausible.io/js/script.js"
+      ></Script>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
-        <Script
-          defer
-          data-domain="bretts.dev"
-          src="https://www.tracklyze.com/insightCore.js"
-        ></Script>
-        <Script
-          defer
-          data-domain="bretts.dev"
-          src="https://plausible.io/js/script.js"
-        ></Script>
-
         <SpeedInsights />
         <Providers>
           <div className="flex w-full">
