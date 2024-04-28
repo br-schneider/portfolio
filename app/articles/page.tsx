@@ -41,9 +41,9 @@ function Article({ article }: { article: Article }) {
 }
 
 export const metadata: Metadata = {
-  title: 'Articles',
+  title: 'Articles on Business and Tech',
   description:
-    'All of my long-form thoughts on programming, product design, and more, collected in chronological order.',
+    'Exploring the intersections of business strategy, legal insights, and technology through in-depth articles.',
 }
 
 export default async function ArticlesPage() {
@@ -51,8 +51,8 @@ export default async function ArticlesPage() {
 
   return (
     <SimpleLayout
-      title="Writing on software design, product design, and the tech industry."
-      intro="All of my long-form thoughts on programming, product design, and more, collected in chronological order."
+      title="Insights on Business Strategies and Tech Innovations"
+      intro="Dive into my analyses on crucial business tactics, software design, and technological advancements in the industry."
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">

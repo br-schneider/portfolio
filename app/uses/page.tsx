@@ -32,7 +32,7 @@ function Tool({
   children: React.ReactNode
 }) {
   return (
-    <Card as="li" className={''}>
+    <Card as="li" className="">
       <Card.Title as="h3" href={href}>
         {title}
       </Card.Title>
@@ -49,86 +49,73 @@ export const metadata: Metadata = {
 export default function Uses() {
   return (
     <SimpleLayout
-      title="Software I use, and other things I recommend."
+      title="Software I use, and things I recommend."
       intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
     >
       <div className="flex flex-col space-y-10">
-        <ToolsSection title="Development">
-          <Tool title="TailwindCSS">
-            I rely on Tailwind for nearly all my projects. It is an outstanding
+        <ToolsSection title="Engineering">
+          <Tool title="Warp" href="https://www.warp.dev/">
+            Warp is a modern, Rust-based terminal with AI built in that makes it
+            easier to navigate and manage your terminal sessions. It is
+            incredibly fast and has a beautiful interface.
+          </Tool>
+          <Tool title="Shadcn" href="https://ui.shadcn.com/">
+            Beautifully designed components that you can copy and paste into
+            your projects. They are simple, clean, and easy to use.
+          </Tool>
+          <Tool title="TailwindCSS" href="https://tailwindcss.com/">
+            I rely on Tailwind for all my projects. It is an outstanding
             utility-first CSS framework that simplifies the creation of
             responsive, accessible, and high-performance interfaces.
           </Tool>
-          <Tool title="Next.js">
+          <Tool title="Nextjs" href="https://nextjs.org/">
             Next.js is my go-to for all React projects. It is an excellent
             framework for developing static and server-rendered React
             applications.
           </Tool>
-          <Tool title="TanStack Query">
-            TanStack Query is an essential data-fetching library I use for my
-            projects. It simplifies the process of fetching, caching, and
-            syncing data in React applications, making it easy to manage server
-            state and improve user experience.
-          </Tool>
-          <Tool title="Vercel">
+          <Tool title="Vercel" href="https://vercel.com/">
             I use Vercel for most of my websites. It is highly flexible and
             user-friendly, capable of scaling with my site and providing
             numerous outstanding features out of the box.
           </Tool>
-          <Tool title="VS Code">
-            VS Code is my development environment of choice. Its extensibility
-            and open-source nature are impressive. I use the Material Theme
-            extension and the Material Icon Theme extension.
+        </ToolsSection>
+        <ToolsSection title="Utilities">
+          <Tool
+            title="Monitor Control"
+            href="https://github.com/MonitorControl/MonitorControl"
+          >
+            Monitor Control is a macOS app that allows you to control your
+            external monitor's brightness, contrast, and volume. It is a
+            fantastic tool for managing your monitor settings.
           </Tool>
-          <Tool title="GitHub Copilot">
-            I&apos;ve been using GitHub Copilot for a few months now and
-            I&apos;m absolutely in love with it. It&apos;s a game changer for
-            me. I use it for everything from writing blog posts to building out
-            new features in my apps.
+          <Tool title="Raycast" href="https://www.raycast.com/">
+            Raycast is a productivity tool for macOS that lets you control your
+            tools with a few keystrokes. It is a fantastic way to save time and
+            stay focused on your work.
+          </Tool>
+          <Tool title="Rectangle" href="https://rectangleapp.com/">
+            Rectangle is a window management app for macOS that allows you to
+            move and resize windows with ease.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Design">
-          <Tool title="Figma">
+          <Tool title="Figma" href="https://www.figma.com/">
             Figma is my preferred tool for all design work, including
             wireframes, prototypes, and final designs. It is an excellent
             platform for collaboration with others.
           </Tool>
+          <Tool title="Visily" href="https://www.visily.ai/">
+            Visily is an AI tool that generates beautiful, high-quality UI
+            designs in seconds. It is incredibly fast and easy to use.
+          </Tool>
         </ToolsSection>
-        <ToolsSection title="Workstation">
-          <Tool title="16” MacBook Pro, M1 Pro, 16GB RAM (2021)">
-            I was using an Intel-based 16” MacBook Pro prior to this and the
-            difference is night and day. The M1 Pro is a beast. I&apos;m able to
-            run multiple VMs, run a bunch of Docker containers, and have a bunch
-            of browser tabs open without any slowdown.
-          </Tool>
-          <Tool title="11” iPad Pro">
-            I utilize this device for reading, writing, and note-taking. It also
-            serves as a second screen for my laptop. I am a big fan of the Apple
-            Pencil and the Smart Keyboard Folio.
-          </Tool>
-          <Tool title="LG 4k HDR Monitors">
-            These monitors are my primary display and are excellent for
-            development. I appreciate the HDR support and the convenience of a
-            vertical monitor.
-          </Tool>
-          <Tool title="MagFlött Magnetic Stand by CharJenPro">
-            I use this stand to add a 3rd monitor to my setup. It&apos;s super
-            convenient and I love that it&apos;s magnetic so I can easily move
-            it around.
-          </Tool>
-          <Tool title="Apple Magic Keyboard w/ Touch ID">
-            I use this keyboard for my main workstation. It&apos;s pretty basic,
-            but I love the Touch ID.
-          </Tool>
-          <Tool title="MX Master 3">
-            I have been using this mouse for years, and it remains my favorite.
-            It is comfortable, has an excellent scroll wheel, and the thumb
-            wheel is incredibly useful for navigating backward and forward in my
-            browser.
-          </Tool>
-          <Tool title="Steelcase Leap">
-            If I&apos;m going to slouch in the worst ergonomic position
-            imaginable all day, I might as well do it in an expensive chair.
+        <ToolsSection title="Random Things I Like">
+          <Tool
+            title="Monaspace Font"
+            href="https://github.com/githubnext/monaspace"
+          >
+            Monaspace is a beautiful monospaced font that I use in Visual Studio
+            Code. It is easy to read and makes my code look great.
           </Tool>
         </ToolsSection>
       </div>
