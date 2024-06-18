@@ -1,6 +1,5 @@
 'use client'
 
-import logoAscendant from '@/images/logos/ascendant.png'
 import logoCervello from '@/images/logos/cervello.png'
 import logoConcentro from '@/images/logos/concentro-black.png'
 import logoGladiate from '@/images/logos/gladiate.png'
@@ -50,13 +49,6 @@ export default function Resume() {
       logo: logoPlanetaria,
       start: '2020',
       end: '2021',
-    },
-    {
-      company: 'Ascendant Capital',
-      title: 'Business Intelligence Intern',
-      logo: logoAscendant,
-      start: '2019',
-      end: '2019',
     },
   ]
 
