@@ -43,7 +43,7 @@ function Article({ article }: { article: Article }) {
 export const metadata: Metadata = {
   title: 'Articles on Business and Tech',
   description:
-    'Exploring the intersections of business strategy, legal insights, and technology through in-depth articles.',
+    'Exploring the intersections of business strategy, and technology through in-depth articles.',
 }
 
 export default async function ArticlesPage() {
@@ -51,7 +51,7 @@ export default async function ArticlesPage() {
 
   return (
     <SimpleLayout
-      title="Insights on Business Strategies and Tech Innovations"
+      title="Insights on Business Strategies and Technology"
       intro="Dive into my analyses on crucial business tactics, software design, and technological advancements in the industry."
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">

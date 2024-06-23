@@ -1,6 +1,5 @@
 import { Layout } from '@/components/tailwind/layout'
 import '@/styles/tailwind.css'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Metadata } from 'next'
 import Script from 'next/script'
 import { Providers } from './providers'
@@ -32,7 +31,6 @@ export default function RootLayout({
         src="https://plausible.io/js/script.js"
       ></Script>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
-        <SpeedInsights />
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

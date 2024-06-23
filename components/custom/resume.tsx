@@ -44,7 +44,7 @@ export default function Resume() {
       end: '2022',
     },
     {
-      company: 'dogsilly',
+      company: 'Dogsilly',
       title: 'Software Engineer',
       logo: logoPlanetaria,
       start: '2020',
