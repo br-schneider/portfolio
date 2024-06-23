@@ -29,11 +29,6 @@ export default function RootLayout({
       <Script
         defer
         data-domain="bretts.dev"
-        src="https://www.tracklyze.com/insightCore.js"
-      ></Script>
-      <Script
-        defer
-        data-domain="bretts.dev"
         src="https://plausible.io/js/script.js"
       ></Script>
       <body className="flex h-full bg-zinc-50 dark:bg-black">

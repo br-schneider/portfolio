@@ -1,0 +1,17 @@
+import { ArticleLayout } from '@/components/tailwind/article-layout'
+
+export const article = {
+  author: 'Brett Schneider',
+  date: '2024-06-24',
+  title: "Go Public Sooner: Takeaways from Coatue's 2024 EMW Conference",
+  description:
+    "Companies are waiting longer to go public, but this trend may not be in the best interest of the company or its investors.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
