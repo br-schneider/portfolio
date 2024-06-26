@@ -1,3 +1,4 @@
+import { ReactQueryClientProvider } from '@/components/custom/react-query-client-provider'
 import { Layout } from '@/components/tailwind/layout'
 import '@/styles/tailwind.css'
 import { Metadata } from 'next'
@@ -24,19 +25,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <Script
-        defer
-        data-domain="bretts.dev"
-        src="https://plausible.io/js/script.js"
-      ></Script>
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
-        <Providers>
-          <div className="flex w-full">
-            <Layout>{children}</Layout>
-          </div>
-        </Providers>
-      </body>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+        <Script
+          defer
+          data-domain="bretts.dev"
+          src="https://plausible.io/js/script.js"
+        ></Script>
+        <body className="flex h-full bg-zinc-50 dark:bg-black">
+          <Providers>
+            <div className="flex w-full">
+              <Layout>{children}</Layout>
+            </div>
+          </Providers>
+        </body>
+      </html>
+    </ReactQueryClientProvider>
   )
 }

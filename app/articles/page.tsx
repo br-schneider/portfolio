@@ -9,6 +9,7 @@ type Article = {
   title: string
   date: string
   description: string
+  views: number
 }
 
 function Article({ article }: { article: Article }) {
@@ -24,8 +25,10 @@ function Article({ article }: { article: Article }) {
           className="md:hidden"
           decorate
         >
-          {formatDate(article.date)}
+          {formatDate(article.date)} •
+          <strong>&nbsp;{article.views} views</strong>
         </Card.Eyebrow>
+
         <Card.Description>{article.description}</Card.Description>
         <Card.Cta>Read article</Card.Cta>
       </Card>
@@ -34,7 +37,7 @@ function Article({ article }: { article: Article }) {
         dateTime={article.date}
         className="mt-1 hidden md:block"
       >
-        {formatDate(article.date)}
+        {formatDate(article.date)} •<strong>&nbsp;{article.views} views</strong>
       </Card.Eyebrow>
     </article>
   )

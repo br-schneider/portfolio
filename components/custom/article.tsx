@@ -9,6 +9,7 @@ export default function Article({
     title: string
     date: string
     description: string
+    views: number
   }
 }) {
   return (
@@ -17,7 +18,7 @@ export default function Article({
         {article.title}
       </Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
+        {formatDate(article.date)} •<strong>&nbsp;{article.views} views</strong>
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
