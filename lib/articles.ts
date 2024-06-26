@@ -1,4 +1,5 @@
 import glob from 'fast-glob'
+import { unstable_noStore } from 'next/cache'
 
 interface Article {
   title: string
@@ -27,6 +28,8 @@ async function importArticle(
 }
 
 export async function getAllArticles() {
+  unstable_noStore()
+
   const articleFilenames = await glob('*/page.mdx', {
     cwd: './app/articles',
   })
