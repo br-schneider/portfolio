@@ -6,8 +6,10 @@ import SocialLink from '@/components/custom/social-link'
 import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/SocialIcons'
 import { Container } from '@/components/tailwind/container'
 import { getAllArticles } from '@/lib/articles'
+import { unstable_noStore } from 'next/cache'
 
 export default async function Home() {
+  unstable_noStore()
   const articles = (await getAllArticles()).slice(0, 4)
 
   return (

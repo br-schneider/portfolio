@@ -1,6 +1,7 @@
 import { Card } from '@/components/tailwind/card'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Metadata } from 'next'
+import { unstable_noStore } from 'next/cache'
 import { getAllArticles } from '../../lib/articles'
 import { formatDate } from '../../lib/formatDate'
 
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
 }
 
 export default async function ArticlesPage() {
+  unstable_noStore()
   const articles = await getAllArticles()
 
   return (
