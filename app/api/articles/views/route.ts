@@ -1,5 +1,6 @@
 export const dynamic = 'force-dynamic' // defaults to auto
 
+import { unstable_noStore } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 
 interface RateLimiterEntry {
@@ -49,6 +50,8 @@ const limit = (ip: string) => {
 }
 
 export async function GET(req: NextRequest) {
+  unstable_noStore()
+
   const ip = req.ip ?? req.headers.get('X-Forwarded-For') ?? 'unknown'
   const isRateLimited = limit(ip)
 
