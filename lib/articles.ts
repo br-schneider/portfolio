@@ -5,7 +5,6 @@ interface Article {
   description: string
   author: string
   date: string
-  views: number
 }
 
 export interface ArticleWithSlug extends Article {
@@ -33,31 +32,5 @@ export async function getAllArticles() {
 
   const articles = await Promise.all(articleFilenames.map(importArticle))
 
-  const articlesWithViews = await Promise.all(
-    articles.map(async (article) => {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/views?slug=${article.slug}`,
-        {
-          cache: 'no-store',
-        },
-      )
-        .then((response) => response.json())
-        .catch((error) => console.error(error))
-
-      // there were 17 views from the old URL
-      if (article.slug === 'unleashing-your-ecommerce-potential') {
-        return {
-          ...article,
-          views: res?.views + 17 || 0,
-        }
-      }
-
-      return {
-        ...article,
-        views: res?.views || 0,
-      }
-    }),
-  )
-
-  return articlesWithViews.sort((a, z) => +new Date(z.date) - +new Date(a.date))
+  return articles.sort((a, z) => +new Date(z.date) - +new Date(a.date))
 }

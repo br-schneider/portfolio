@@ -1,3 +1,4 @@
+import ArticleViews from '@/components/custom/article-views'
 import { Card } from '@/components/tailwind/card'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Metadata } from 'next'
@@ -9,7 +10,6 @@ type Article = {
   title: string
   date: string
   description: string
-  views: number
 }
 
 function Article({ article }: { article: Article }) {
@@ -25,8 +25,8 @@ function Article({ article }: { article: Article }) {
           className="md:hidden"
           decorate
         >
-          {formatDate(article.date)} •
-          <strong>&nbsp;{article.views} views</strong>
+          {formatDate(article.date)}{' '}
+          <ArticleViews slug={article.slug} separator />
         </Card.Eyebrow>
 
         <Card.Description>{article.description}</Card.Description>
@@ -38,7 +38,7 @@ function Article({ article }: { article: Article }) {
         className="mt-1 hidden md:block "
       >
         <div> {formatDate(article.date)}</div>
-        <strong className="">{article.views} views</strong>
+        <ArticleViews slug={article.slug} />
       </Card.Eyebrow>
     </article>
   )

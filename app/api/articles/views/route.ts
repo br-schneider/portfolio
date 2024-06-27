@@ -12,7 +12,7 @@ const idToRequestCount = new Map<string, RateLimiterEntry>() // keeps track of i
 
 const rateLimiter = {
   windowSize: 10000, // 10 seconds window for request counting
-  maxRequests: 5,
+  maxRequests: 10,
   blockDuration: 3600000, // 1 hour in milliseconds
 }
 
@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
   const ip = req.ip ?? req.headers.get('X-Forwarded-For') ?? 'unknown'
   const isRateLimited = limit(ip)
 
-  if (isRateLimited) {
+  if (isRateLimited && process.env.NODE_ENV !== 'development') {
     return NextResponse.json({ error: 'rate limited' }, { status: 429 })
   }
 

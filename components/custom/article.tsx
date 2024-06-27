@@ -1,5 +1,6 @@
 import { Card } from '@/components/tailwind/card'
 import { formatDate } from '@/lib/formatDate'
+import ArticleViews from './article-views'
 
 export default function Article({
   article,
@@ -9,7 +10,6 @@ export default function Article({
     title: string
     date: string
     description: string
-    views: number
   }
 }) {
   return (
@@ -18,7 +18,8 @@ export default function Article({
         {article.title}
       </Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)} •<strong>&nbsp;{article.views} views</strong>
+        {formatDate(article.date)}{' '}
+        <ArticleViews slug={article.slug} separator />
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
