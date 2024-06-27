@@ -38,12 +38,7 @@ export function ArticleLayout({
   const { data, isLoading } = useQuery({
     queryKey: ['article', article.slug],
     queryFn: async () => {
-      const res = await fetch(`/api/articles/views?slug=${slug}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      const res = await fetch(`/api/articles/views?slug=${slug}`)
 
       return res.json()
     },

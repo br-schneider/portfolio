@@ -1,6 +1,5 @@
 export const dynamic = 'force-dynamic' // defaults to auto
 
-import { unstable_noStore } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 
 interface RateLimiterEntry {
@@ -10,6 +9,7 @@ interface RateLimiterEntry {
 }
 
 const idToRequestCount = new Map<string, RateLimiterEntry>() // keeps track of individual users
+
 const rateLimiter = {
   windowSize: 10000, // 10 seconds window for request counting
   maxRequests: 5,
@@ -50,8 +50,6 @@ const limit = (ip: string) => {
 }
 
 export async function GET(req: NextRequest) {
-  unstable_noStore()
-
   const ip = req.ip ?? req.headers.get('X-Forwarded-For') ?? 'unknown'
   const isRateLimited = limit(ip)
 
@@ -83,6 +81,7 @@ export async function GET(req: NextRequest) {
       headers: {
         Authorization: `Bearer ${process.env.PLAUSIBLE_API_KEY}`,
       },
+      cache: 'no-store',
     },
   )
     .then((response) => response.json())

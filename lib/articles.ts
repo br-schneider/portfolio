@@ -32,12 +32,14 @@ export async function getAllArticles() {
   })
 
   const articles = await Promise.all(articleFilenames.map(importArticle))
-  const today = new Date().toISOString().split('T')[0]
 
   const articlesWithViews = await Promise.all(
     articles.map(async (article) => {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/views?slug=${article.slug}`,
+        {
+          cache: 'no-store',
+        },
       )
         .then((response) => response.json())
         .catch((error) => console.error(error))
