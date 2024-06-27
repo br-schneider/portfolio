@@ -37,12 +37,7 @@ export async function getAllArticles() {
   const articlesWithViews = await Promise.all(
     articles.map(async (article) => {
       const res = await fetch(
-        `https://plausible.io/api/v1/stats/aggregate?site_id=bretts.dev&period=custom&date=2020-01-01,${today}&filters=event:page%3D%3D%2Farticles%2F${article.slug}`,
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.PLAUSIBLE_API_KEY}`,
-          },
-        },
+        `${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/views?slug=${article.slug}`,
       )
         .then((response) => response.json())
         .catch((error) => console.error(error))
@@ -51,13 +46,13 @@ export async function getAllArticles() {
       if (article.slug === 'unleashing-your-ecommerce-potential') {
         return {
           ...article,
-          views: res?.results?.visitors?.value + 17 || 0,
+          views: res?.views + 17 || 0,
         }
       }
 
       return {
         ...article,
-        views: res?.results?.visitors?.value || 0,
+        views: res?.views || 0,
       }
     }),
   )

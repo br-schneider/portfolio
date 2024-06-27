@@ -1,7 +1,6 @@
 import { Card } from '@/components/tailwind/card'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Metadata } from 'next'
-import { unstable_noStore } from 'next/cache'
 import { getAllArticles } from '../../lib/articles'
 import { formatDate } from '../../lib/formatDate'
 
@@ -36,9 +35,10 @@ function Article({ article }: { article: Article }) {
       <Card.Eyebrow
         as="time"
         dateTime={article.date}
-        className="mt-1 hidden md:block"
+        className="mt-1 hidden md:block "
       >
-        {formatDate(article.date)} •<strong>&nbsp;{article.views} views</strong>
+        <div> {formatDate(article.date)}</div>
+        <strong className="">{article.views} views</strong>
       </Card.Eyebrow>
     </article>
   )
@@ -51,7 +51,6 @@ export const metadata: Metadata = {
 }
 
 export default async function ArticlesPage() {
-  unstable_noStore()
   const articles = await getAllArticles()
 
   return (
