@@ -453,28 +453,12 @@ export function Header() {
               </div>
 
               <div className="z-50 flex flex-1 justify-end md:justify-center">
-                <MobileNavigation className="pointer-events-auto fixed mr-10 md:hidden" />
+                <MobileNavigation className="pointer-events-auto  md:hidden" />
                 <DesktopNavigation className="pointer-events-auto fixed hidden md:block" />
               </div>
 
-              <div className=" ju pointer-events-auto fixed flex items-center gap-3 rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur md:hidden dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
-                <SocialLink
-                  href="https://linkedin.com/in/brettcschneider/"
-                  aria-label="Follow on LinkedIn"
-                  icon={LinkedInIcon}
-                  title="LinkedIn"
-                />
-
-                <SocialLink
-                  href="https://github.com/br-schneider"
-                  aria-label="Follow on GitHub"
-                  icon={GitHubIcon}
-                  title="GitHub"
-                />
-              </div>
-
               <div className="flex justify-end md:flex-1">
-                <div className="pointer-events-auto fixed">
+                <div className="pointer-events-auto ">
                   <ThemeToggle />
                 </div>
               </div>
