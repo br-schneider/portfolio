@@ -9,6 +9,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Fragment, useEffect, useRef, useState } from 'react'
+import SocialLink from '../custom/social-link'
+import { GitHubIcon, LinkedInIcon } from './SocialIcons'
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -88,7 +90,7 @@ function MobileNavItem({
 }
 
 function MobileNavigation(
-  props: React.ComponentPropsWithoutRef<typeof Popover>
+  props: React.ComponentPropsWithoutRef<typeof Popover>,
 ) {
   return (
     <Popover {...props}>
@@ -162,7 +164,7 @@ function NavItem({
           'relative block px-3 py-2 transition',
           isActive
             ? 'text-teal-500 dark:text-teal-400'
-            : 'hover:text-teal-500 dark:hover:text-teal-400'
+            : 'hover:text-teal-500 dark:hover:text-teal-400',
         )}
       >
         {children}
@@ -177,12 +179,25 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex items-center rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Articles</NavItem>
-        {/* <NavItem href="/projects">Projects</NavItem> */}
         <NavItem href="/photography">Photography</NavItem>
         <NavItem href="/uses">Uses</NavItem>
+        <div className="flex items-center gap-3 pl-2">
+          <SocialLink
+            href="https://linkedin.com/in/brettcschneider/"
+            aria-label="Follow on LinkedIn"
+            icon={LinkedInIcon}
+            title="LinkedIn"
+          />
+          <SocialLink
+            href="https://github.com/br-schneider"
+            aria-label="Follow on GitHub"
+            icon={GitHubIcon}
+            title="GitHub"
+          />
+        </div>
       </ul>
     </nav>
   )
@@ -224,7 +239,7 @@ function AvatarContainer({
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10',
       )}
       {...props}
     />
@@ -251,7 +266,7 @@ function Avatar({
         sizes={large ? '4rem' : '2.25rem'}
         className={clsx(
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
+          large ? 'h-16 w-16' : 'h-9 w-9',
         )}
         priority
       />
@@ -287,7 +302,7 @@ export function Header() {
       const scrollY = clamp(
         window.scrollY,
         0,
-        document.body.scrollHeight - window.innerHeight
+        document.body.scrollHeight - window.innerHeight,
       )
 
       if (isInitial.current) {
@@ -339,7 +354,7 @@ export function Header() {
 
       setProperty(
         '--avatar-image-transform',
-        `translate3d(${x}rem, 0, 0) scale(${scale})`
+        `translate3d(${x}rem, 0, 0) scale(${scale})`,
       )
 
       const borderScale = 1 / (toScale / scale)
@@ -436,12 +451,30 @@ export function Header() {
                   </AvatarContainer>
                 )}
               </div>
-              <div className="flex flex-1 justify-end md:justify-center">
-                <MobileNavigation className="pointer-events-auto md:hidden" />
-                <DesktopNavigation className="pointer-events-auto hidden md:block" />
+
+              <div className="z-50 flex flex-1 justify-end md:justify-center">
+                <MobileNavigation className="pointer-events-auto fixed mr-10 md:hidden" />
+                <DesktopNavigation className="pointer-events-auto fixed hidden md:block" />
               </div>
+
+              <div className=" ju pointer-events-auto fixed flex items-center gap-3 rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur md:hidden dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+                <SocialLink
+                  href="https://linkedin.com/in/brettcschneider/"
+                  aria-label="Follow on LinkedIn"
+                  icon={LinkedInIcon}
+                  title="LinkedIn"
+                />
+
+                <SocialLink
+                  href="https://github.com/br-schneider"
+                  aria-label="Follow on GitHub"
+                  icon={GitHubIcon}
+                  title="GitHub"
+                />
+              </div>
+
               <div className="flex justify-end md:flex-1">
-                <div className="pointer-events-auto">
+                <div className="pointer-events-auto fixed">
                   <ThemeToggle />
                 </div>
               </div>

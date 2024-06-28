@@ -25,16 +25,16 @@ export default async function Home() {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://github.com/br-schneider"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-              title="GitHub"
-            />
-            <SocialLink
               href="https://linkedin.com/in/brettcschneider/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
               title="LinkedIn"
+            />
+            <SocialLink
+              href="https://github.com/br-schneider"
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+              title="GitHub"
             />
           </div>
         </div>
