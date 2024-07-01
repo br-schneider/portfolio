@@ -453,8 +453,8 @@ export function Header() {
               </div>
 
               <div className="z-50 flex flex-1 justify-end md:justify-center">
-                <MobileNavigation className="pointer-events-auto  md:hidden" />
-                <DesktopNavigation className="pointer-events-auto fixed hidden md:block" />
+                <MobileNavigation className="pointer-events-auto md:hidden" />
+                <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
 
               <div className="flex justify-end md:flex-1">
