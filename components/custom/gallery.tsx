@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
 import ImageModal from './image-modal'
 
@@ -21,7 +20,7 @@ export default function Gallery({ images }: { images: string[] }) {
         />
       ) : null}
 
-      {images.map((image) => {
+      {/* {images.map((image) => {
         if (image) {
           return (
             <li
@@ -49,15 +48,12 @@ export default function Gallery({ images }: { images: string[] }) {
               <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-zinc-800 dark:text-zinc-100">
                 {image}
               </p>
-              {/* <p className="block text-sm font-medium text-gray-500 pointer-events-none">
-                {image.width} × {image.height} px
-              </p> */}
             </li>
           )
         } else {
           return null
         }
-      })}
+      })} */}
     </ul>
   )
 }
