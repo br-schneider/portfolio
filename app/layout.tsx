@@ -28,6 +28,11 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="en" className="h-full antialiased" suppressHydrationWarning>
         <Script
+          async
+          src="https://cdn.seline.so/seline.js"
+          data-token="7093d0f89af9208"
+        ></Script>
+        <Script
           defer
           data-domain="bretts.dev"
           src="https://plausible.io/js/script.js"
