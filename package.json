@@ -31,7 +31,7 @@
     "autoprefixer": "^10.4.12",
     "axios": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "fast-glob": "^3.2.11",
     "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
@@ -52,8 +52,9 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-next": "^14.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint-config-next": "^14.1.0",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sharp": "0.33.1"

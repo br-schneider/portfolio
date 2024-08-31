@@ -65,8 +65,8 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I'm Brett Schneider, an Entrepreneur and Software Engineer Building
-            Companies in Austin, Texas.
+            I&apos;m Brett Schneider, an Entrepreneur and Software Engineer
+            Building Companies in Austin, Texas.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
@@ -92,10 +92,10 @@ export default function About() {
               The intersection of design and engineering is where I thrive,
               believing that the true elegance of a solution lies in its
               simplicity and user experience. My commitment to design is about
-              more than aesthetics; it's about creating intuitive and inclusive
-              systems that enhance the interaction between technology and its
-              users. This approach has been a cornerstone in my journey as I
-              move beyond application development to build companies with a
+              more than aesthetics; it&apos;s about creating intuitive and
+              inclusive systems that enhance the interaction between technology
+              and its users. This approach has been a cornerstone in my journey
+              as I move beyond application development to build companies with a
               conscience.
             </p>
             <p>

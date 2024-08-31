@@ -85,7 +85,7 @@ export default function Uses() {
             href="https://github.com/MonitorControl/MonitorControl"
           >
             Monitor Control is a macOS app that allows you to control your
-            external monitor's brightness, contrast, and volume. It is a
+            external monitor&apos;s brightness, contrast, and volume. It is a
             fantastic tool for managing your monitor settings.
           </Tool>
           <Tool title="Raycast" href="https://www.raycast.com/">
