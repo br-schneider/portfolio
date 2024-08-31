@@ -31,15 +31,15 @@ export default function ImageModal({
           <XMarkIcon className="h-7 w-7" />
         </button>
       </div>
-      <div className="relative z-10 mx-10 rounded-lg bg-white p-5 dark:bg-zinc-800">
+      <div className="relative z-10 bg-white sm:mx-10 sm:rounded-lg sm:p-5 dark:bg-zinc-800">
         <div className="flex justify-center">
           <Image
-            src={`/drone/${image}`}
+            src={image}
             alt={image}
             width={1000}
             height={500}
             className={
-              ' rounded-lg ' +
+              ' sm:rounded-lg ' +
               (loaded ? '' : ' animate-pulse bg-zinc-200 dark:bg-zinc-700 ')
             }
             priority={true}
