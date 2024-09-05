@@ -1,8 +1,8 @@
 import { ReactQueryClientProvider } from '@/components/custom/react-query-client-provider'
 import { Layout } from '@/components/tailwind/layout'
-import '@/styles/tailwind.css'
 import { Metadata } from 'next'
 import Script from 'next/script'
+import './globals.css'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
