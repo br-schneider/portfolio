@@ -46,7 +46,7 @@ function MailIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'I’m Brett Schneider. I live in Austin, Texas, where I engineer and design applications.',
+    'I’m Brett, a software engineer and entrepreneur based in Austin, TX. I work on the Concentro team, where we create innovative applications to democratize access to affordable funding for renewable energy.',
 }
 
 export default function About() {
@@ -65,8 +65,8 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I&apos;m Brett Schneider, an Entrepreneur and Software Engineer
-            Building Companies in Austin, Texas.
+            I&apos;m Brett Schneider, an Entrepreneur Building Companies in
+            Austin, Texas.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>

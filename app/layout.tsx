@@ -1,6 +1,8 @@
 import { ReactQueryClientProvider } from '@/components/custom/react-query-client-provider'
 import { Layout } from '@/components/tailwind/layout'
+import { cn } from '@/lib/utils'
 import { Metadata } from 'next'
+import { Be_Vietnam_Pro as FontSans } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { Providers } from './providers'
@@ -18,6 +20,12 @@ export const metadata: Metadata = {
     },
   },
 }
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['400', '500', '600'],
+})
 
 export default function RootLayout({
   children,
@@ -41,7 +49,12 @@ export default function RootLayout({
           data-domain="bretts.dev"
           src="https://plausible.io/js/script.js"
         ></Script>
-        <body className="flex h-full bg-zinc-50 dark:bg-black">
+        <body
+          className={cn(
+            'min-h-screen bg-background font-sans antialiased',
+            fontSans.variable,
+          )}
+        >
           <Providers>
             <div className="flex w-full">
               <Layout>{children}</Layout>
