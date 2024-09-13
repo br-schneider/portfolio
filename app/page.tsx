@@ -8,7 +8,7 @@ import { Container } from '@/components/tailwind/container'
 import { getAllArticles } from '@/lib/articles'
 
 export default async function Home() {
-  const articles = (await getAllArticles()).slice(0, 4)
+  const articles = (await getAllArticles()).slice(0, 3)
 
   return (
     <>
