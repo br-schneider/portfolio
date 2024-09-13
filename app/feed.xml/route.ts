@@ -10,8 +10,8 @@ export async function GET(req: Request) {
   }
 
   const author = {
-    name: 'Spencer Sharp',
-    email: 'spencer@planetaria.tech',
+    name: 'Brett Schneider',
+    email: 'brett.c.schneider@gmail.com',
   }
 
   const feed = new Feed({
