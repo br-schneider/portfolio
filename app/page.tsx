@@ -19,9 +19,8 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Brett, a software engineer and entrepreneur based in Austin, TX.
-            I work on the Concentro team, where we create innovative
-            applications to democratize access to affordable funding for
-            renewable energy.
+            I work on the Concentro team, where we create innovative software to
+            democratize access to affordable funding for renewable energy.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
