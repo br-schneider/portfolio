@@ -70,38 +70,39 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              My journey began at the University of Colorado Boulder, where I
-              earned a degree in Computer Science, laying the groundwork for a
-              career not just in engineering applications but in forging
-              companies. I am currently working at{' '}
+              I started my journey at the University of Colorado Boulder, where
+              I got a degree in Computer Science. This set the foundation for my
+              career, not just in engineering but in building companies.{' '}
+              <strong>
+                After college, I have focused on blending my technical skills
+                with entrepreneurial ventures.
+              </strong>{' '}
+              I currently work at{' '}
               <a className="underline" href="https://www.concentro.io/">
                 Concentro
               </a>{' '}
-              where we create innovative applications to democratize access to
-              affordable funding for renewable energy.
+              where we create apps to make renewable energy funding more
+              accessible.
+            </p>
+
+            <p>
+              Over the years, I&apos;ve moved from engineering solutions to
+              leading businesses that tackle important needs. I&apos;m
+              passionate about combining technology and entrepreneurship,
+              especially in building platforms that are accessible,
+              high-performing, and positively impact communities.
             </p>
             <p>
-              With many years of experience, I’ve transitioned from engineering
-              solutions to being at the forefront of creating businesses that
-              address critical needs. My passion lies in the fusion of
-              technology and entrepreneurship, especially in developing
-              platforms that are not only accessible and high-performing but
-              also make a significant impact on the communities they serve.
+              I thrive at the crossroads of design and engineering, believing
+              that a solution&apos;s elegance is in its simplicity and user
+              experience. For me, design isn&apos;t just about looks; it&apos;s
+              about making intuitive and inclusive systems that improve how
+              users interact with technology. This mindset has been key as I
+              move from app development to building mindful companies.
             </p>
             <p>
-              The intersection of design and engineering is where I thrive,
-              believing that the true elegance of a solution lies in its
-              simplicity and user experience. My commitment to design is about
-              more than aesthetics; it&apos;s about creating intuitive and
-              inclusive systems that enhance the interaction between technology
-              and its users. This approach has been a cornerstone in my journey
-              as I move beyond application development to build companies with a
-              conscience.
-            </p>
-            <p>
-              I’m always looking for new opportunities to learn and grow. If you
-              have any questions or would like to chat, feel free to reach out
-              to me at the links provided.
+              I&apos;m always open to learning and growing. If you have any
+              questions or want to chat, please reach out using the links below.
             </p>
           </div>
         </div>
