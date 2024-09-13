@@ -47,7 +47,7 @@ function Article({ article }: { article: Article }) {
 export const metadata: Metadata = {
   title: 'Articles on Business and Tech',
   description:
-    'Exploring the intersections of business strategy, and technology through in-depth articles.',
+    'Dive into my analyses on crucial business tactics, software design, and technological advancements in the industry.',
 }
 
 export default async function ArticlesPage() {
