@@ -102,7 +102,8 @@ export default function About() {
             </p>
             <p>
               I&apos;m always open to learning and growing. If you have any
-              questions or want to chat, please reach out using the links below.
+              questions or want to chat, please reach out using the links
+              provided.
             </p>
           </div>
         </div>
