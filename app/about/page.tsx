@@ -46,7 +46,7 @@ function MailIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'I’m Brett, a software engineer and entrepreneur based in Austin, TX. I work on the Concentro team, where we create innovative applications to democratize access to affordable funding for renewable energy.',
+    'I’m Brett, a software engineer and entrepreneur based in Austin, TX. I work on the Concentro team, where we create innovative software to democratize access to affordable funding for renewable energy.',
 }
 
 export default function About() {
@@ -81,7 +81,7 @@ export default function About() {
               <a className="underline" href="https://www.concentro.io/">
                 Concentro
               </a>{' '}
-              where we create apps to make renewable energy funding more
+              where we create software to make renewable energy funding more
               accessible.
             </p>
 
