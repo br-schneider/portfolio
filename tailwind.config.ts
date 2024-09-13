@@ -9,7 +9,7 @@ export default {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: ['selector', 'class'],
+  darkMode: 'selector',
   plugins: [typographyPlugin, require('tailwindcss-animate')],
   theme: {
     fontFamily: {
