@@ -22,8 +22,8 @@ export default function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
+              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+              rotations[imageIndex % rotations.length],
             )}
           >
             <Image
@@ -31,6 +31,7 @@ export default function Photos() {
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
+              loading={imageIndex === 0 ? 'eager' : 'lazy'} // Eager load the first image
             />
           </div>
         ))}
