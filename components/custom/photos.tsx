@@ -31,7 +31,6 @@ export default function Photos() {
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
-              loading={imageIndex === 0 ? 'eager' : 'lazy'} // Eager load the first image
             />
           </div>
         ))}
