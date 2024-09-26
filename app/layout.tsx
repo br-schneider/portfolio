@@ -40,10 +40,7 @@ export default function RootLayout({
           src="https://cdn.seline.so/seline.js"
           data-token="7093d0f89af9208"
         ></Script>
-        <Script
-          src="https://www.tracklyze.com/insight-core.js"
-          data-site-id="ed5bb2c5-d11e-462d-ab72-0803c8f715ad"
-        ></Script>
+
         <Script
           defer
           data-domain="bretts.dev"
