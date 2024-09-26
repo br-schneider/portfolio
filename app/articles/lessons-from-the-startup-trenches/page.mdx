@@ -1,0 +1,32 @@
+import { ArticleLayout } from '@/components/tailwind/article-layout'
+
+export const article = {
+  author: 'Brett Schneider',
+  date: '2024-09-26',
+  title: "Lessons from the Startup Trenches",
+  description:
+    "Sharing my hot takes from the startup trenches—lessons on building a strong team, avoiding common tech pitfalls, and driving innovation through experimentation.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Building startups has been a wild ride—with its highs, lows, and everything in between. As I reflect on what’s worked (and what hasn’t), I’ve gathered a few key insights that might resonate with fellow founders and teams. Some of these might be hot takes, but they’ve shaped how I approach both the technical and non-technical sides of the business.
+
+1. **Transparency is Key**: To me, this is non-negotiable. Being as transparent as possible about company financials and progress is one of the best ways to build trust within the team. Whether it’s fundraising, runway, new customers, ARR, or burn rate—keeping everyone in the loop creates a shared sense of ownership. Plus, it avoids any unpleasant surprises later on.
+
+2. **Showcase the Whole Team**: This one is an easy win, but it’s surprising how often it’s overlooked. When creating an “About Us” section for your website or presentations, don’t just highlight the leadership team—include everyone. It helps show that each member of the team contributes to the company's success and creates a sense of inclusion. Plus, it’s a great way to acknowledge everyone’s hard work.
+
+3. **Make Hiring Less Stressful for Candidates**: The hiring process should focus on getting to know the candidate's real potential, not just how well they perform under stress. Avoid using LeetCode-style problems as a qualifier. Instead, try more high-level, collaborative exercises to see how they think and work in real-time. Candidates tend to perform better when they aren’t anxious, which means they’ll showcase their skills more effectively. I have had this experience firsthand and it’s been a game changer.
+
+4. **Skip Story Points and Estimates**: Honestly, just focus on getting things done. If you’re using an agile process, you’ve probably dealt with story points. In my experience, story points are a huge time sink and do little to provide accurate estimates. Instead, focus on building out tasks directly. If something feels too big, break it down into smaller, manageable pieces. The major key here is to strike a balance between planning the thing you want to build and just building it.
+
+5. **Allow Engineers to Experiment**: Let them cook! Giving engineers the freedom to experiment when they hit friction is often the secret sauce for innovation. Pain points are often signals that something could be done better, and giving your team room to innovate can lead to better long-term solutions.
+
+6. **Too Much Process and Meetings = Bad**: This one is no revelation, but we’ve all been there—meetings about meetings, endless standups, and bloated processes. At a certain point, the processes start to hinder productivity rather than enhance it. Keep things lean and efficient to give the team more time for actual work.
+
+These are just a few of the lessons I’ve learned so far, but the journey is always evolving. I’d love to hear your experiences—what’s worked for you, and what hasn’t?
