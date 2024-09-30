@@ -1,0 +1,35 @@
+import { ArticleLayout } from '@/components/tailwind/article-layout'
+
+export const article = {
+  author: 'Brett Schneider',
+  date: '2024-09-29',
+  title: "Lessons from the Startup Trenches",
+  description:
+    "Sharing my hot takes from the startup trenches—insights on building a strong team, streamlining processes, avoiding tech pitfalls, and fostering innovation through experimentation.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Building startups has been a wild ride—with its highs, lows, and everything in between. As I reflect on what’s worked (and what hasn’t), I’ve gathered a few key insights that might resonate with fellow founders and teams. Some of these might be hot takes, but they’ve shaped how I approach both the technical and non-technical sides of the business. 
+
+1. **Transparency is Key**: To me, this is non-negotiable. Being as transparent as possible about company financials and progress is one of the best ways to build trust within the team. Whether it’s fundraising, runway, new customers, ARR, or burn rate—keeping everyone in the loop creates a shared sense of ownership. Plus, it avoids any unpleasant surprises later on.
+
+
+2. **Make Hiring Less Stressful for Candidates**: The hiring process should focus on getting to know the candidate's real potential, not just how well they perform under stress. Avoid using LeetCode-style problems as a qualifier. Instead, try more high-level, collaborative exercises to see how they think and work in real-time. Candidates tend to perform better when they aren’t anxious, which means they’ll showcase their skills more effectively. I have had this experience firsthand and it’s been a game changer.
+
+3. **Skip Story Points and Estimates**: Honestly, just focus on getting things done. If you’re using an agile process, you’ve probably dealt with story points. In my experience, story points are a huge time sink and do little to provide accurate estimates. Instead, focus on building out tasks directly. If something feels too big, break it down into smaller, manageable pieces. The key here is to strike a balance between planning the thing you want to build and just building it. 
+
+4. **Allow Engineers to Experiment**: Let them cook! Giving engineers the freedom to experiment when they hit friction is often the secret sauce for innovation. Pain points are often signals that something could be done better, and giving your team room to innovate can lead to better long-term solutions.
+
+5. **Highlight Contributions Across the Team**: It's easy to focus on the leadership team when creating an “About Us” section or presentations, but don’t forget to shine a light on other key contributors as well. This doesn't mean showcasing every individual—especially as your team grows—but making sure that significant accomplishments and team efforts are acknowledged. This not only helps create a sense of inclusion but also reinforces that the company’s success is a collective effort. Whether it’s a shout-out in team meetings or highlighting a big win on your website, recognizing contributions goes a long way in boosting morale and building a stronger culture.
+
+6. **Too Much Process and Meetings = Bad**: This one is no revelation, but we’ve all been there—meetings about meetings, endless standups, and bloated processes. At a certain point, the processes start to hinder productivity rather than enhance it. Keep things lean and efficient to give the team more time for actual work. If your team is bogged down by meetings, consider reducing them to one or two key check-ins per week, or replacing them with async updates to keep things moving.
+
+7. **Focus on Doing a Few Things Really Well**: It’s tempting to build out every feature that customers ask for, but trying to do too many things at once often leads to mediocre results. Instead, focus on mastering one or two core features that truly differentiate your product. Doing so helps you create a standout experience, and it allows your team to build deep expertise in key areas. By narrowing your scope, you’ll also reduce technical debt, ship higher-quality updates faster, and set clearer expectations with customers. Remember, it’s better to be known for doing one thing exceptionally well than to deliver a dozen underwhelming features.
+
+There’s no perfect playbook for startups, but sharing our experiences helps us all navigate the ups and downs a little better. Keep experimenting, keep learning, and don’t be afraid to adapt along the way. I’d love to hear your thoughts—what strategies have worked for you, and what challenges have you faced?
