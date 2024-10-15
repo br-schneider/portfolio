@@ -46,6 +46,12 @@ export default function RootLayout({
           data-domain="bretts.dev"
           src="https://plausible.io/js/script.js"
         ></Script>
+
+        <Script
+          async
+          src="https://www.tracklyze.com/insight-core.js"
+          data-site-id="513ee7b5-37ad-4e7d-8d77-de12c19815df"
+        ></Script>
         <body
           className={cn(
             'min-h-screen bg-background font-sans antialiased',
