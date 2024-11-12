@@ -49,7 +49,7 @@ export default function RootLayout({
 
         <Script
           async
-          src="https://www.tracklyze.com/insight-core.js"
+          src="http://dev.tracklyze.com/insight-core.js"
           data-site-id="513ee7b5-37ad-4e7d-8d77-de12c19815df"
         ></Script>
         <body
