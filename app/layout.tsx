@@ -37,18 +37,6 @@ export default function RootLayout({
       <html lang="en" className="h-full antialiased" suppressHydrationWarning>
         <Script
           async
-          src="https://cdn.seline.so/seline.js"
-          data-token="7093d0f89af9208"
-        ></Script>
-
-        <Script
-          defer
-          data-domain="bretts.dev"
-          src="https://plausible.io/js/script.js"
-        ></Script>
-
-        <Script
-          async
           src="https://tracklyze.com/insight-core.js"
           data-site-id="513ee7b5-37ad-4e7d-8d77-de12c19815df"
         ></Script>
