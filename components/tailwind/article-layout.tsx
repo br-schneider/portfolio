@@ -3,8 +3,7 @@
 import { AppContext } from '@/app/providers'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
-import { useQuery } from '@tanstack/react-query'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useContext } from 'react'
 import { Container } from './container'
 import { Prose } from './prose'
@@ -31,22 +30,6 @@ export function ArticleLayout({
 }) {
   const router = useRouter()
   const { previousPathname } = useContext(AppContext)
-  const pathname = usePathname()
-
-  const slug = pathname.split('/').pop()
-
-  const { data, isLoading } = useQuery({
-    queryKey: ['article', article.slug],
-    queryFn: async () => {
-      const res = await fetch(`/api/articles/views?slug=${slug}`, {
-        cache: 'no-store',
-      })
-
-      return res.json()
-    },
-  })
-
-  const isError = data?.error ? true : false
 
   return (
     <Container className="mt-16 lg:mt-32">
@@ -75,16 +58,6 @@ export function ArticleLayout({
                 >
                   <span className="">{formatDate(article.date)}</span>
                 </time>
-                {!isError &&
-                  (isLoading ? (
-                    <span className=" inline-flex w-fit items-center rounded-md bg-zinc-50 px-2 py-0.5 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 ">
-                      Loading...
-                    </span>
-                  ) : (
-                    <span className="inline-flex w-fit items-center rounded-md bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                      {data?.views ?? 0} views
-                    </span>
-                  ))}
               </div>
             </header>
             <Prose className="mt-8" data-mdx-content>
