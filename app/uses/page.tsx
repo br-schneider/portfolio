@@ -109,7 +109,7 @@ export default function Uses() {
             designs in seconds. It is incredibly fast and easy to use.
           </Tool>
         </ToolsSection>
-        <ToolsSection title="Random Things I Like">
+        <ToolsSection title="Random">
           <Tool
             title="Monaspace Font"
             href="https://github.com/githubnext/monaspace"
