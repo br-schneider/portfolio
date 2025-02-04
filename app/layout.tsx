@@ -25,6 +25,7 @@ const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
   weight: ['400', '500', '600'],
+  display: 'swap',
 })
 
 export default function RootLayout({
@@ -33,13 +34,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ReactQueryClientProvider>
-      <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <head>
         <Script
           async
           src="https://tracklyze.com/insight-core.js"
           data-site-id="513ee7b5-37ad-4e7d-8d77-de12c19815df"
         ></Script>
+      </head>
+      <ReactQueryClientProvider>
         <body
           className={cn(
             'min-h-screen bg-background font-sans antialiased',
@@ -52,7 +55,7 @@ export default function RootLayout({
             </div>
           </Providers>
         </body>
-      </html>
-    </ReactQueryClientProvider>
+      </ReactQueryClientProvider>
+    </html>
   )
 }
