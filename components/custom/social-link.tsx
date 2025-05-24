@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { SVGProps } from 'react'
+import { SVGProps, type JSX } from 'react';
 
 export default function SocialLink({
   icon: Icon,

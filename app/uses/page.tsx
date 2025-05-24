@@ -54,29 +54,47 @@ export default function Uses() {
     >
       <div className="flex flex-col space-y-10">
         <ToolsSection title="Engineering">
-          <Tool title="Warp" href="https://www.warp.dev/">
-            Warp is a modern, Rust-based terminal with AI built in that makes it
-            easier to navigate and manage your terminal sessions. It is
-            incredibly fast and has a beautiful interface.
+          <Tool title="TailwindCSS" href="https://tailwindcss.com/">
+            I rely on Tailwind for all my projects. I am sure you know it by
+            now! I use it for all my projects, and it is a great tool for
+            quickly building beautiful interfaces.
           </Tool>
           <Tool title="Shadcn" href="https://ui.shadcn.com/">
             Beautifully designed components that you can copy and paste into
             your projects. They are simple, clean, and easy to use.
           </Tool>
-          <Tool title="TailwindCSS" href="https://tailwindcss.com/">
-            I rely on Tailwind for all my projects. It is an outstanding
-            utility-first CSS framework that simplifies the creation of
-            responsive, accessible, and high-performance interfaces.
+          <Tool title="Hono" href="https://hono.dev/">
+            Hono is a modern, open-source web framework for building just about
+            anything. It has a beautiful DX and has some of the best typescript
+            support I have seen in a while.
           </Tool>
           <Tool title="Nextjs" href="https://nextjs.org/">
             Next.js is my go-to for all React projects. It is an excellent
-            framework for developing static and server-rendered React
+            framework for developing static, server-rendered, and hybrid React
             applications.
           </Tool>
           <Tool title="Vercel" href="https://vercel.com/">
             I use Vercel for most of my websites. It is highly flexible and
             user-friendly, capable of scaling with my site and providing
             numerous outstanding features out of the box.
+          </Tool>
+        </ToolsSection>
+        <ToolsSection title="Design">
+          <Tool title="v0" href="https://v0.dev/">
+            I find v0 to be a great tool for creating beautiful designs. It can
+            be used by just about anyone and helps you get going on building
+            features.
+          </Tool>
+          <Tool title="Figma" href="https://www.figma.com/">
+            Figma is my preferred tool for all design work, including
+            wireframes, prototypes, and final designs. It is an excellent
+            platform for collaboration with others.
+          </Tool>
+        </ToolsSection>
+        <ToolsSection title="Analytics">
+          <Tool title="Dub" href="https://dub.co">
+            Dub is a fun way to see who clicks on your links. They have built a
+            truly amazing platform, loaded with features for every use case.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Utilities">
@@ -96,26 +114,6 @@ export default function Uses() {
           <Tool title="Rectangle" href="https://rectangleapp.com/">
             Rectangle is a window management app for macOS that allows you to
             move and resize windows with ease.
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Design">
-          <Tool title="Figma" href="https://www.figma.com/">
-            Figma is my preferred tool for all design work, including
-            wireframes, prototypes, and final designs. It is an excellent
-            platform for collaboration with others.
-          </Tool>
-          <Tool title="Visily" href="https://www.visily.ai/">
-            Visily is an AI tool that generates beautiful, high-quality UI
-            designs in seconds. It is incredibly fast and easy to use.
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Random">
-          <Tool
-            title="Monaspace Font"
-            href="https://github.com/githubnext/monaspace"
-          >
-            Monaspace is a beautiful monospaced font that I use in Visual Studio
-            Code. It is easy to read and makes my code look great.
           </Tool>
         </ToolsSection>
       </div>

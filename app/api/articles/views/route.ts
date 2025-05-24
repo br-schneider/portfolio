@@ -2,6 +2,8 @@ export const dynamic = 'force-dynamic' // defaults to auto
 
 import { NextRequest, NextResponse } from 'next/server'
 
+import { ipAddress } from '@vercel/functions'
+
 interface RateLimiterEntry {
   count: number
   lastRequest: number
@@ -50,7 +52,7 @@ const limit = (ip: string) => {
 }
 
 export async function GET(req: NextRequest) {
-  const ip = req.ip ?? req.headers.get('X-Forwarded-For') ?? 'unknown'
+  const ip = ipAddress(req) ?? req.headers.get('X-Forwarded-For') ?? 'unknown'
   const isRateLimited = limit(ip)
 
   if (isRateLimited && process.env.NODE_ENV !== 'development') {
@@ -92,13 +94,6 @@ export async function GET(req: NextRequest) {
   }
 
   const views = res?.results?.visitors?.value || 0
-
-  // there were 17 views from the old URL
-  if (slug === 'unleashing-your-ecommerce-potential') {
-    return NextResponse.json({
-      views: views + 17 ?? 0,
-    })
-  }
 
   return NextResponse.json({
     views: views ?? 0,
