@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import SocialLink from '../custom/social-link'
-import { GitHubIcon, LinkedInIcon } from './SocialIcons'
+import { GitHubIcon, LinkedInIcon } from './social-icons'
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (

@@ -3,7 +3,7 @@ import Newsletter from '@/components/custom/newsletter'
 import Photos from '@/components/custom/photos'
 import Resume from '@/components/custom/resume'
 import SocialLink from '@/components/custom/social-link'
-import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/SocialIcons'
+import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/social-icons'
 import { Container } from '@/components/tailwind/container'
 import { getAllArticles } from '@/lib/articles'
 

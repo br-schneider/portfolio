@@ -1,4 +1,4 @@
-import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/SocialIcons'
+import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/social-icons'
 import { Container } from '@/components/tailwind/container'
 import portraitImage from '@/images/portrait.jpg'
 import clsx from 'clsx'
@@ -46,7 +46,7 @@ function MailIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'I’m Brett, a software engineer and entrepreneur based in Austin, TX. I work on the Concentro team, where we create innovative software to democratize access to affordable funding for renewable energy.',
+    'I’m Brett, a software engineer and entrepreneur based in Austin. I build products that turn complex ideas into clear, useful software.',
 }
 
 export default function About() {
@@ -65,45 +65,35 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I&apos;m Brett Schneider, an Entrepreneur Building Companies in
-            Austin, Texas.
+            I&apos;m Brett, an Entrepreneur Building Companies in Austin.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I started my journey at the University of Colorado Boulder, where
-              I got a degree in Computer Science. This set the foundation for my
-              career, not just in engineering but in building companies.{' '}
-              <strong>
-                After college, I have focused on blending my technical skills
-                with entrepreneurial ventures.
-              </strong>{' '}
-              I currently work at{' '}
+              I build products that turn complex ideas into clear, useful
+              software. I currently work at{' '}
               <a className="underline" href="https://www.concentro.io/">
                 Concentro
               </a>{' '}
               where we create software to make renewable energy funding more
               accessible.
             </p>
-
             <p>
-              Over the years, I&apos;ve moved from engineering solutions to
-              leading businesses that tackle important needs. I&apos;m
-              passionate about combining technology and entrepreneurship,
-              especially in building platforms that are accessible,
-              high-performing, and positively impact communities.
+              My career blends code and entrepreneurship. I have launched
+              multiple SaaS products, scaled design systems, and led early-stage
+              teams from concept to release, always with one goal: make
+              technology approachable and valuable for the people who rely on
+              it.
             </p>
             <p>
-              I thrive at the crossroads of design and engineering, believing
-              that a solution&apos;s elegance is in its simplicity and user
-              experience. For me, design isn&apos;t just about looks; it&apos;s
-              about making intuitive and inclusive systems that improve how
-              users interact with technology. This mindset has been key as I
-              move from app development to building mindful companies.
+              I care deeply about the meeting point of design and engineering. A
+              product succeeds when its logic feels seamless and its interface
+              feels inviting, so I apply that standard at every step, shaping
+              clean architecture, intuitive flows, and purposeful features.
             </p>
             <p>
-              I&apos;m always open to learning and growing. If you have any
-              questions or want to chat, please reach out using the links
-              provided.
+              Curiosity keeps me moving. If you would like to trade ideas,
+              collaborate, or just say hello, reach out through the links here.
+              I am always happy to connect!
             </p>
           </div>
         </div>

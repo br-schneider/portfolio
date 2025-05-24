@@ -1,7 +1,5 @@
-/* eslint-disable react/prop-types */
-
 import { Card } from '@/components/tailwind/card'
-import { Section } from '@/components/tailwind/Section'
+import { Section } from '@/components/tailwind/section'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Metadata } from 'next'
 

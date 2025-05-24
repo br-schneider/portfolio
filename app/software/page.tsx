@@ -38,7 +38,7 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 export const metadata: Metadata = {
-  title: 'Personal Software',
+  title: 'Personal Software.',
   description:
     'I have adapted my personal software for others to use. I try to make all my personal software free to use and if not free, priced to cover the cost of its underlying infrastructure.',
 }
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Personal Software"
+      title="Personal Software."
       intro="Whenever I have a problem, I try to solve it with software. I have adapted my personal software for others to use. I try to make all my personal software free to use and if not free, priced to cover the cost of its underlying infrastructure."
     >
       <ul
