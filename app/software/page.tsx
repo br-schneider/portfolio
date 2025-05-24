@@ -10,7 +10,7 @@ const projects = [
   {
     name: 'BoltBudget',
     description:
-      'I was tired of using a spreadsheet to track my budget and wanted something that is easy to use from my phone. I created a simple app to help me track my budget. Its relatively opinionated in how it works. Its free for anyone to use.',
+      'I was tired of using a spreadsheet to track my budget and wanted something that is easy to use from my phone. I created a simple app to help me track my budget. Its relatively opinionated in how it works and is free for anyone to use.',
     link: {
       href: 'https://try.boltbudget.com/1B8Y1',
       label: 'boltbudget.com',
