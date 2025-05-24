@@ -1,5 +1,5 @@
 import { Card } from '@/components/tailwind/card'
-import { Section } from '@/components/tailwind/section'
+import Section from '@/components/tailwind/section'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Metadata } from 'next'
 

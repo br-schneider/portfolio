@@ -1,6 +1,6 @@
 import { useId } from 'react'
 
-export function Section({
+export default function Section({
   title,
   children,
 }: {
