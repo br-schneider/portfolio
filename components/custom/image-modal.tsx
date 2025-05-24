@@ -31,7 +31,7 @@ export default function ImageModal({
           <XMarkIcon className="h-7 w-7" />
         </button>
       </div>
-      <div className="relative z-10 bg-white sm:mx-10 sm:rounded-lg sm:p-5 dark:bg-zinc-800">
+      <div className="relative z-10 mx-auto max-w-[95%] rounded-lg bg-white p-2 sm:max-w-[85%] sm:p-4 dark:bg-zinc-800">
         <div className="flex justify-center">
           <Image
             src={image}
@@ -39,7 +39,7 @@ export default function ImageModal({
             width={1000}
             height={500}
             className={
-              ' sm:rounded-lg ' +
+              'max-h-[80vh] w-auto object-contain ' +
               (loaded ? '' : ' animate-pulse bg-zinc-200 dark:bg-zinc-700 ')
             }
             priority={true}
