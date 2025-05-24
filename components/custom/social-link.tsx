@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { SVGProps, type JSX } from 'react';
+import { SVGProps, type JSX } from 'react'
 
 export default function SocialLink({
   icon: Icon,
@@ -13,7 +13,7 @@ export default function SocialLink({
 }) {
   return (
     <Link target={'_blank'} className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-teal-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-sky-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
 }
