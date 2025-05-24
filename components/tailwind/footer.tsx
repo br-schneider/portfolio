@@ -31,7 +31,7 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/software">Software</NavLink>
-                <NavLink href="/photography">Photography</NavLink>
+                <NavLink href="/photography">Photos</NavLink>
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <p className="text-sm text-zinc-700 dark:text-zinc-500">
