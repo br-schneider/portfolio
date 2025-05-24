@@ -1,43 +1,7 @@
-import { Card } from '@/components/tailwind/card'
-import Section from '@/components/tailwind/section'
+import { Tool } from '@/components/custom/tool'
+import { ToolsSection } from '@/components/custom/tools-section'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Metadata } from 'next'
-
-function ToolsSection({
-  children,
-  title,
-  ...props
-}: {
-  children: React.ReactNode
-  title: string
-}) {
-  return (
-    <Section title={title} {...props}>
-      <ul role="list" className="space-y-16 pt-5">
-        {children}
-      </ul>
-    </Section>
-  )
-}
-
-function Tool({
-  title,
-  href,
-  children,
-}: {
-  title: string
-  href?: string
-  children: React.ReactNode
-}) {
-  return (
-    <Card as="li" className="">
-      <Card.Title as="h3" href={href}>
-        {title}
-      </Card.Title>
-      <Card.Description>{children}</Card.Description>
-    </Card>
-  )
-}
 
 export const metadata: Metadata = {
   title: 'Uses',
