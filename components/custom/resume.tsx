@@ -21,7 +21,7 @@ function getDateTime(date: any) {
 export default function Resume() {
   const resume = [
     {
-      company: 'Merit First',
+      company: 'MeritFirst',
       title: 'Founding Software Engineer',
       logo: logoMeritFirst,
       start: '2025',
