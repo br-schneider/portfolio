@@ -20,7 +20,7 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Hi, I’m Brett, a software engineer and entrepreneur based in Austin,
-            Texas. I work on the engineering team at&nbsp;
+            Texas. I work on the team at&nbsp;
             <Link
               className="underline hover:text-sky-500"
               href="https://www.meritfirst.us/"
