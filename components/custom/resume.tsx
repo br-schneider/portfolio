@@ -3,6 +3,7 @@
 import logoCervello from '@/images/logos/cervello.png'
 import logoConcentro from '@/images/logos/concentro-black.png'
 import logoGladiate from '@/images/logos/gladiate.png'
+import logoMeritFirst from '@/images/logos/meritfirst.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import Image from 'next/image'
 import ArrowDownIcon from '../icons/arrow-down-icon'
@@ -20,14 +21,18 @@ function getDateTime(date: any) {
 export default function Resume() {
   const resume = [
     {
+      company: 'Merit First',
+      title: 'Founding Software Engineer',
+      logo: logoMeritFirst,
+      start: '2025',
+      end: 'Present',
+    },
+    {
       company: 'Concentro',
       title: 'Founding Software Engineer',
       logo: logoConcentro,
       start: '2024',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      end: '2025',
     },
     {
       company: 'Gladiate',

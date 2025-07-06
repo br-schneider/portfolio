@@ -3,9 +3,10 @@ import Newsletter from '@/components/custom/newsletter'
 import Photos from '@/components/custom/photos'
 import Resume from '@/components/custom/resume'
 import SocialLink from '@/components/custom/social-link'
-import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/social-icons'
 import { Container } from '@/components/tailwind/container'
+import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/social-icons'
 import { getAllArticles } from '@/lib/articles'
+import Link from 'next/link'
 
 export default async function Home() {
   const articles = (await getAllArticles()).slice(0, 3)
@@ -15,12 +16,19 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Founding Software Engineer at Concentro.
+            Founding Software Engineer at MeritFirst
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Brett, a software engineer and entrepreneur based in Austin, TX.
-            I work on the Concentro team, where we create innovative software to
-            democratize access to affordable funding for renewable energy.
+            Hi, I’m Brett, a software engineer and entrepreneur based in Austin,
+            Texas. I work on the engineering team at&nbsp;
+            <Link
+              className="underline hover:text-sky-500"
+              href="https://www.meritfirst.us/"
+            >
+              MeritFirst
+            </Link>
+            , where we are rethinking how companies discover exceptional talent
+            and building software that makes hiring simpler.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

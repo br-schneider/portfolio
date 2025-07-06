@@ -10,10 +10,10 @@ import { Providers } from './providers'
 export const metadata: Metadata = {
   title: {
     template: '%s - Brett Schneider',
-    default: 'Brett Schneider - Founding Software Engineer',
+    default: 'Brett Schneider - Founding Software Engineer at MeritFirst',
   },
   description:
-    'I’m Brett, a software engineer and entrepreneur based in Austin, TX. I work on the Concentro team, where we create innovative software to democratize access to affordable funding for renewable energy.',
+    "Hi, I'm Brett, a software engineer and entrepreneur in Austin. At MeritFirst I rethink how companies find exceptional talent with user friendly software.",
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
@@ -37,9 +37,9 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <Script
+          data-token="7093d0f89af9208"
+          src="https://cdn.seline.com/seline.js"
           async
-          src="https://tracklyze.com/insight-core.js"
-          data-site-id="513ee7b5-37ad-4e7d-8d77-de12c19815df"
         ></Script>
       </head>
       <ReactQueryClientProvider>
