@@ -1,0 +1,117 @@
+export const article = {
+  author: 'Brett Schneider',
+  date: '2025-07-20',
+  title: 'Building an Early-Stage Software Product',
+  description:
+    'Reflections on shipping zero-to-one with speed: inspiration sources, MVP craft, AI coding tools, Vercel v0 prototyping, and feedback loops.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Writing software has never felt more exciting, and I have been eager to capture
+why. Since joining MeritFirst and taking another product to launch, I have
+reflected on what makes building this time feel different. I have landed on many
+new workflows, ideation processes, and problem-solving methods that feel like
+they have multiplied my leverage as an engineer. Most engineers can talk your
+ear off about the "best" tech stack or the perfect Git flow, but I want to focus
+on the net-new ways of thinking and building I have adopted recently.
+
+## Study elite teams
+
+As an entry point to everything, I found one exercise particularly helpful:
+compile a list of brilliant startups and study them in the most granular way
+possible. Turn over every rock on Twitter, Product Hunt, Reddit, or anywhere
+else that helps you find teams with extreme taste, talent, and product
+intuition. It is shocking how many resources these companies and their founders
+put in plain sight explaining how they operate. If you are lucky, you may even
+stumble across a company like PostHog or Resend that publishes its entire
+company handbook for the world to see (one of the coolest things I have found).
+I have some current favorites, but I could extend the list much further:
+[Linear](https://linear.app), [Vercel](https://vercel.com),
+[Resend](https://resend.com), [PostHog](https://posthog.com),
+[Ramp](https://ramp.com), [Midday](https://midday.ai), [Fey](https://fey.com),
+[Dub](https://dub.sh), [Supabase](https://supabase.com),
+[Planetscale](https://planetscale.com).
+
+## Design the MVP like the final product
+
+Along the lines of the last point, one blog post has become my north star for
+how I think about the zero-to-one phase: Linear's piece on [rethinking the
+startup
+MVP](https://linear.app/blog/rethinking-the-startup-mvp-building-a-competitive-product).
+For a while, the framing of early-stage building was to ship a bunch of stuff
+that did not need to look good or be fully functional, then magically perfect it
+later. The post argues this no longer works, and I agree. Now, more than ever,
+you need to deliver a truly exceptional experience from the beginning.
+
+## Multiply output with AI
+
+No surprise here, but Cursor has been a huge unlock for building at a fast pace.
+Delegating low-stakes tasks that would otherwise eat my time when I could be
+doing more important work is incredible. One example I like is letting Cursor
+nail pixel-perfect loading states once I finish building a new feature. It
+delivers that extra polish without the time cost. Things get even more
+interesting with tools that allow complete end-to-end AI pull requests. I have
+been experimenting with Seer by Sentry and OpenAI's Codex. They are amazing for
+triaging and fixing very specific issues on the fly. At first I was hesitant,
+but in many cases they provide a solid starting point or even write the correct
+code entirely. Having that head start feels like a real difference maker for
+fixing bugs, cleaning up UI, and more. If the code is wrong, there is not much
+lost; it was generated asynchronously while I tackled other tasks. Sentry's Seer
+even opens pull requests automatically for critical bugs, so I always have a
+place to start.
+
+The last tool that pleasantly surprised me is CodeRabbit's AI PR reviewer. I
+turned it on as an experiment, and it caught some niche issues before they
+reached production. Having another safeguard that might catch a bug first is
+wonderful. I understand the skepticism around these tools, but when AI
+integration does not cost much time or effort, it offers leverage we did not
+previously have. The review can be ignored, the Seer pull request can be closed
+with one click, and when these tools work, it is pretty incredible to watch.
+
+## Prototype in minutes with v0
+
+I could have squeezed this into the AI section, but v0 needs its own spotlight.
+The unlock it provides for every member of my team is wild. Among other things,
+v0 lets non-technical colleagues produce working prototypes for the features and
+ideas they are exploring. They can then hand off that prototype, with working
+code, to the engineering team and give us a fantastic starting point. All of
+these AI tools come back to one thing: the jump start. Starting at fifty percent
+instead of zero is a massive productivity boost.
+
+On the flip side, v0 is great for communicating my own ideas. Instead of
+explaining or sketching, I can present a new version of a feature, or even a
+completely new feature, with a functioning UI. If you are skeptical about AI
+tooling, at least give v0 a shot. The Vercel team really delivered, and you
+might be surprised by how quickly you can go from idea to fully functioning,
+shipped feature.
+
+## Close the feedback loop fast
+
+This one is simple. Add an extremely minimal, low-friction feedback,
+product-ideas, or bug-report button _everywhere_ in your app. Pipe it to Slack,
+email, or whatever lets you see submissions right away. Then, solve a problem
+reported through that form quickly, and you will earn user trust in no time.
+Many companies do this, but Ramp is spectacular at responding to customer
+feedback with speed. I have seen posts where they turn around a bug fix or new
+feature in record time, and it is good vibes all around. The customer feels
+seen, something important gets fixed or added, and everyone is happy.
+
+This is just one example, but creating as many feedback loops as possible is
+vital to understanding whether what you are building is actually helpful. You
+should not ship every single feature users request, and Linear's MVP post covers
+that, but collecting all feedback lets you make actionable product decisions and
+connect with users who need help, building their trust in your team.
+
+## Parting thoughts
+
+The gloom around AI misses the bigger picture. Jevons Paradox reminds us that
+greater efficiency leads to greater use, and we are only at the beginning of
+that curve. Writing software has never been more enjoyable or more impactful. I
+plan to keep exploring every new tool that appears, and I hope you do the same.
+Keep shipping.
