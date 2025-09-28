@@ -53,8 +53,8 @@ export default function About() {
             </p>
             <p>
               Curiosity keeps me moving. If you would like to trade ideas,
-              collaborate, or simply say hello, reach out through the links
-              below. I would love to connect.
+              collaborate, or simply say hello, reach out through the links on
+              the page. I would love to connect.
             </p>
           </div>
         </div>

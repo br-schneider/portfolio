@@ -67,11 +67,18 @@ Card.Title = function CardTitle<T extends React.ElementType = 'h2'>({
 
 Card.Description = function CardDescription({
   children,
+  className,
 }: {
   children: React.ReactNode
+  className?: string
 }) {
   return (
-    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+    <p
+      className={clsx(
+        'relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400',
+        className,
+      )}
+    >
       {children}
     </p>
   )

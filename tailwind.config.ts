@@ -1,6 +1,6 @@
 import typographyPlugin from '@tailwindcss/typography'
 import { type Config } from 'tailwindcss'
-import { fontFamily } from 'tailwindcss/defaultTheme'
+import defaultTheme from 'tailwindcss/defaultTheme'
 import typographyStyles from './typography'
 
 export default {
@@ -13,7 +13,7 @@ export default {
   plugins: [typographyPlugin, require('tailwindcss-animate')],
   theme: {
     fontFamily: {
-      sans: ['var(--font-sans)', ...fontFamily.sans],
+      sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],

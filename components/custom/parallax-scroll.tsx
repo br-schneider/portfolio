@@ -7,7 +7,7 @@ import { useRef, useState } from 'react'
 import ImageModal from './image-modal'
 
 const LoaderOverlay = () => (
-  <div className="absolute inset-0 flex items-center justify-center rounded-xl bg-background/80 backdrop-blur-sm">
+  <div className="absolute inset-0 flex items-center justify-center rounded-xl bg-background/80 backdrop-blur-xs">
     <div className="flex h-8 w-8 items-center justify-center">
       <div className="h-4 w-4 animate-spin rounded-full border-[2.5px] border-muted-foreground/25 border-t-muted-foreground" />
     </div>
@@ -73,7 +73,7 @@ export const ParallaxScroll = ({
                     }}
                     src={el}
                     className={cn(
-                      '!m-0 h-80 w-full cursor-pointer rounded-lg object-cover object-center !p-0 shadow-lg sm:h-96',
+                      'm-0! h-80 w-full cursor-pointer rounded-lg object-cover object-center p-0! shadow-lg sm:h-96',
                       loadingImages[el] && 'opacity-0',
                     )}
                     height="400"
@@ -96,7 +96,7 @@ export const ParallaxScroll = ({
                     }}
                     src={el}
                     className={cn(
-                      '!m-0 h-80 w-full cursor-pointer rounded-lg object-cover object-left-top !p-0 shadow-lg sm:h-96',
+                      'm-0! h-80 w-full cursor-pointer rounded-lg object-cover object-top-left p-0! shadow-lg sm:h-96',
                       loadingImages[el] && 'opacity-0',
                     )}
                     height="400"
@@ -119,7 +119,7 @@ export const ParallaxScroll = ({
                     }}
                     src={el}
                     className={cn(
-                      '!m-0 h-80 w-full cursor-pointer rounded-lg object-cover object-left-top !p-0 shadow-lg sm:h-96',
+                      'm-0! h-80 w-full cursor-pointer rounded-lg object-cover object-top-left p-0! shadow-lg sm:h-96',
                       loadingImages[el] && 'opacity-0',
                     )}
                     height="400"
@@ -142,7 +142,7 @@ export const ParallaxScroll = ({
                   }}
                   src={el}
                   className={cn(
-                    '!m-0 h-full w-full cursor-pointer rounded-lg object-cover object-left-top !p-0 shadow-lg',
+                    'm-0! h-full w-full cursor-pointer rounded-lg object-cover object-top-left p-0! shadow-lg',
                     loadingImages[el] && 'opacity-0',
                   )}
                   height="400"
