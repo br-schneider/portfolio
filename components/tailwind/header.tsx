@@ -185,7 +185,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/software">Software</NavItem>
         <NavItem href="/photography">Photos</NavItem>
         <NavItem href="/uses">Uses</NavItem>
-        <div className="flex items-center gap-3 pl-2">
+        <li className="ml-2 flex items-center gap-3 border-l border-zinc-200/60 pl-3 dark:border-white/10">
           <SocialLink
             href="https://linkedin.com/in/brettcschneider/"
             aria-label="Follow on LinkedIn"
@@ -198,7 +198,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
             icon={GitHubIcon}
             title="GitHub"
           />
-        </div>
+        </li>
       </ul>
     </nav>
   )
