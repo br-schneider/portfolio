@@ -1,16 +1,18 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
-
-import { ClassValue, clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
 import ImageModal from './image-modal'
 
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+const LoaderOverlay = () => (
+  <div className="absolute inset-0 flex items-center justify-center rounded-xl bg-background/80 backdrop-blur-sm">
+    <div className="flex h-8 w-8 items-center justify-center">
+      <div className="h-4 w-4 animate-spin rounded-full border-[2.5px] border-muted-foreground/25 border-t-muted-foreground" />
+    </div>
+  </div>
+)
 
 export const ParallaxScroll = ({
   images,
@@ -20,10 +22,7 @@ export const ParallaxScroll = ({
   className?: string
 }) => {
   const gridRef = useRef<any>(null)
-  const { scrollYProgress } = useScroll({
-    // container: gridRef, // remove this if your container is not fixed height
-    // offset: ['start start', 'end start'], // remove this if your container is not fixed height
-  })
+  const { scrollYProgress } = useScroll({})
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>(
     images.reduce((acc, img) => ({ ...acc, [img]: true }), {}),
@@ -64,11 +63,7 @@ export const ParallaxScroll = ({
           <div className="grid gap-4 sm:gap-10">
             {firstPart.map((el, idx) => (
               <div className="relative h-80 sm:h-96" key={'grid-1' + idx}>
-                {loadingImages[el] && (
-                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800">
-                    <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600"></div>
-                  </div>
-                )}
+                {loadingImages[el] && <LoaderOverlay />}
                 <motion.div
                   style={{ y: translateFirst }} // Apply the translateY motion value here
                 >
@@ -93,11 +88,7 @@ export const ParallaxScroll = ({
           <div className="grid gap-4 sm:gap-10">
             {secondPart.map((el, idx) => (
               <div className="relative h-80 sm:h-96" key={'grid-2' + idx}>
-                {loadingImages[el] && (
-                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800">
-                    <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600"></div>
-                  </div>
-                )}
+                {loadingImages[el] && <LoaderOverlay />}
                 <motion.div style={{ y: translateSecond }}>
                   <Image
                     onClick={() => {
@@ -120,11 +111,7 @@ export const ParallaxScroll = ({
           <div className="grid gap-4 sm:gap-10">
             {thirdPart.map((el, idx) => (
               <div className="relative h-80 sm:h-96" key={'grid-3' + idx}>
-                {loadingImages[el] && (
-                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800">
-                    <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600"></div>
-                  </div>
-                )}
+                {loadingImages[el] && <LoaderOverlay />}
                 <motion.div style={{ y: translateThird }}>
                   <Image
                     onClick={() => {
@@ -148,11 +135,7 @@ export const ParallaxScroll = ({
           <div className="grid gap-4 sm:hidden sm:gap-10">
             {images.map((el, idx) => (
               <div key={'grid-4' + idx} className="relative h-80">
-                {loadingImages[el] && (
-                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800">
-                    <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600"></div>
-                  </div>
-                )}
+                {loadingImages[el] && <LoaderOverlay />}
                 <Image
                   onClick={() => {
                     setSelectedImage(el)
