@@ -36,11 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
-        <Script
-          data-token="7093d0f89af9208"
-          src="https://cdn.seline.com/seline.js"
-          async
-        ></Script>
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            data-token="7093d0f89af9208"
+            src="https://cdn.seline.com/seline.js"
+            async
+          ></Script>
+        )}
       </head>
       <ReactQueryClientProvider>
         <body
