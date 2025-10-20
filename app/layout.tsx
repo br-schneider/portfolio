@@ -1,6 +1,7 @@
 import { ReactQueryClientProvider } from '@/components/custom/react-query-client-provider'
 import { Layout } from '@/components/tailwind/layout'
 import { cn } from '@/lib/utils'
+import { Analytics } from '@vercel/analytics/next'
 import { Metadata } from 'next'
 import { Be_Vietnam_Pro as FontSans } from 'next/font/google'
 import Script from 'next/script'
@@ -47,7 +48,7 @@ export default function RootLayout({
       <ReactQueryClientProvider>
         <body
           className={cn(
-            'min-h-screen bg-background font-sans antialiased',
+            'bg-background min-h-screen font-sans antialiased',
             fontSans.variable,
           )}
         >
@@ -56,6 +57,7 @@ export default function RootLayout({
               <Layout>{children}</Layout>
             </div>
           </Providers>
+          <Analytics />
         </body>
       </ReactQueryClientProvider>
     </html>
