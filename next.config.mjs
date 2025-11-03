@@ -1,10 +1,16 @@
-import rehypePrism from '@mapbox/rehype-prism'
 import nextMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
+
+const mdxOptions = {
+  remarkPlugins: [['remark-gfm']],
+  rehypePlugins: [['@mapbox/rehype-prism']],
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  experimental: {
+    mdxRs: false,
+  },
   images: {
     remotePatterns: [
       {
@@ -19,10 +25,7 @@ const nextConfig = {
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-  },
+  options: mdxOptions,
 })
 
 export default withMDX(nextConfig)
