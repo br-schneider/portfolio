@@ -21,7 +21,7 @@ export default async function Home() {
             Texas. I work on the team at&nbsp;
             <Link
               className="underline underline-offset-2 transition-colors hover:text-foreground"
-              href="https://www.meritfirst.us/"
+              href="https://www.meritfirst.us/?utm_source=bretts.dev"
             >
               MeritFirst
             </Link>

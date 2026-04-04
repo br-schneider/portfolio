@@ -12,54 +12,54 @@ export default function Uses() {
   return (
     <SimpleLayout
       title="Software I use, and things I recommend."
-      intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+      intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I'm really just procrastinating. Here's a big list of all of my favorite stuff."
     >
       <div className="flex flex-col space-y-10">
         <ToolsSection title="Engineering">
-          <Tool title="Unkey" href="https://unkey.com/">
+          <Tool title="Unkey" href="https://unkey.com/?utm_source=bretts.dev">
             Unkey is my go-to for API key management, rate limiting, and usage
             tracking. It is simple to integrate and gives you fine-grained
             control over how your APIs are consumed.
           </Tool>
-          <Tool title="TailwindCSS" href="https://tailwindcss.com/">
+          <Tool title="TailwindCSS" href="https://tailwindcss.com/?utm_source=bretts.dev">
             I rely on Tailwind for all my projects. I am sure you know it by
             now! I use it for all my projects, and it is a great tool for
             quickly building beautiful interfaces.
           </Tool>
-          <Tool title="Shadcn" href="https://ui.shadcn.com/">
+          <Tool title="Shadcn" href="https://ui.shadcn.com/?utm_source=bretts.dev">
             Beautifully designed components that you can copy and paste into
             your projects. They are simple, clean, and easy to use.
           </Tool>
-          <Tool title="Hono" href="https://hono.dev/">
+          <Tool title="Hono" href="https://hono.dev/?utm_source=bretts.dev">
             Hono is a modern, open-source web framework for building just about
             anything. It has a beautiful DX and has some of the best typescript
             support I have seen in a while.
           </Tool>
-          <Tool title="Nextjs" href="https://nextjs.org/">
+          <Tool title="Nextjs" href="https://nextjs.org/?utm_source=bretts.dev">
             Next.js is my go-to for all React projects. It is an excellent
             framework for developing static, server-rendered, and hybrid React
             applications.
           </Tool>
-          <Tool title="Vercel" href="https://vercel.com/">
+          <Tool title="Vercel" href="https://vercel.com/?utm_source=bretts.dev">
             I use Vercel for most of my websites. It is highly flexible and
             user-friendly, capable of scaling with my site and providing
             numerous outstanding features out of the box.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Design">
-          <Tool title="v0" href="https://v0.dev/">
+          <Tool title="v0" href="https://v0.dev/?utm_source=bretts.dev">
             I find v0 to be a great tool for creating beautiful designs. It can
             be used by just about anyone and helps you get going on building
             features.
           </Tool>
-          <Tool title="Figma" href="https://www.figma.com/">
+          <Tool title="Figma" href="https://www.figma.com/?utm_source=bretts.dev">
             Figma is my preferred tool for all design work, including
             wireframes, prototypes, and final designs. It is an excellent
             platform for collaboration with others.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Analytics">
-          <Tool title="Dub" href="https://dub.co">
+          <Tool title="Dub" href="https://dub.co?utm_source=bretts.dev">
             Dub is a fun way to see who clicks on your links. They have built a
             truly amazing platform, loaded with features for every use case.
           </Tool>
@@ -67,18 +67,18 @@ export default function Uses() {
         <ToolsSection title="Utilities">
           <Tool
             title="Monitor Control"
-            href="https://github.com/MonitorControl/MonitorControl"
+            href="https://github.com/MonitorControl/MonitorControl?utm_source=bretts.dev"
           >
             Monitor Control is a macOS app that allows you to control your
             external monitor&apos;s brightness, contrast, and volume. It is a
             fantastic tool for managing your monitor settings.
           </Tool>
-          <Tool title="Raycast" href="https://www.raycast.com/">
+          <Tool title="Raycast" href="https://www.raycast.com/?utm_source=bretts.dev">
             Raycast is a productivity tool for macOS that lets you control your
             tools with a few keystrokes. It is a fantastic way to save time and
             stay focused on your work.
           </Tool>
-          <Tool title="Rectangle" href="https://rectangleapp.com/">
+          <Tool title="Rectangle" href="https://rectangleapp.com/?utm_source=bretts.dev">
             Rectangle is a window management app for macOS that allows you to
             move and resize windows with ease.
           </Tool>
