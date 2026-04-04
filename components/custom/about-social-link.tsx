@@ -18,9 +18,9 @@ export default function AboutSocialLink({
       <Link
         href={href}
         target="_blank"
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-sky-500 dark:text-zinc-200 dark:hover:text-sky-500"
+        className="group flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-sky-500" />
+        <Icon className="h-5 w-5 flex-none fill-muted-foreground transition-colors group-hover:fill-foreground" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>

@@ -1,6 +1,6 @@
-import { Card } from '@/components/tailwind/card'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { getAllArticles } from '../../lib/articles'
 import { formatDate } from '../../lib/formatDate'
 
@@ -13,32 +13,21 @@ type Article = {
 
 function Article({ article }: { article: Article }) {
   return (
-    <article className="md:grid md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
-        <Card.Title href={`/articles/${article.slug}`}>
-          {article.title}
-        </Card.Title>
-        <Card.Eyebrow
-          as="time"
-          dateTime={article.date}
-          className="md:hidden"
-          decorate
-        >
-          {formatDate(article.date)}{' '}
-          {/* <ArticleViews slug={article.slug} separator /> */}
-        </Card.Eyebrow>
-
-        <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read article</Card.Cta>
-      </Card>
-      <Card.Eyebrow
-        as="time"
-        dateTime={article.date}
-        className="mt-1 hidden md:block "
+    <article>
+      <Link
+        href={`/articles/${article.slug}`}
+        className="group flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
       >
-        <div> {formatDate(article.date)}</div>
-        {/* <ArticleViews slug={article.slug} /> */}
-      </Card.Eyebrow>
+        <span className="text-sm font-medium text-foreground transition-colors group-hover:text-muted-foreground">
+          {article.title}
+        </span>
+        <time
+          dateTime={article.date}
+          className="flex-none text-xs text-muted-foreground sm:text-sm sm:tabular-nums"
+        >
+          {formatDate(article.date)}
+        </time>
+      </Link>
     </article>
   )
 }
@@ -57,12 +46,10 @@ export default async function ArticlesPage() {
       title="My Thoughts on Software and Business Strategy."
       intro="Dive into my analyses on software design, business strategy, and technological advancements in the industry."
     >
-      <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-        <div className="flex max-w-3xl flex-col space-y-16">
-          {articles.map((article) => (
-            <Article key={article.slug} article={article} />
-          ))}
-        </div>
+      <div className="flex flex-col divide-y divide-border">
+        {articles.map((article) => (
+          <Article key={article.slug} article={article} />
+        ))}
       </div>
     </SimpleLayout>
   )

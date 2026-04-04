@@ -1,5 +1,5 @@
-import { Card } from '@/components/tailwind/card'
 import { formatDate } from '@/lib/formatDate'
+import Link from 'next/link'
 
 export default function Article({
   article,
@@ -12,16 +12,19 @@ export default function Article({
   }
 }) {
   return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}{' '}
-        {/* <ArticleViews slug={article.slug} separator /> */}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
+    <article className="flex flex-col gap-1">
+      <div className="flex items-baseline justify-between gap-4">
+        <h2 className="text-base font-medium text-foreground">
+          <Link href={`/articles/${article.slug}`}>{article.title}</Link>
+        </h2>
+        <time
+          dateTime={article.date}
+          className="hidden flex-none text-sm tabular-nums text-muted-foreground sm:block"
+        >
+          {formatDate(article.date)}
+        </time>
+      </div>
+      <p className="text-sm text-muted-foreground">{article.description}</p>
+    </article>
   )
 }

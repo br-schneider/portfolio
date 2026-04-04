@@ -3,7 +3,7 @@ import { Layout } from '@/components/tailwind/layout'
 import { cn } from '@/lib/utils'
 import { Analytics } from '@vercel/analytics/next'
 import { Metadata } from 'next'
-import { Be_Vietnam_Pro as FontSans } from 'next/font/google'
+import { Inter as FontSans } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { Providers } from './providers'
@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ['400', '500', '600'],
   display: 'swap',
 })
 
@@ -37,12 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
-        {process.env.NODE_ENV === 'production' && (
+        {process.env.NODE_ENV === 'development' && (
           <Script
-            data-token="7093d0f89af9208"
-            src="https://cdn.seline.com/seline.js"
-            async
-          ></Script>
+            src="//unpkg.com/react-grab/dist/index.global.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
         )}
       </head>
       <ReactQueryClientProvider>
