@@ -56,8 +56,7 @@ export default function About() {
                 on real-world results.
               </p>
               <p>
-                My work sits at the intersection of code and entrepreneurship. I
-                have launched SaaS products, grown design systems, and led
+                I have launched SaaS products, grown design systems, and led
                 early-stage teams from first sketch to public release. Whatever
                 the project, my goal is to make technology friendly and valuable
                 for the people who rely on it.
