@@ -25,8 +25,7 @@ export default async function Home() {
             >
               MeritFirst
             </Link>
-            , where we are rethinking how companies discover exceptional talent
-            and building software that makes hiring simpler.
+            , where we are rethinking how companies discover exceptional talent.
           </p>
           <div className="mt-4 flex gap-4">
             <SocialLink
