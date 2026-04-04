@@ -54,7 +54,7 @@ export default function Resume() {
         </h2>
         <button
           onClick={handleDownload}
-          className="text-xs text-muted-foreground/80 transition-colors hover:text-foreground"
+          className="text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
           Resume &darr;
         </button>
