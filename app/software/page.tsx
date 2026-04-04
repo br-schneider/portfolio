@@ -49,7 +49,7 @@ export default function Projects() {
               <Link
                 href={project.href}
                 target="_blank"
-                className="flex-none text-xs text-muted-foreground/60 transition-colors hover:text-foreground"
+                className="flex-none text-xs text-muted-foreground/80 transition-colors hover:text-foreground"
               >
                 {project.label} ↗
               </Link>

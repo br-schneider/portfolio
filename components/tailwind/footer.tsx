@@ -35,7 +35,7 @@ export function Footer() {
                 <NavLink href="/photography">Photos</NavLink>
                 <NavLink href="/uses">Uses</NavLink>
               </div>
-              <p className="text-sm text-muted-foreground/60">
+              <p className="text-sm text-muted-foreground/80">
                 &copy; {new Date().getFullYear()} Brett Schneider
               </p>
             </div>
