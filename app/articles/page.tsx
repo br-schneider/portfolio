@@ -18,7 +18,7 @@ function Article({ article }: { article: Article }) {
         href={`/articles/${article.slug}`}
         className="group flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
       >
-        <span className="text-sm font-medium text-foreground transition-colors group-hover:text-muted-foreground">
+        <span className="text-sm font-medium text-foreground underline-offset-2 group-hover:underline">
           {article.title}
         </span>
         <time

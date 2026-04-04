@@ -10,7 +10,7 @@ export function Tool({
   children: React.ReactNode
 }) {
   return (
-    <Card as="li" className="">
+    <Card as="li">
       <Card.Title as="h3" href={href}>
         {title}
       </Card.Title>

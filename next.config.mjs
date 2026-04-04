@@ -9,6 +9,10 @@ const mdxOptions = {
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   experimental: {
+    // Enable filesystem caching for `next dev`
+    turbopackFileSystemCacheForDev: true,
+    // Enable filesystem caching for `next build`
+    turbopackFileSystemCacheForBuild: true,
     mdxRs: false,
   },
   images: {

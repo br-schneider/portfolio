@@ -12,7 +12,7 @@ export default function Photos() {
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <div
             key={image.src}
-            className="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-lg bg-muted sm:w-72 sm:rounded-lg"
+            className="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-lg bg-muted sm:w-72"
           >
             <Image
               src={image}

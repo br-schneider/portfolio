@@ -1,9 +1,8 @@
 import Article from '@/components/custom/article'
-import Newsletter from '@/components/custom/newsletter'
 import Resume from '@/components/custom/resume'
 import SocialLink from '@/components/custom/social-link'
 import { Container } from '@/components/tailwind/container'
-import { GitHubIcon, LinkedInIcon } from '@/components/tailwind/social-icons'
+import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/tailwind/social-icons'
 import { getAllArticles } from '@/lib/articles'
 import Link from 'next/link'
 
@@ -21,7 +20,7 @@ export default async function Home() {
             Hi, I&apos;m Brett, a software engineer and entrepreneur based in Austin,
             Texas. I work on the team at&nbsp;
             <Link
-              className="underline underline-offset-2 hover:text-foreground"
+              className="underline underline-offset-2 transition-colors hover:text-foreground"
               href="https://www.meritfirst.us/"
             >
               MeritFirst
@@ -30,6 +29,12 @@ export default async function Home() {
             and building software that makes hiring simpler.
           </p>
           <div className="mt-4 flex gap-4">
+            <SocialLink
+              href="https://x.com/brettcschneids"
+              aria-label="Follow on X"
+              icon={XIcon}
+              title="X"
+            />
             <SocialLink
               href="https://linkedin.com/in/brettcschneider/"
               aria-label="Follow on LinkedIn"
@@ -51,8 +56,7 @@ export default async function Home() {
           ))}
         </div>
 
-        <div className="mt-14 space-y-14">
-          <Newsletter />
+        <div className="mt-14">
           <Resume />
         </div>
       </div>

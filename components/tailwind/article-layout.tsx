@@ -39,7 +39,7 @@ export function ArticleLayout({
               </h1>
               <time
                 dateTime={article.date}
-                className="mt-2 text-sm text-muted-foreground"
+                className="mt-2 text-sm tabular-nums text-muted-foreground"
               >
                 {formatDate(article.date)}
               </time>

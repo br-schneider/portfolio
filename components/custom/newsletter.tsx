@@ -22,10 +22,6 @@ export default function Newsletter() {
       onSubmit={handleSubmit}
       className="space-y-4"
     >
-      <h2 className="text-sm font-medium text-foreground">
-        Stay up to date
-      </h2>
-
       <p className="text-sm text-muted-foreground">
         Get notified when I publish something new, and unsubscribe at any time.
       </p>

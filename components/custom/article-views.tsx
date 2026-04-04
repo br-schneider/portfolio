@@ -35,9 +35,9 @@ export default function ArticleViews({
   return (
     <>
       {separator && '•'}
-      <strong className={separator ? 'pl-1' : ''}>
+      <span className={separator ? 'pl-1 font-medium' : 'font-medium'}>
         {data?.views ?? 0} views
-      </strong>
+      </span>
     </>
   )
 }
