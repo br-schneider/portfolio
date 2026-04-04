@@ -1,8 +1,7 @@
 import Article from '@/components/custom/article'
 import Resume from '@/components/custom/resume'
-import SocialLink from '@/components/custom/social-link'
+import SocialIconsRow from '@/components/custom/social-icons-row'
 import { Container } from '@/components/tailwind/container'
-import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/tailwind/social-icons'
 import { getAllArticles } from '@/lib/articles'
 import Link from 'next/link'
 
@@ -27,25 +26,8 @@ export default async function Home() {
             </Link>
             , where we are rethinking how companies discover exceptional talent.
           </p>
-          <div className="mt-4 flex gap-4">
-            <SocialLink
-              href="https://x.com/brettcschneids"
-              aria-label="Follow on X"
-              icon={XIcon}
-              title="X"
-            />
-            <SocialLink
-              href="https://linkedin.com/in/brettcschneider/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-              title="LinkedIn"
-            />
-            <SocialLink
-              href="https://github.com/br-schneider"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-              title="GitHub"
-            />
+          <div className="mt-4">
+            <SocialIconsRow />
           </div>
         </div>
 
