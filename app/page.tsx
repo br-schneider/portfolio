@@ -12,14 +12,14 @@ export default async function Home() {
     <Container className="mt-10 sm:mt-14">
       <div className="stagger">
         <div className="max-w-2xl">
-          <h1 className="text-2xl font-medium tracking-tight text-foreground">
+          <h1 className="text-foreground text-2xl font-medium tracking-tight">
             Founding Software Engineer at MeritFirst
           </h1>
-          <p className="mt-4 text-base text-muted-foreground">
-            Hi, I&apos;m Brett, a software engineer and entrepreneur based in Austin,
-            Texas. I work on the team at&nbsp;
+          <p className="text-muted-foreground mt-4 text-base">
+            Hi, I&apos;m Brett, a software engineer and entrepreneur based in
+            Austin, Texas. I work on the team at
             <Link
-              className="underline underline-offset-2 transition-colors hover:text-foreground"
+              className="hover:text-foreground underline underline-offset-2 transition-colors"
               href="https://www.meritfirst.us/?utm_source=bretts.dev"
             >
               MeritFirst
