@@ -17,14 +17,14 @@ export default async function Home() {
           </h1>
           <p className="text-muted-foreground mt-4 text-base">
             Hi, I&apos;m Brett, a software engineer and entrepreneur based in
-            Austin, Texas. I work on the team at&nbsp;
+            Austin, Texas. I work on the team at{' '}
             <Link
               className="hover:text-foreground underline underline-offset-2 transition-colors"
               href="https://www.meritfirst.us/?utm_source=bretts.dev"
             >
               MeritFirst
-            </Link>
-            , where we are rethinking how companies discover exceptional talent.
+            </Link>, where we are rethinking how companies discover exceptional
+            talent.
           </p>
           <div className="mt-4">
             <SocialIconsRow />
