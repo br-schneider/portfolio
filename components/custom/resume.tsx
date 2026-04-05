@@ -21,7 +21,7 @@ export default function Resume() {
       end: '2024',
     },
     {
-      company: 'Cervello',
+      company: 'Kearney',
       title: 'Software Engineer',
       start: '2021',
       end: '2022',
@@ -49,12 +49,10 @@ export default function Resume() {
   return (
     <div className="space-y-4">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-sm font-medium text-foreground">
-          Work
-        </h2>
+        <h2 className="text-foreground text-sm font-medium">Work</h2>
         <button
           onClick={handleDownload}
-          className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+          className="text-muted-foreground hover:text-foreground text-xs transition-colors"
         >
           Resume &darr;
         </button>
@@ -63,16 +61,14 @@ export default function Resume() {
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex flex-col gap-0.5">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-foreground">
+              <span className="text-foreground text-sm font-medium">
                 {role.company}
               </span>
-              <span className="text-sm tabular-nums text-muted-foreground">
+              <span className="text-muted-foreground text-sm tabular-nums">
                 {role.start} &mdash; {role.end}
               </span>
             </div>
-            <span className="text-sm text-muted-foreground">
-              {role.title}
-            </span>
+            <span className="text-muted-foreground text-sm">{role.title}</span>
           </li>
         ))}
       </ol>
