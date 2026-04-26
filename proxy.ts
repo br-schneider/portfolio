@@ -24,6 +24,26 @@ function htmlToMarkdown(html: string): string {
   $('script, style, noscript, svg, link[rel="preload"]').remove()
   const main = $('main').first()
   const root = main.length ? main : $('body')
+
+  root.find('a').each((_, el) => {
+    const $a = $(el)
+    const href = $a.attr('href')
+    if (!href) return
+
+    const $heading = $a.find('h1,h2,h3,h4,h5,h6').first()
+    if ($heading.length) {
+      const text = $heading.text().trim()
+      $heading.empty().append($('<a></a>').attr('href', href).text(text))
+      $a.replaceWith($a.contents())
+      return
+    }
+
+    if (!$a.text().trim()) {
+      const label = ($a.attr('aria-label') || $a.attr('title') || '').trim()
+      if (label) $a.text(label)
+    }
+  })
+
   return turndown.turndown(root.html() || '').trim()
 }
 
