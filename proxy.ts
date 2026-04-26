@@ -22,6 +22,10 @@ function wantsMarkdown(accept: string | null): boolean {
 function htmlToMarkdown(html: string): string {
   const $ = cheerio.load(html)
   $('script, style, noscript, svg, link[rel="preload"]').remove()
+  $('img').each((_, el) => {
+    const $img = $(el)
+    if (!($img.attr('alt') || '').trim()) $img.remove()
+  })
   const main = $('main').first()
   const root = main.length ? main : $('body')
 
@@ -35,6 +39,16 @@ function htmlToMarkdown(html: string): string {
       const text = $heading.text().trim()
       $heading.empty().append($('<a></a>').attr('href', href).text(text))
       $a.replaceWith($a.contents())
+      return
+    }
+
+    const $time = $a.find('time').first()
+    if ($time.length) {
+      const dateText = $time.text().trim()
+      $time.remove()
+      const titleText = $a.text().trim()
+      $a.empty().text(titleText)
+      if (dateText) $a.after(` — ${dateText}`)
       return
     }
 
