@@ -25,6 +25,29 @@ const nextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: '/',
+        headers: [
+          {
+            key: 'Link',
+            value: [
+              '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+              '</feed.xml>; rel="alternate"; type="application/rss+xml"; title="Articles RSS feed"',
+              '</sitemap.xml>; rel="describedby"; type="application/xml"',
+            ].join(', '),
+          },
+        ],
+      },
+      {
+        source: '/.well-known/api-catalog',
+        headers: [
+          { key: 'Content-Type', value: 'application/linkset+json' },
+        ],
+      },
+    ]
+  },
 }
 
 const withMDX = nextMDX({

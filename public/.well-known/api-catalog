@@ -1,0 +1,21 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://bretts.dev/",
+      "service-doc": [
+        {
+          "href": "https://bretts.dev/feed.xml",
+          "type": "application/rss+xml",
+          "title": "Articles RSS feed"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://bretts.dev/sitemap.xml",
+          "type": "application/xml",
+          "title": "Sitemap"
+        }
+      ]
+    }
+  ]
+}
