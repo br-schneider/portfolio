@@ -1,6 +1,6 @@
 # My Site
 
-Welcome to my website! I'm excited to share with you some of my thoughts I have developed as a founding software engineer.
+Welcome to my website! I'm excited to share with you some of my thoughts I have developed as a founding engineer.
 
 This website is built using some of my favorite web technologies and frameworks, including [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com).
 

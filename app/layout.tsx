@@ -11,7 +11,7 @@ import { Providers } from './providers'
 export const metadata: Metadata = {
   title: {
     template: '%s - Brett Schneider',
-    default: 'Brett Schneider - Founding Software Engineer at MeritFirst',
+    default: 'Brett Schneider - Founding Engineer at MeritFirst',
   },
   description:
     "Hi, I'm Brett, a software engineer and entrepreneur in Austin. At MeritFirst I rethink how companies find exceptional talent with user friendly software.",

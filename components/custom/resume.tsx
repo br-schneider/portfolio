@@ -4,19 +4,19 @@ export default function Resume() {
   const resume = [
     {
       company: 'MeritFirst',
-      title: 'Founding Software Engineer',
+      title: 'Founding Engineer',
       start: '2025',
       end: 'Present',
     },
     {
       company: 'Concentro',
-      title: 'Founding Software Engineer',
+      title: 'Founding Engineer',
       start: '2024',
       end: '2025',
     },
     {
       company: 'Gladiate',
-      title: 'Founding Software Engineer',
+      title: 'Founding Engineer',
       start: '2022',
       end: '2024',
     },

@@ -6,14 +6,15 @@ import { getAllArticles } from '@/lib/articles'
 import Link from 'next/link'
 
 export default async function Home() {
-  const articles = (await getAllArticles()).slice(0, 3)
+  const allArticles = await getAllArticles()
+  const displayedArticles = allArticles.slice(0, 3)
 
   return (
     <Container className="mt-10 sm:mt-14">
       <div className="stagger">
         <div className="max-w-2xl">
           <h1 className="text-foreground text-2xl font-medium tracking-tight">
-            Founding Software Engineer at MeritFirst
+            Founding Engineer at MeritFirst
           </h1>
           <p className="text-muted-foreground mt-4 text-base">
             Hi, I&apos;m Brett, a software engineer and entrepreneur based in
@@ -23,8 +24,8 @@ export default async function Home() {
               href="https://www.meritfirst.us/?utm_source=bretts.dev"
             >
               MeritFirst
-            </Link>, where we are rethinking how companies discover exceptional
-            talent.
+            </Link>
+            , where we are rethinking how companies discover exceptional talent.
           </p>
           <div className="mt-4">
             <SocialIconsRow />
@@ -32,7 +33,7 @@ export default async function Home() {
         </div>
 
         <div className="mt-14 flex flex-col gap-16">
-          {articles.map((article) => (
+          {displayedArticles.map((article) => (
             <Article key={article.slug} article={article} />
           ))}
         </div>
