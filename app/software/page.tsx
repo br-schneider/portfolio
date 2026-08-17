@@ -8,15 +8,8 @@ const projects = [
     name: 'nextjs-nav-guard',
     description:
       'The original next-navigation-guard package was abandoned and broke on newer versions of Next.js. I forked it, fixed the runtime crashes, removed the deprecated Pages Router support, and have been maintaining it since. It gives you a simple hook to prevent users from navigating away from unsaved changes.',
-    href: 'https://nextjs-nav-guard-personal-66985.unkey.app/',
+    href: 'https://nextjs-nav-guard.vercel.app/',
     label: 'view project',
-  },
-  {
-    name: 'BoltBudget',
-    description:
-      'I was tired of using a spreadsheet to track my budget and wanted something that is easy to use from my phone. I created a simple app to help me track my budget. Its relatively opinionated in how it works and is free for anyone to use.',
-    href: 'https://try.boltbudget.com/1B8Y1',
-    label: 'boltbudget.com',
   },
   {
     name: 'SelfPing',
@@ -24,6 +17,13 @@ const projects = [
       'For a variety of reasons, I needed to be able to text myself via api. I found it annoyingly difficult to find a quick and easy solution. Here is a simple app that allows you to text yourself via api. It is cost effective and easy to use.',
     href: 'https://try.selfping.com/GWujuwd',
     label: 'selfping.com',
+  },
+  {
+    name: 'BoltBudget',
+    description:
+      'I was tired of using a spreadsheet to track my budget and wanted something that is easy to use from my phone. I created a simple app to help me track my budget. Its relatively opinionated in how it works and is free for anyone to use.',
+    href: 'https://try.boltbudget.com/1B8Y1',
+    label: 'boltbudget.com',
   },
 ]
 
