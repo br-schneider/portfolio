@@ -7,7 +7,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    "I'm Brett, a software engineer and entrepreneur based in Austin. I build products that turn complex ideas into clear, useful software.",
+    "I'm Brett, CTO of Analyst House and Analyst House Labs, based in Austin. I build finance software and AI tools for accounting teams and businesses.",
 }
 
 export default function About() {
@@ -21,34 +21,39 @@ export default function About() {
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rounded-lg bg-muted object-cover"
+                className="bg-muted aspect-square rounded-lg object-cover"
               />
             </div>
             <SocialIconsRow />
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-2xl font-medium tracking-tight text-foreground">
+            <h1 className="text-foreground text-2xl font-medium tracking-tight">
               I&apos;m Brett, an entrepreneur building companies in Austin
             </h1>
 
-            <div className="mt-6 space-y-6 text-base text-muted-foreground">
+            <div className="text-muted-foreground mt-6 space-y-6 text-base">
               <p>
-                I build products that turn complex ideas into clear, useful
-                software. Over the years I have shipped production systems and
-                guided lean teams at venture-backed startups, always with an eye
-                on real-world results.
+                I&apos;m CTO of Analyst House and Analyst House Labs, building
+                software for accounting teams and the businesses they support.
+                Analyst House provides accounting and CFO services, and Labs
+                builds the technology behind them.
               </p>
               <p>
-                I have launched SaaS products, grown design systems, and led
-                early-stage teams from first sketch to public release. Whatever
-                the project, my goal is to make technology friendly and valuable
-                for the people who rely on it.
+                My work spans practice management, client portals, and AI agents
+                that help people understand their finances. We build for Analyst
+                House first, with the goal of bringing those tools to other
+                firms and finance teams.
               </p>
               <p>
-                I care deeply about the way design and engineering meet. A product
-                shines when its logic feels effortless and its interface feels
-                welcoming, so I shape clean architecture, intuitive flows, and
-                purposeful features at every step.
+                Before Analyst House, I was a founding engineer at MeritFirst,
+                Concentro, and Gladiate, taking products from early ideas to
+                production.
+              </p>
+              <p>
+                I care deeply about the way design and engineering meet. A
+                product shines when its logic feels effortless and its interface
+                feels welcoming, so I shape clean architecture, intuitive flows,
+                and purposeful features at every step.
               </p>
               <p>
                 Curiosity keeps me moving. If you would like to trade ideas,
@@ -57,7 +62,6 @@ export default function About() {
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </Container>

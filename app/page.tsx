@@ -14,18 +14,19 @@ export default async function Home() {
       <div className="stagger">
         <div className="max-w-2xl">
           <h1 className="text-foreground text-2xl font-medium tracking-tight">
-            Founding Engineer at MeritFirst
+            CTO at Analyst House
           </h1>
           <p className="text-muted-foreground mt-4 text-base">
             Hi, I&apos;m Brett, a software engineer and entrepreneur based in
-            Austin, Texas. I work on the team at{' '}
+            Austin, Texas. I&apos;m CTO at{' '}
             <Link
               className="hover:text-foreground underline underline-offset-2 transition-colors"
-              href="https://www.meritfirst.us/?utm_source=bretts.dev"
+              href="https://www.analysthouse.io/?utm_source=bretts.dev"
             >
-              MeritFirst
-            </Link>
-            , where we are rethinking how companies discover exceptional talent.
+              Analyst House
+            </Link>{' '}
+            and Analyst House Labs, building finance software and AI tools for
+            accounting teams and the businesses they support.
           </p>
           <div className="mt-4">
             <SocialIconsRow />

@@ -3,10 +3,16 @@
 export default function Resume() {
   const resume = [
     {
+      company: 'Analyst House',
+      title: 'CTO, Analyst House & Analyst House Labs',
+      start: '2026',
+      end: 'Present',
+    },
+    {
       company: 'MeritFirst',
       title: 'Founding Engineer',
       start: '2025',
-      end: 'Present',
+      end: '2026',
     },
     {
       company: 'Concentro',
@@ -65,7 +71,7 @@ export default function Resume() {
                 {role.company}
               </span>
               <span className="text-muted-foreground text-sm tabular-nums">
-                {role.start} &mdash; {role.end}
+                {role.start} - {role.end}
               </span>
             </div>
             <span className="text-muted-foreground text-sm">{role.title}</span>
