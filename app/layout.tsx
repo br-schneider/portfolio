@@ -9,12 +9,13 @@ import './globals.css'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bretts.dev'),
   title: {
     template: '%s - Brett Schneider',
-    default: 'Brett Schneider - Founding Engineer at MeritFirst',
+    default: 'Brett Schneider - CTO at Analyst House',
   },
   description:
-    "Hi, I'm Brett, a software engineer and entrepreneur in Austin. At MeritFirst I rethink how companies find exceptional talent with user friendly software.",
+    "Hi, I'm Brett, CTO of Analyst House in Austin. I build finance software and AI tools for accounting teams and the businesses they support.",
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

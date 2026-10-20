@@ -33,6 +33,7 @@ export default function About() {
 
             <div className="mt-6 space-y-6 text-base text-muted-foreground">
               <p>
+                I&apos;m currently CTO at Analyst House.
                 I build products that turn complex ideas into clear, useful
                 software. Over the years I have shipped production systems and
                 guided lean teams at venture-backed startups, always with an eye
