@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: 'Brett Schneider - CTO at Analyst House',
   },
   description:
-    "Hi, I'm Brett, CTO of Analyst House and Analyst House Labs in Austin. I build finance software and AI tools for accounting teams and the businesses they support.",
+    "Hi, I'm Brett, CTO of Analyst House in Austin. I build finance software and AI tools for accounting teams and the businesses they support.",
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

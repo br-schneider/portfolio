@@ -24,9 +24,9 @@ export default async function Home() {
               href="https://www.analysthouse.io/?utm_source=bretts.dev"
             >
               Analyst House
-            </Link>{' '}
-            and Analyst House Labs, building finance software and AI tools for
-            accounting teams and the businesses they support.
+            </Link>
+            , building finance software and AI tools for accounting teams and
+            the businesses they support.
           </p>
           <div className="mt-4">
             <SocialIconsRow />

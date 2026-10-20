@@ -7,7 +7,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    "I'm Brett, CTO of Analyst House and Analyst House Labs, based in Austin. I build finance software and AI tools for accounting teams and businesses.",
+    "I'm Brett, CTO of Analyst House, based in Austin. I build finance software and AI tools for accounting teams and businesses.",
 }
 
 export default function About() {
@@ -33,10 +33,9 @@ export default function About() {
 
             <div className="text-muted-foreground mt-6 space-y-6 text-base">
               <p>
-                I&apos;m CTO of Analyst House and Analyst House Labs, building
-                software for accounting teams and the businesses they support.
-                Analyst House provides accounting and CFO services, and Labs
-                builds the technology behind them.
+                I&apos;m CTO of Analyst House, building software for accounting
+                teams and the businesses they support. Analyst House provides
+                accounting and CFO services.
               </p>
               <p>
                 My work spans practice management, client portals, and AI agents

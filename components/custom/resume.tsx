@@ -4,7 +4,7 @@ export default function Resume() {
   const resume = [
     {
       company: 'Analyst House',
-      title: 'CTO, Analyst House & Analyst House Labs',
+      title: 'CTO',
       start: '2026',
       end: 'Present',
     },
