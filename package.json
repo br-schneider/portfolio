@@ -38,7 +38,7 @@
     "fast-glob": "^3.2.11",
     "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^14.7.1",
     "lru-cache": "^10.2.2",
     "lucide-react": "^0.438.0",
     "moment": "^2.29.4",

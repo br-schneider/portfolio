@@ -2,10 +2,11 @@
 
 import { Container } from '@/components/tailwind/container'
 import clsx from 'clsx'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 
 function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -42,17 +43,12 @@ function MoonIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
   const otherTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   return (
     <button
       type="button"
-      aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
-      className="text-muted-foreground transition-colors hover:text-foreground"
+      aria-label="Toggle theme"
+      className="text-muted-foreground hover:text-foreground transition-colors"
       onClick={() => setTheme(otherTheme)}
     >
       <SunIcon className="h-5 w-5 fill-current stroke-current dark:hidden" />
@@ -64,15 +60,19 @@ function ThemeToggle() {
 function NavLink({
   href,
   children,
+  onClick,
 }: {
   href: string
   children: React.ReactNode
+  onClick?: () => void
 }) {
   const isActive = usePathname() === href
 
   return (
     <Link
       href={href}
+      onClick={onClick}
+      aria-current={isActive ? 'page' : undefined}
       className={clsx(
         'transition-colors',
         isActive
@@ -114,14 +114,60 @@ function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const menuId = useId()
+  const reduceMotion = useReducedMotion()
+  const closedTransform = reduceMotion ? 'translateY(0px)' : 'translateY(-6px)'
+
+  function closeMenu() {
+    setMobileMenuOpen(false)
+  }
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+
+    function onPointerDown(event: PointerEvent) {
+      if (
+        event.target instanceof Node &&
+        !headerRef.current?.contains(event.target)
+      ) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false)
+        buttonRef.current?.focus()
+      }
+    }
+
+    function dismiss() {
+      setMobileMenuOpen(false)
+    }
+
+    const desktop = window.matchMedia('(min-width: 768px)')
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    window.addEventListener('popstate', dismiss)
+    desktop.addEventListener('change', dismiss)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+      window.removeEventListener('popstate', dismiss)
+      desktop.removeEventListener('change', dismiss)
+    }
+  }, [mobileMenuOpen])
 
   return (
-    <header className="relative z-50 w-full">
+    <header ref={headerRef} className="relative z-50 w-full">
       <Container>
         <div className="flex items-center justify-between py-6">
           <Link
             href="/"
-            className="text-sm font-medium text-foreground"
+            onClick={closeMenu}
+            className="text-foreground text-sm font-medium"
           >
             Brett Schneider
           </Link>
@@ -140,10 +186,13 @@ export function Header() {
           <div className="flex items-center gap-4 md:hidden">
             <ThemeToggle />
             <button
+              ref={buttonRef}
               type="button"
-              aria-label="Toggle menu"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls={mobileMenuOpen ? menuId : undefined}
+              className="text-muted-foreground hover:text-foreground focus-visible:outline-ring relative -me-3 flex size-11 items-center justify-center rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+              onClick={() => setMobileMenuOpen((open) => !open)}
             >
               {mobileMenuOpen ? (
                 <CloseIcon className="h-5 w-5" />
@@ -153,18 +202,49 @@ export function Header() {
             </button>
           </div>
         </div>
-
-        {/* Mobile nav */}
-        {mobileMenuOpen && (
-          <nav className="flex flex-col gap-4 border-t border-border pb-6 pt-4 text-sm md:hidden">
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/articles">Articles</NavLink>
-            <NavLink href="/software">Software</NavLink>
-            <NavLink href="/photography">Photos</NavLink>
-            <NavLink href="/uses">Uses</NavLink>
-          </nav>
-        )}
       </Container>
+
+      {/* Mobile nav */}
+      <AnimatePresence initial={false}>
+        {mobileMenuOpen && (
+          <motion.div
+            key="mobile-navigation"
+            id={menuId}
+            initial={{ opacity: 0, transform: closedTransform }}
+            animate={{ opacity: 1, transform: 'translateY(0px)' }}
+            exit={{
+              opacity: 0,
+              transform: closedTransform,
+              pointerEvents: 'none',
+            }}
+            transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
+            className="bg-background border-border absolute inset-x-0 top-full border-y md:hidden"
+          >
+            <Container>
+              <nav
+                aria-label="Mobile navigation"
+                className="flex flex-col py-2 text-sm [&>a]:flex [&>a]:min-h-11 [&>a]:items-center"
+              >
+                <NavLink href="/about" onClick={closeMenu}>
+                  About
+                </NavLink>
+                <NavLink href="/articles" onClick={closeMenu}>
+                  Articles
+                </NavLink>
+                <NavLink href="/software" onClick={closeMenu}>
+                  Software
+                </NavLink>
+                <NavLink href="/photography" onClick={closeMenu}>
+                  Photos
+                </NavLink>
+                <NavLink href="/uses" onClick={closeMenu}>
+                  Uses
+                </NavLink>
+              </nav>
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
