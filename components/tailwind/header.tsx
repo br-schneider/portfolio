@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 
 function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -42,17 +42,12 @@ function MoonIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
   const otherTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   return (
     <button
       type="button"
-      aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
-      className="text-muted-foreground transition-colors hover:text-foreground"
+      aria-label="Toggle theme"
+      className="text-muted-foreground hover:text-foreground transition-colors"
       onClick={() => setTheme(otherTheme)}
     >
       <SunIcon className="h-5 w-5 fill-current stroke-current dark:hidden" />
@@ -64,15 +59,19 @@ function ThemeToggle() {
 function NavLink({
   href,
   children,
+  onClick,
 }: {
   href: string
   children: React.ReactNode
+  onClick?: () => void
 }) {
   const isActive = usePathname() === href
 
   return (
     <Link
       href={href}
+      onClick={onClick}
+      aria-current={isActive ? 'page' : undefined}
       className={clsx(
         'transition-colors',
         isActive
@@ -114,14 +113,66 @@ function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const menuId = useId()
+
+  function closeMobileMenu() {
+    setMobileMenuOpen(false)
+  }
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+
+    function onPointerDown(event: PointerEvent) {
+      if (
+        event.target instanceof Node &&
+        !headerRef.current?.contains(event.target)
+      ) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    function closeMenu() {
+      setMobileMenuOpen(false)
+    }
+
+    const desktop = window.matchMedia('(min-width: 768px)')
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    window.addEventListener('popstate', closeMenu)
+    desktop.addEventListener('change', closeMenu)
+
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+      window.removeEventListener('popstate', closeMenu)
+      desktop.removeEventListener('change', closeMenu)
+    }
+  }, [mobileMenuOpen])
 
   return (
-    <header className="relative z-50 w-full">
+    <header
+      ref={headerRef}
+      className="relative z-50 w-full"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget))
+          closeMobileMenu()
+      }}
+    >
       <Container>
         <div className="flex items-center justify-between py-6">
           <Link
             href="/"
-            className="text-sm font-medium text-foreground"
+            onClick={closeMobileMenu}
+            className="text-foreground text-sm font-medium"
           >
             Brett Schneider
           </Link>
@@ -140,31 +191,53 @@ export function Header() {
           <div className="flex items-center gap-4 md:hidden">
             <ThemeToggle />
             <button
+              ref={menuButtonRef}
               type="button"
-              aria-label="Toggle menu"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls={menuId}
+              data-open={mobileMenuOpen}
+              className="mobile-menu-toggle text-muted-foreground hover:text-foreground focus-visible:outline-ring relative -me-3 flex size-11 items-center justify-center rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+              onClick={() => setMobileMenuOpen((open) => !open)}
             >
-              {mobileMenuOpen ? (
-                <CloseIcon className="h-5 w-5" />
-              ) : (
-                <MenuIcon className="h-5 w-5" />
-              )}
+              <MenuIcon className="mobile-menu-open-icon absolute size-5" />
+              <CloseIcon className="mobile-menu-close-icon absolute size-5" />
             </button>
           </div>
         </div>
-
-        {/* Mobile nav */}
-        {mobileMenuOpen && (
-          <nav className="flex flex-col gap-4 border-t border-border pb-6 pt-4 text-sm md:hidden">
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/articles">Articles</NavLink>
-            <NavLink href="/software">Software</NavLink>
-            <NavLink href="/photography">Photos</NavLink>
-            <NavLink href="/uses">Uses</NavLink>
-          </nav>
-        )}
       </Container>
+
+      {/* Mobile nav */}
+      <div
+        id={menuId}
+        className="mobile-navigation bg-background border-border absolute inset-x-0 top-full border-y shadow-sm md:hidden"
+        data-open={mobileMenuOpen}
+        aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
+      >
+        <Container>
+          <nav
+            aria-label="Mobile navigation"
+            className="flex flex-col py-2 text-sm [&>a]:flex [&>a]:min-h-11 [&>a]:items-center"
+          >
+            <NavLink href="/about" onClick={closeMobileMenu}>
+              About
+            </NavLink>
+            <NavLink href="/articles" onClick={closeMobileMenu}>
+              Articles
+            </NavLink>
+            <NavLink href="/software" onClick={closeMobileMenu}>
+              Software
+            </NavLink>
+            <NavLink href="/photography" onClick={closeMobileMenu}>
+              Photos
+            </NavLink>
+            <NavLink href="/uses" onClick={closeMobileMenu}>
+              Uses
+            </NavLink>
+          </nav>
+        </Container>
+      </div>
     </header>
   )
 }

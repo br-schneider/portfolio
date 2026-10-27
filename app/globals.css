@@ -57,6 +57,59 @@
   }
 }
 
+.mobile-navigation {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobile-navigation[data-open='true'] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-open-icon,
+.mobile-menu-close-icon {
+  transition: opacity 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobile-menu-close-icon,
+.mobile-menu-toggle[data-open='true'] .mobile-menu-open-icon {
+  opacity: 0;
+}
+
+.mobile-menu-toggle[data-open='true'] .mobile-menu-close-icon {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-navigation {
+    transform: translateY(-6px);
+    transition-property: opacity, transform;
+  }
+
+  .mobile-navigation[data-open='true'] {
+    transform: translateY(0);
+  }
+
+  .mobile-menu-open-icon,
+  .mobile-menu-close-icon {
+    transition-property: opacity, transform;
+  }
+
+  .mobile-menu-close-icon {
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu-toggle[data-open='true'] .mobile-menu-open-icon {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-toggle[data-open='true'] .mobile-menu-close-icon {
+    transform: rotate(0);
+  }
+}
+
 /* Blur-fade stagger animation */
 @keyframes page-in {
   from {
