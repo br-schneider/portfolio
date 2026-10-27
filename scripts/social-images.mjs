@@ -6,7 +6,6 @@ import { fileURLToPath } from 'node:url'
 import { parseArgs } from 'node:util'
 import { setTimeout as delay } from 'node:timers/promises'
 import { chromium } from 'playwright'
-import sharp from 'sharp'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const { values } = parseArgs({
@@ -95,8 +94,7 @@ try {
   await page.addStyleTag({
     content: 'nextjs-portal { display: none !important; }',
   })
-  const screenshot = await page.screenshot({ animations: 'disabled' })
-  const image = await sharp(screenshot).resize(1200, 630).png().toBuffer()
+  const image = await page.screenshot({ animations: 'disabled' })
   const desktop = join(homedir(), 'Desktop')
   await mkdir(desktop, { recursive: true })
   const outputs = [
