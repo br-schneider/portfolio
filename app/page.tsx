@@ -17,8 +17,8 @@ export default async function Home() {
             CTO at Analyst House
           </h1>
           <p className="text-muted-foreground mt-4 text-base">
-            Hi, I&apos;m Brett, a software engineer and entrepreneur based in
-            Austin, Texas. I&apos;m CTO at{' '}
+            Hi, I&apos;m Brett, an entrepreneur based in Austin, Texas. I&apos;m
+            CTO at{' '}
             <Link
               className="hover:text-foreground underline underline-offset-2 transition-colors"
               href="https://www.analysthouse.io/?utm_source=bretts.dev"

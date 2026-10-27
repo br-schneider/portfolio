@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "social:images": "node scripts/social-images.mjs",
     "lint": "eslint ."
   },
   "browserslist": "defaults, not ie <= 11",
@@ -63,6 +64,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^9.39.0",
     "eslint-config-next": "16.2.12",
+    "playwright": "1.64.1",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "sharp": "^0.35.3",
