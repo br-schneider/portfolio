@@ -11,17 +11,12 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const { values } = parseArgs({
   options: {
     url: { type: 'string' },
-    theme: { type: 'string', default: 'dark' },
   },
 })
 const url = new URL(values.url ?? 'http://localhost:3000')
-const theme = values.theme
 
 if (!['http:', 'https:'].includes(url.protocol)) {
   throw new Error('Use an http or https URL.')
-}
-if (!['dark', 'light'].includes(theme)) {
-  throw new Error('Use --theme dark or --theme light.')
 }
 
 let server
@@ -77,15 +72,15 @@ try {
 
   browser = await chromium.launch()
   const page = await browser.newPage({
-    viewport: { width: 1200, height: 630 },
-    deviceScaleFactor: 2,
-    colorScheme: theme,
+    viewport: { width: 800, height: 420 },
+    deviceScaleFactor: 3,
+    colorScheme: 'light',
     reducedMotion: 'reduce',
   })
   await page.route('**/react-grab/**', (route) => route.abort())
-  await page.addInitScript((selectedTheme) => {
-    localStorage.setItem('theme', selectedTheme)
-  }, theme)
+  await page.addInitScript(() => {
+    localStorage.setItem('theme', 'light')
+  })
   const response = await page.goto(url.href, { waitUntil: 'networkidle' })
   if (!response?.ok())
     throw new Error('The homepage did not load successfully.')

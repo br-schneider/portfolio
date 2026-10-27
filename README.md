@@ -8,10 +8,10 @@ I hope you enjoy exploring my portfolio and gaining a better understanding of my
 
 ## Refresh social images
 
-Run `pnpm social:images` to screenshot the current homepage at 2400 × 1260, using a 1200 × 630 viewport at 2× resolution for crisp text on Retina screens. It reuses the local site on port 3000 or starts a temporary preview and stops it when finished.
+Run `pnpm social:images` to screenshot the current homepage in light mode at 2400 × 1260. An 800 × 420 viewport at 3× resolution keeps the framing tight and the text crisp on Retina screens. It reuses the local site on port 3000 or starts a temporary preview and stops it when finished.
 
 The command replaces `app/opengraph-image.png` and `app/twitter-image.png`, which Next.js includes in link preview metadata, and saves `~/Desktop/portfolio-linkedin.png` for manual uploads to LinkedIn. Commit and push the generated app images to publish them.
 
-The default is dark mode. Use `pnpm social:images --theme light` for light mode, or `pnpm social:images --url https://www.bretts.dev` to capture the published homepage instead of local changes.
+All outputs use light mode. Use `pnpm social:images --url https://www.bretts.dev` to capture the published homepage instead of local changes. Open Graph has no theme preference for preview images, so the app uses the same light image for every viewer.
 
 After installing dependencies for the first time, run `pnpm exec playwright install chromium` to install the screenshot browser. If LinkedIn still shows an older preview after deployment, refresh the page URL in [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).
