@@ -1,86 +1,117 @@
+import { type Metadata } from 'next'
 import { Tool } from '@/components/custom/tool'
 import { ToolsSection } from '@/components/custom/tools-section'
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Uses',
-  description: 'Software I use, gadgets I love, and other things I recommend.',
+  description: 'The tools I use to design, build, and ship software.',
 }
 
 export default function Uses() {
   return (
     <SimpleLayout
-      title="Software I use, and things I recommend."
-      intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I'm being productive when I'm really just procrastinating. Here's a big list of all of my favorite stuff."
+      title="Tools I reach for."
+      intro="The tools I use to design, build, and ship software."
     >
-      <div className="flex flex-col space-y-10">
-        <ToolsSection title="Engineering">
-          <Tool title="Unkey" href="https://unkey.com/?utm_source=bretts.dev">
-            Unkey is my go-to for API key management, rate limiting, and usage
-            tracking. It is simple to integrate and gives you fine-grained
-            control over how your APIs are consumed.
+      <div className="flex flex-col gap-12">
+        <ToolsSection title="Building">
+          <Tool
+            title="Rex by Superlogical"
+            href="https://www.superlogical.com/?utm_source=bretts.dev"
+            logo="/logos/rex.png"
+          >
+            My workspace for terminals and coding agents, with persistent
+            sessions I can pick up across devices.
           </Tool>
-          <Tool title="TailwindCSS" href="https://tailwindcss.com/?utm_source=bretts.dev">
-            I rely on Tailwind for all my projects. I am sure you know it by
-            now! I use it for all my projects, and it is a great tool for
-            quickly building beautiful interfaces.
+          <Tool
+            title="Next.js"
+            href="https://nextjs.org/?utm_source=bretts.dev"
+            logo="/logos/nextjs.svg"
+          >
+            My starting point for React apps, from a small side project to a
+            full product.
           </Tool>
-          <Tool title="Shadcn" href="https://ui.shadcn.com/?utm_source=bretts.dev">
-            Beautifully designed components that you can copy and paste into
-            your projects. They are simple, clean, and easy to use.
+          <Tool
+            title="Tailwind CSS"
+            href="https://tailwindcss.com/?utm_source=bretts.dev"
+            logo="/logos/tailwind.svg"
+          >
+            How I style pretty much everything. Fast to build with and easy to
+            keep consistent.
           </Tool>
-          <Tool title="Hono" href="https://hono.dev/?utm_source=bretts.dev">
-            Hono is a modern, open-source web framework for building just about
-            anything. It has a beautiful DX and has some of the best typescript
-            support I have seen in a while.
+          <Tool
+            title="shadcn/ui"
+            href="https://ui.shadcn.com/?utm_source=bretts.dev"
+            logo="/logos/shadcn.svg"
+          >
+            The components I start with, then make my own.
           </Tool>
-          <Tool title="Nextjs" href="https://nextjs.org/?utm_source=bretts.dev">
-            Next.js is my go-to for all React projects. It is an excellent
-            framework for developing static, server-rendered, and hybrid React
-            applications.
+          <Tool
+            title="Hono"
+            href="https://hono.dev/?utm_source=bretts.dev"
+            logo="/logos/hono.svg"
+          >
+            My pick for lightweight APIs. Simple to work with, with great
+            TypeScript support.
           </Tool>
-          <Tool title="Vercel" href="https://vercel.com/?utm_source=bretts.dev">
-            I use Vercel for most of my websites. It is highly flexible and
-            user-friendly, capable of scaling with my site and providing
-            numerous outstanding features out of the box.
+        </ToolsSection>
+        <ToolsSection title="Infra">
+          <Tool
+            title="Zero Sync"
+            href="https://zero.rocicorp.dev/?utm_source=bretts.dev"
+            logo="/logos/zero.svg"
+          >
+            Instant-feeling interfaces, with local reads and writes that sync in
+            the background.
+          </Tool>
+          <Tool
+            title="PlanetScale"
+            href="https://planetscale.com/?utm_source=bretts.dev"
+            logo="/logos/planetscale.svg"
+          >
+            Managed databases that let me spend more time on the product.
+          </Tool>
+          <Tool
+            title="Unkey"
+            href="https://unkey.com/?utm_source=bretts.dev"
+            logo="/logos/unkey.svg"
+          >
+            My go-to for API keys, rate limits, and usage tracking.
+          </Tool>
+          <Tool
+            title="Vercel"
+            href="https://vercel.com/?utm_source=bretts.dev"
+            logo="/logos/vercel.svg"
+          >
+            Where I deploy most of my websites. Easy to get live and keep
+            shipping.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Design">
-          <Tool title="v0" href="https://v0.dev/?utm_source=bretts.dev">
-            I find v0 to be a great tool for creating beautiful designs. It can
-            be used by just about anyone and helps you get going on building
-            features.
+          <Tool
+            title="v0"
+            href="https://v0.dev/?utm_source=bretts.dev"
+            logo="/logos/v0.svg"
+          >
+            A quick way to turn an idea into an interface I can actually try.
           </Tool>
-          <Tool title="Figma" href="https://www.figma.com/?utm_source=bretts.dev">
-            Figma is my preferred tool for all design work, including
-            wireframes, prototypes, and final designs. It is an excellent
-            platform for collaboration with others.
+          <Tool
+            title="Paper"
+            href="https://paper.design/?utm_source=bretts.dev"
+            logo="/logos/paper.png"
+          >
+            A design canvas built on HTML and CSS, with agents connected
+            directly to the work.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Analytics">
-          <Tool title="Dub" href="https://dub.co?utm_source=bretts.dev">
-            Dub is a fun way to see who clicks on your links. They have built a
-            truly amazing platform, loaded with features for every use case.
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Utilities">
           <Tool
-            title="Monitor Control"
-            href="https://github.com/MonitorControl/MonitorControl?utm_source=bretts.dev"
+            title="Dub"
+            href="https://dub.co?utm_source=bretts.dev"
+            logo="/logos/dub.png"
           >
-            Monitor Control is a macOS app that allows you to control your
-            external monitor&apos;s brightness, contrast, and volume. It is a
-            fantastic tool for managing your monitor settings.
-          </Tool>
-          <Tool title="Raycast" href="https://www.raycast.com/?utm_source=bretts.dev">
-            Raycast is a productivity tool for macOS that lets you control your
-            tools with a few keystrokes. It is a fantastic way to save time and
-            stay focused on your work.
-          </Tool>
-          <Tool title="Rectangle" href="https://rectangleapp.com/?utm_source=bretts.dev">
-            Rectangle is a window management app for macOS that allows you to
-            move and resize windows with ease.
+            Short links and a clear view of what people click.
           </Tool>
         </ToolsSection>
       </div>
