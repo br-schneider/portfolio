@@ -114,13 +114,15 @@ function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [animateMenuExit, setAnimateMenuExit] = useState(true)
   const headerRef = useRef<HTMLElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const menuId = useId()
   const reduceMotion = useReducedMotion()
   const closedTransform = reduceMotion ? 'translateY(0px)' : 'translateY(-6px)'
 
-  function closeMenu() {
+  function closeMenuForNavigation() {
+    setAnimateMenuExit(false)
     setMobileMenuOpen(false)
   }
 
@@ -166,7 +168,7 @@ export function Header() {
         <div className="flex items-center justify-between py-6">
           <Link
             href="/"
-            onClick={closeMenu}
+            onClick={closeMenuForNavigation}
             className="text-foreground text-sm font-medium"
           >
             Brett Schneider
@@ -192,7 +194,10 @@ export function Header() {
               aria-expanded={mobileMenuOpen}
               aria-controls={mobileMenuOpen ? menuId : undefined}
               className="text-muted-foreground hover:text-foreground focus-visible:outline-ring relative -me-3 flex size-11 items-center justify-center rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
-              onClick={() => setMobileMenuOpen((open) => !open)}
+              onClick={() => {
+                setAnimateMenuExit(true)
+                setMobileMenuOpen((open) => !open)
+              }}
             >
               {mobileMenuOpen ? (
                 <CloseIcon className="h-5 w-5" />
@@ -205,17 +210,21 @@ export function Header() {
       </Container>
 
       {/* Mobile nav */}
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial={false} custom={animateMenuExit}>
         {mobileMenuOpen && (
           <motion.div
             key="mobile-navigation"
             id={menuId}
             initial={{ opacity: 0, transform: closedTransform }}
             animate={{ opacity: 1, transform: 'translateY(0px)' }}
-            exit={{
-              opacity: 0,
-              transform: closedTransform,
-              pointerEvents: 'none',
+            exit="closed"
+            variants={{
+              closed: (animateExit: boolean) => ({
+                opacity: 0,
+                transform: closedTransform,
+                pointerEvents: 'none',
+                transition: { duration: animateExit ? 0.18 : 0 },
+              }),
             }}
             transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
             className="bg-background border-border absolute inset-x-0 top-full border-y md:hidden"
@@ -225,19 +234,19 @@ export function Header() {
                 aria-label="Mobile navigation"
                 className="flex flex-col py-2 text-sm [&>a]:flex [&>a]:min-h-11 [&>a]:items-center"
               >
-                <NavLink href="/about" onClick={closeMenu}>
+                <NavLink href="/about" onClick={closeMenuForNavigation}>
                   About
                 </NavLink>
-                <NavLink href="/articles" onClick={closeMenu}>
+                <NavLink href="/articles" onClick={closeMenuForNavigation}>
                   Articles
                 </NavLink>
-                <NavLink href="/software" onClick={closeMenu}>
+                <NavLink href="/software" onClick={closeMenuForNavigation}>
                   Software
                 </NavLink>
-                <NavLink href="/photography" onClick={closeMenu}>
+                <NavLink href="/photography" onClick={closeMenuForNavigation}>
                   Photos
                 </NavLink>
-                <NavLink href="/uses" onClick={closeMenu}>
+                <NavLink href="/uses" onClick={closeMenuForNavigation}>
                   Uses
                 </NavLink>
               </nav>
