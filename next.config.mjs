@@ -36,15 +36,14 @@ const nextConfig = {
               '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
               '</feed.xml>; rel="alternate"; type="application/rss+xml"; title="Articles RSS feed"',
               '</sitemap.xml>; rel="describedby"; type="application/xml"',
+              '</llms.txt>; rel="describedby"; type="text/plain"',
             ].join(', '),
           },
         ],
       },
       {
         source: '/.well-known/api-catalog',
-        headers: [
-          { key: 'Content-Type', value: 'application/linkset+json' },
-        ],
+        headers: [{ key: 'Content-Type', value: 'application/linkset+json' }],
       },
     ]
   },

@@ -11,6 +11,16 @@
       ],
       "describedby": [
         {
+          "href": "https://bretts.dev/llms.txt",
+          "type": "text/plain",
+          "title": "Profile and site guide for language models"
+        },
+        {
+          "href": "https://bretts.dev/llms-full.txt",
+          "type": "text/plain",
+          "title": "Expanded profile, career history, and projects"
+        },
+        {
           "href": "https://bretts.dev/sitemap.xml",
           "type": "application/xml",
           "title": "Sitemap"

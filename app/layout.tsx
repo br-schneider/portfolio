@@ -1,6 +1,7 @@
 import { ReactQueryClientProvider } from '@/components/custom/react-query-client-provider'
 import { Layout } from '@/components/tailwind/layout'
 import { cn } from '@/lib/utils'
+import { personSchema, profile, profileDescription } from '@/lib/profile'
 import { Analytics } from '@vercel/analytics/next'
 import { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
@@ -9,16 +10,16 @@ import './globals.css'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bretts.dev'),
+  metadataBase: new URL(profile.siteUrl),
   title: {
-    template: '%s - Brett Schneider',
-    default: 'Brett Schneider - CTO at Analyst House',
+    template: `%s - ${profile.name}`,
+    default: `${profile.name} - ${profile.title} at ${profile.company.name}`,
   },
-  description:
-    "Hi, I'm Brett, CTO of Analyst House in Austin. I build finance software and AI tools for accounting teams and the businesses they support.",
+  description: profileDescription,
+  authors: [{ name: profile.name, url: profile.siteUrl }],
   alternates: {
     types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+      'application/rss+xml': `${profile.siteUrl}/feed.xml`,
     },
   },
 }
@@ -37,6 +38,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema).replace(/</g, '\\u003c'),
+          }}
+        />
         {process.env.NODE_ENV === 'development' && (
           <Script
             src="//unpkg.com/react-grab/dist/index.global.js"

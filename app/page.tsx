@@ -3,6 +3,7 @@ import Resume from '@/components/custom/resume'
 import SocialIconsRow from '@/components/custom/social-icons-row'
 import { Container } from '@/components/tailwind/container'
 import { getAllArticles } from '@/lib/articles'
+import { profile } from '@/lib/profile'
 import Link from 'next/link'
 
 export default async function Home() {
@@ -14,19 +15,19 @@ export default async function Home() {
       <div className="stagger">
         <div className="max-w-2xl">
           <h1 className="text-foreground text-2xl font-medium tracking-tight">
-            CTO at Analyst House
+            {profile.title} at {profile.company.name}
           </h1>
           <p className="text-muted-foreground mt-4 text-base">
-            Hi, I&apos;m Brett, an entrepreneur based in Austin, Texas. I&apos;m
-            CTO at{' '}
+            Hi, I&apos;m {profile.givenName}, an entrepreneur based in{' '}
+            {profile.location.city}, {profile.location.region}. I&apos;m{' '}
+            {profile.title} at{' '}
             <Link
               className="hover:text-foreground underline underline-offset-2 transition-colors"
-              href="https://www.analysthouse.io/?utm_source=bretts.dev"
+              href={`${profile.company.url}?utm_source=bretts.dev`}
             >
-              Analyst House
+              {profile.company.name}
             </Link>
-            , building finance software and AI tools for accounting teams and
-            the businesses they support.
+            , building {profile.focus}.
           </p>
           <div className="mt-4">
             <SocialIconsRow />

@@ -1,45 +1,8 @@
 'use client'
 
-export default function Resume() {
-  const resume = [
-    {
-      company: 'Analyst House',
-      title: 'CTO',
-      start: '2026',
-      end: 'Present',
-    },
-    {
-      company: 'MeritFirst',
-      title: 'Founding Engineer',
-      start: '2025',
-      end: '2026',
-    },
-    {
-      company: 'Concentro',
-      title: 'Founding Engineer',
-      start: '2024',
-      end: '2025',
-    },
-    {
-      company: 'Gladiate',
-      title: 'Founding Engineer',
-      start: '2022',
-      end: '2024',
-    },
-    {
-      company: 'Kearney',
-      title: 'Software Engineer',
-      start: '2021',
-      end: '2022',
-    },
-    {
-      company: 'Dogsilly',
-      title: 'Software Engineer',
-      start: '2020',
-      end: '2021',
-    },
-  ]
+import { career } from '@/lib/profile'
 
+export default function Resume() {
   const handleDownload = () => {
     fetch('/brett_schneider_resume.pdf').then((response) => {
       response.blob().then((blob) => {
@@ -64,7 +27,7 @@ export default function Resume() {
         </button>
       </div>
       <ol className="space-y-3">
-        {resume.map((role, roleIndex) => (
+        {career.map((role, roleIndex) => (
           <li key={roleIndex} className="flex flex-col gap-0.5">
             <div className="flex items-center justify-between">
               <span className="text-foreground text-sm font-medium">

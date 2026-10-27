@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/tailwind/simple-layout'
 import { Badge } from '@/components/ui/badge'
+import { personalProjects } from '@/lib/profile'
 
 export const revalidate = 86400
 
@@ -45,23 +46,6 @@ async function getLifetimeDownloads() {
   }
 }
 
-const projects = [
-  {
-    name: 'nextjs-nav-guard',
-    description:
-      'The original next-navigation-guard package was abandoned and broke on newer versions of Next.js. I forked it, fixed the runtime crashes, removed the deprecated Pages Router support, and have been maintaining it since. It gives you a simple hook to prevent users from navigating away from unsaved changes.',
-    href: 'https://nextjs-nav-guard.vercel.app/',
-    label: 'view project',
-  },
-  {
-    name: 'SelfPing',
-    description:
-      'For a variety of reasons, I needed to be able to text myself via api. I found it annoyingly difficult to find a quick and easy solution. Here is a simple app that allows you to text yourself via api. It is cost effective and easy to use.',
-    href: 'https://try.selfping.com/GWujuwd',
-    label: 'selfping.com',
-  },
-]
-
 export const metadata: Metadata = {
   title: 'Personal Software',
   description:
@@ -77,7 +61,7 @@ export default async function Projects() {
       intro="Whenever I have a problem, I try to solve it with software. I try to make all my personal software free to use and if not free, priced to cover the cost of its underlying infrastructure."
     >
       <div className="flex flex-col gap-10">
-        {projects.map((project) => (
+        {personalProjects.map((project) => (
           <div key={project.name}>
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2">

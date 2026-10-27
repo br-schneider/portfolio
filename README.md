@@ -1,10 +1,14 @@
 # My Site
 
-Welcome to my website! I'm excited to share with you some of my thoughts I have developed as a founding engineer.
+Personal website and writing by Brett Schneider, CTO at Analyst House.
 
 This website is built using some of my favorite web technologies and frameworks, including [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com).
 
-I hope you enjoy exploring my portfolio and gaining a better understanding of my work. If you have any questions or comments, please don't hesitate to reach out. I'm always happy to connect with others!
+## Profile and LLM docs
+
+Edit `lib/profile.ts` to update the current role, public profiles, work history, and personal projects. That data feeds the site metadata, Person JSON-LD, homepage, work list, software page, and the `/llms.txt` and `/llms-full.txt` routes. The LLM docs are generated during the build and include the current article index.
+
+The short document introduces the site and links to its main pages. The expanded document also includes work history, project descriptions, and public profiles. Pages support `Accept: text/markdown` for reading their full text. The homepage advertises `/llms.txt` in its HTTP Link header, and each page includes an HTML discovery link.
 
 ## Refresh social images
 
